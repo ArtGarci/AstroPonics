@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ba2kt0ani0abt"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ReferenceMenuButton" type="Button" parent="."]
+offset_right = 110.0
+offset_bottom = 54.0
+text = "Handbook
+(Placeholder)"
+
+[node name="Toolbar" type="Label" parent="."]
+offset_left = 896.0
+offset_right = 998.0
+offset_bottom = 52.0
+text = "Toolbar
+(Placeholder)"
+
+[node name="CareBar" type="Label" parent="."]
+offset_left = 576.0
+offset_right = 678.0
+offset_bottom = 52.0
+text = "Care Bar
+(Placeholder)"
+
+[node name="ScoreButton" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_top = 64.0
+offset_right = -2.0
+offset_bottom = 116.0
+grow_horizontal = 0
+text = "Score Button
+(Placeholder)"
+
+[node name="GameplayClock" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -124.0
+offset_bottom = 52.0
+grow_horizontal = 0
+text = "Gameplay Clock
+(Placeholder)"

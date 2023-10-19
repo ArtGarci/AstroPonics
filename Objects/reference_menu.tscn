@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=3 uid="uid://driavqeeh2psj"]
+
+[ext_resource type="Script" path="res://Objects/ReferenceGuideText.gd" id="1_yu732"]
+
+[node name="ReferenceMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.0
+offset_top = -476.0
+offset_right = 896.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+offset_right = 250.0
+offset_bottom = 48.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Reference Guide"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReferenceGuideText" type="RichTextLabel" parent="Background"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 896.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Placeholder text for reference menu items"
+fit_content = true
+script = ExtResource("1_yu732")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -496.0
+offset_top = 64.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Plant 1" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Plant #1 (Placeholder)"
+
+[node name="Plant 2" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Plant #2 (Placeholder)"
+
+[node name="Plant 3" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Plant #3 (Placeholder)"
+
+[node name="Plant 4" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Plant #4 (Placeholder)"
+
+[node name="Plant 5" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Plant #5 (Placeholder)"
+
+[node name="Plant 6" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Plant #6 (Placeholder)"
+
+[node name="Plant 7" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Plant #7 (Placeholder)"
+
+[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 1" to="Background/ReferenceGuideText" method="_on_plant_1_toggled"]
+[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 2" to="Background/ReferenceGuideText" method="_on_plant_2_toggled"]
+[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 3" to="Background/ReferenceGuideText" method="_on_plant_3_toggled"]
+[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 4" to="Background/ReferenceGuideText" method="_on_plant_4_toggled"]
+[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 5" to="Background/ReferenceGuideText" method="_on_plant_5_toggled"]
+[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 6" to="Background/ReferenceGuideText" method="_on_plant_6_toggled"]
+[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 7" to="Background/ReferenceGuideText" method="_on_plant_7_toggled"]

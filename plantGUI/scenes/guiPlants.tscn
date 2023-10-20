@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://eultllaxwx7x"]
+[gd_scene load_steps=10 format=3 uid="uid://eultllaxwx7x"]
 
 [ext_resource type="Texture2D" uid="uid://bpitcc2sjy74y" path="res://images/seedimage.png" id="1_jshow"]
 [ext_resource type="Script" path="res://guiPlants.gd" id="1_yo1vl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c8liqloj0ypja" path="res://images/seedtmppress.png" id="5_m4qwi"]
 [ext_resource type="PackedScene" uid="uid://cogrckninwxv6" path="res://scenes/trash_bin.tscn" id="7_21v35"]
 [ext_resource type="PackedScene" uid="uid://dst2oncus4vxp" path="res://scenes/pot_ui.tscn" id="8_htlee"]
+[ext_resource type="PackedScene" uid="uid://17hdd8xx6243" path="res://scenes/trowel.tscn" id="9_mkb6d"]
 
 [node name="GUI" type="MarginContainer"]
 anchors_preset = 7
@@ -165,6 +166,10 @@ position = Vector2(-61, 1493)
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(1000, 800)
 zoom = Vector2(0.25, 0.25)
+
+[node name="trowel" parent="." instance=ExtResource("9_mkb6d")]
+position = Vector2(543, 1375)
+scale = Vector2(0.3, 0.3)
 
 [connection signal="pressed" from="seedButton/buttonForMenu" to="." method="_on_button_for_menu_pressed"]
 [connection signal="gui_input" from="seedMenu/background/BoxContainer/leftButtonCont/topLeftCont/lettaceSeed" to="." method="_on_lettace_seed_gui_input"]

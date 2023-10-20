@@ -1,8 +1,9 @@
-[gd_scene load_steps=61 format=3 uid="uid://dst2oncus4vxp"]
+[gd_scene load_steps=40 format=3 uid="uid://dst2oncus4vxp"]
 
 [ext_resource type="Texture2D" uid="uid://ddydyv7nm5phr" path="res://images/farmingTilesheetComplete.png" id="1_nhnwu"]
 [ext_resource type="Script" path="res://pot_ui.gd" id="1_vyret"]
 [ext_resource type="PackedScene" uid="uid://c8q12rkrf4u75" path="res://scenes/my_plant.tscn" id="3_e0uhg"]
+[ext_resource type="PackedScene" uid="uid://dgm5gm8di213u" path="res://scenes/low_light_plant.tscn" id="4_3exl8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vplm"]
 atlas = ExtResource("1_nhnwu")
@@ -19,95 +20,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipjqr"]
-size = Vector2(747, 750)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n6d1w"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(176, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uv7s4"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(96, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_847t8"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(112, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ux71j"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(0, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b3fvq"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(192, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qegob"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(176, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ctbwd"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(80, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nwo4i"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(64, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oicnl"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(48, 64, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x0oj6"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"none",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6d1w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uv7s4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_847t8")
-}],
-"loop": true,
-"name": &"potatoeGrow",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ux71j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b3fvq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qegob")
-}],
-"loop": true,
-"name": &"tomatoeGrow",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ctbwd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nwo4i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oicnl")
-}],
-"loop": true,
-"name": &"wheatGrow",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mi1cq"]
 atlas = ExtResource("1_nhnwu")
 region = Rect2(64, 112, 16, 16)
@@ -120,95 +32,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5l4u"]
-size = Vector2(15.32, 15.24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6kud"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(80, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_it5go"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(96, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xssc6"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(112, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8yah"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(0, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tsehu"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(192, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yc8gw"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(176, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbsa0"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(80, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u445s"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(64, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_orqwo"]
-atlas = ExtResource("1_nhnwu")
-region = Rect2(48, 64, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8jb01"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"none",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a6kud")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_it5go")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xssc6")
-}],
-"loop": true,
-"name": &"potatoeGrow",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m8yah")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tsehu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yc8gw")
-}],
-"loop": true,
-"name": &"tomatoeGrow",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bbsa0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u445s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_orqwo")
-}],
-"loop": true,
-"name": &"wheatGrow",
 "speed": 5.0
 }]
 
@@ -501,20 +324,9 @@ scale = Vector2(10, 23)
 sprite_frames = SubResource("SpriteFrames_1ymuw")
 centered = false
 
-[node name="potOneH" type="Area2D" parent="NinePatchRect/potHolder/highLightPots/potOneH"]
-position = Vector2(29.9999, 11.84)
-scale = Vector2(0.2, 0.46)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/highLightPots/potOneH/potOneH"]
-position = Vector2(399, 395)
-shape = SubResource("RectangleShape2D_ipjqr")
-metadata/_edit_lock_ = true
-
-[node name="sOnePlant" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potOneH"]
-position = Vector2(110, 140)
-scale = Vector2(10, 15)
-sprite_frames = SubResource("SpriteFrames_x0oj6")
-animation = &"none"
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potOneH" instance=ExtResource("3_e0uhg")]
+position = Vector2(116, 239.84)
+scale = Vector2(10, 23)
 
 [node name="potTwoH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
 layout_mode = 2
@@ -526,20 +338,9 @@ scale = Vector2(10, 23)
 sprite_frames = SubResource("SpriteFrames_2tdye")
 centered = false
 
-[node name="potTwoH" type="Area2D" parent="NinePatchRect/potHolder/highLightPots/potTwoH"]
-position = Vector2(16.9999, 10.84)
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potTwoH" instance=ExtResource("3_e0uhg")]
+position = Vector2(99.9999, 239.84)
 scale = Vector2(10, 23)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/highLightPots/potTwoH/potTwoH"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
-
-[node name="sTwoPlant" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potTwoH"]
-position = Vector2(97.9999, 140.84)
-scale = Vector2(10, 15)
-sprite_frames = SubResource("SpriteFrames_8jb01")
-animation = &"none"
 
 [node name="potThreeH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
 layout_mode = 2
@@ -550,13 +351,6 @@ position = Vector2(18.9999, 9.84)
 scale = Vector2(10, 23)
 sprite_frames = SubResource("SpriteFrames_ahmfu")
 centered = false
-
-[node name="potThreeH" type="Area2D" parent="NinePatchRect/potHolder/highLightPots/potThreeH/spriteThree"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/highLightPots/potThreeH/spriteThree/potThreeH"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
 
 [node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potThreeH" instance=ExtResource("3_e0uhg")]
 position = Vector2(103, 241.84)
@@ -572,12 +366,9 @@ scale = Vector2(10, 23)
 sprite_frames = SubResource("SpriteFrames_b5kgw")
 centered = false
 
-[node name="potFourH" type="Area2D" parent="NinePatchRect/potHolder/highLightPots/potFourH/spriteFour"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/highLightPots/potFourH/spriteFour/potFourH"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potFourH" instance=ExtResource("3_e0uhg")]
+position = Vector2(116, 238.84)
+scale = Vector2(10, 23)
 
 [node name="potFiveH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
 layout_mode = 2
@@ -590,12 +381,9 @@ sprite_frames = SubResource("SpriteFrames_vch3h")
 animation = &"lettaceAnime"
 centered = false
 
-[node name="potFiveH" type="Area2D" parent="NinePatchRect/potHolder/highLightPots/potFiveH/spriteFive"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/highLightPots/potFiveH/spriteFive/potFiveH"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potFiveH" instance=ExtResource("3_e0uhg")]
+position = Vector2(97.9999, 241.84)
+scale = Vector2(10, 23)
 
 [node name="lowLightPots" type="HBoxContainer" parent="NinePatchRect/potHolder"]
 layout_mode = 2
@@ -612,12 +400,9 @@ scale = Vector2(10, 23)
 sprite_frames = SubResource("SpriteFrames_rfltb")
 centered = false
 
-[node name="potOneL" type="Area2D" parent="NinePatchRect/potHolder/lowLightPots/potOneL/spriteOneL"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/lowLightPots/potOneL/spriteOneL/potOneL"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potOneL" instance=ExtResource("4_3exl8")]
+position = Vector2(117, 260.84)
+scale = Vector2(7.5, 17.5)
 
 [node name="potTwoL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
 layout_mode = 2
@@ -630,12 +415,9 @@ sprite_frames = SubResource("SpriteFrames_vch3h")
 animation = &"lettaceAnime"
 centered = false
 
-[node name="potTwoL" type="Area2D" parent="NinePatchRect/potHolder/lowLightPots/potTwoL/spriteTwoL"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/lowLightPots/potTwoL/spriteTwoL/potTwoL"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potTwoL" instance=ExtResource("4_3exl8")]
+position = Vector2(103, 258.84)
+scale = Vector2(7.5, 17.5)
 
 [node name="potThreeL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
 layout_mode = 2
@@ -648,12 +430,9 @@ sprite_frames = SubResource("SpriteFrames_vch3h")
 animation = &"lettaceAnime"
 centered = false
 
-[node name="potThreeL" type="Area2D" parent="NinePatchRect/potHolder/lowLightPots/potThreeL/spriteThreeL"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/lowLightPots/potThreeL/spriteThreeL/potThreeL"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potThreeL" instance=ExtResource("4_3exl8")]
+position = Vector2(113, 258.84)
+scale = Vector2(7.5, 17.5)
 
 [node name="potFourL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
 layout_mode = 2
@@ -666,12 +445,9 @@ sprite_frames = SubResource("SpriteFrames_vch3h")
 animation = &"lettaceAnime"
 centered = false
 
-[node name="potFourL" type="Area2D" parent="NinePatchRect/potHolder/lowLightPots/potFourL/spriteFourL"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/lowLightPots/potFourL/spriteFourL/potFourL"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potFourL" instance=ExtResource("4_3exl8")]
+position = Vector2(114, 261.84)
+scale = Vector2(7.5, 17.5)
 
 [node name="potFiveL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
 layout_mode = 2
@@ -684,12 +460,9 @@ sprite_frames = SubResource("SpriteFrames_vch3h")
 animation = &"lettaceAnime"
 centered = false
 
-[node name="potFiveL" type="Area2D" parent="NinePatchRect/potHolder/lowLightPots/potFiveL/spriteFiveL"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NinePatchRect/potHolder/lowLightPots/potFiveL/spriteFiveL/potFiveL"]
-position = Vector2(8, 7.95652)
-shape = SubResource("RectangleShape2D_c5l4u")
-metadata/_edit_lock_ = true
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potFiveL" instance=ExtResource("4_3exl8")]
+position = Vector2(102, 256.84)
+scale = Vector2(7.5, 17.5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(800, 0)
@@ -701,14 +474,4 @@ zoom = Vector2(0.1, 0.1)
 
 [node name="tomatoeTimer" type="Timer" parent="."]
 
-[connection signal="area_entered" from="NinePatchRect/potHolder/highLightPots/potOneH/potOneH" to="." method="_on_pot_one_h_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/highLightPots/potTwoH/potTwoH" to="." method="_on_pot_two_h_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/highLightPots/potThreeH/spriteThree/potThreeH" to="." method="_on_pot_three_h_area_entered"]
 [connection signal="child_entered_tree" from="NinePatchRect/potHolder/highLightPots/potThreeH/myPlant" to="." method="_on_my_plant_child_entered_tree"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/highLightPots/potFourH/spriteFour/potFourH" to="." method="_on_pot_four_h_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/highLightPots/potFiveH/spriteFive/potFiveH" to="." method="_on_pot_five_h_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/lowLightPots/potOneL/spriteOneL/potOneL" to="." method="_on_pot_one_l_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/lowLightPots/potTwoL/spriteTwoL/potTwoL" to="." method="_on_pot_two_l_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/lowLightPots/potThreeL/spriteThreeL/potThreeL" to="." method="_on_pot_three_l_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/lowLightPots/potFourL/spriteFourL/potFourL" to="." method="_on_pot_four_l_area_entered"]
-[connection signal="area_entered" from="NinePatchRect/potHolder/lowLightPots/potFiveL/spriteFiveL/potFiveL" to="." method="_on_pot_five_l_area_entered"]

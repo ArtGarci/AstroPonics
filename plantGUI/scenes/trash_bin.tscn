@@ -24,5 +24,3 @@ texture_pressed = ExtResource("2_57qo8")
 [node name="trashCollision" type="CollisionShape2D" parent="trashButton/trashArea"]
 position = Vector2(259, 282)
 shape = SubResource("RectangleShape2D_8xbpl")
-
-[connection signal="area_entered" from="trashButton/trashArea" to="." method="_on_area_2d_area_entered"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://0exr3nat38w"]
+[gd_scene load_steps=6 format=3 uid="uid://0exr3nat38w"]
 
 [ext_resource type="Texture2D" uid="uid://sgleevgun4bf" path="res://images/seedtmp1.png" id="1_ak6cd"]
 [ext_resource type="Script" path="res://dragSeed.gd" id="1_w66uh"]
-[ext_resource type="Texture2D" uid="uid://c8liqloj0ypja" path="res://images/seedtmppress.png" id="2_4ho1s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87hwg"]
 atlas = ExtResource("1_ak6cd")
@@ -16,14 +15,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_4ho1s")
-}],
-"loop": true,
-"name": &"lettaceSeed",
 "speed": 5.0
 }]
 
@@ -40,4 +31,3 @@ script = ExtResource("1_w66uh")
 shape = SubResource("CircleShape2D_euj2u")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

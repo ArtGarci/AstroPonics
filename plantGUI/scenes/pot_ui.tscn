@@ -1,19 +1,19 @@
 [gd_scene load_steps=40 format=3 uid="uid://dst2oncus4vxp"]
 
+[ext_resource type="Script" path="res://pot_ui.gd" id="1_k0exx"]
 [ext_resource type="Texture2D" uid="uid://ddydyv7nm5phr" path="res://images/farmingTilesheetComplete.png" id="1_nhnwu"]
-[ext_resource type="Script" path="res://pot_ui.gd" id="1_vyret"]
 [ext_resource type="PackedScene" uid="uid://c8q12rkrf4u75" path="res://scenes/my_plant.tscn" id="3_e0uhg"]
 [ext_resource type="PackedScene" uid="uid://dgm5gm8di213u" path="res://scenes/low_light_plant.tscn" id="4_3exl8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0vplm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm0fh"]
 atlas = ExtResource("1_nhnwu")
 region = Rect2(64, 112, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1ymuw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hm03"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0vplm")
+"texture": SubResource("AtlasTexture_sm0fh")
 }],
 "loop": true,
 "name": &"default",
@@ -293,7 +293,7 @@ offset_right = 3.38397
 offset_bottom = 5.39999
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vyret")
+script = ExtResource("1_k0exx")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -316,17 +316,14 @@ alignment = 1
 [node name="potOneH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
 
 [node name="spriteOne" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potOneH"]
-position = Vector2(29.9999, 11.84)
+position = Vector2(117, 192.84)
 scale = Vector2(10, 23)
-sprite_frames = SubResource("SpriteFrames_1ymuw")
-centered = false
+sprite_frames = SubResource("SpriteFrames_1hm03")
 
-[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potOneH" instance=ExtResource("3_e0uhg")]
-position = Vector2(116, 239.84)
-scale = Vector2(10, 23)
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potOneH/spriteOne" instance=ExtResource("3_e0uhg")]
+position = Vector2(0.200005, 2.17391)
 
 [node name="potTwoH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
 layout_mode = 2
@@ -446,7 +443,7 @@ animation = &"lettaceAnime"
 centered = false
 
 [node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potFourL" instance=ExtResource("4_3exl8")]
-position = Vector2(114, 261.84)
+position = Vector2(114, 253.84)
 scale = Vector2(7.5, 17.5)
 
 [node name="potFiveL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
@@ -473,5 +470,3 @@ zoom = Vector2(0.1, 0.1)
 [node name="wheatTimer" type="Timer" parent="."]
 
 [node name="tomatoeTimer" type="Timer" parent="."]
-
-[connection signal="child_entered_tree" from="NinePatchRect/potHolder/highLightPots/potThreeH/myPlant" to="." method="_on_my_plant_child_entered_tree"]

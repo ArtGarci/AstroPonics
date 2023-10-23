@@ -51,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fn0av")
 }],
-"loop": true,
+"loop": false,
 "name": &"chivesGrow",
 "speed": 5.0
 }, {
@@ -65,7 +65,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eljjt")
 }],
-"loop": true,
+"loop": false,
 "name": &"lettaceGrow",
 "speed": 5.0
 }, {
@@ -84,7 +84,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bijh1")
 }],
-"loop": true,
+"loop": false,
 "name": &"radishGrow",
 "speed": 5.0
 }]

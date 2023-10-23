@@ -51,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ni8i2")
 }],
-"loop": true,
+"loop": false,
 "name": &"growPotatoes",
 "speed": 5.0
 }, {
@@ -65,7 +65,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uyask")
 }],
-"loop": true,
+"loop": false,
 "name": &"growTomatoes",
 "speed": 5.0
 }, {
@@ -79,7 +79,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_duv3y")
 }],
-"loop": true,
+"loop": false,
 "name": &"growWheats",
 "speed": 5.0
 }, {

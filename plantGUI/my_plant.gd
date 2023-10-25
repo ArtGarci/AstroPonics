@@ -7,13 +7,13 @@ var plantGrowing = false
 # when the seed goes over a grow plot, the plant animation starts
 func _on_plant_collision_area_entered(area):
 	if Global.itSeed == true:
-		if area == get_node("/root/GUI/seedDrag/lettaceSeedDrag/Area2D"):
+		if area.name == "seedArea":
 			if Global.lightLevel == 2:
 				if Global.seedSelected == 0:
 					spriteAnim.play("none")
 					plantGrowing = false
 				if Global.seedSelected == 4 and plantGrowing == false:
-					spriteAnim.play("growPotatoes")
+					spriteAnim.play("growPotatoes")	
 					plantGrowing = true
 				if Global.seedSelected == 5 and plantGrowing == false:
 					spriteAnim.play("growWheats")
@@ -26,3 +26,18 @@ func _on_plant_collision_area_entered(area):
 			plantGrowing = false
 			spriteAnim.animation = "none"
 			Global.seedSelected = 0
+
+# used for testing
+func setGlobalVariables(itSeed, lightLevel, seedSelected):
+	if itSeed == true:
+		Global.itSeed = itSeed
+	if itSeed == false:
+		Global.itTrowel = true
+	Global.lightLevel = lightLevel
+	Global.seedSelected = seedSelected
+	
+func isPlantGrowing():
+	return plantGrowing
+
+func setPlantGrowing(isGrowing):
+	plantGrowing = isGrowing

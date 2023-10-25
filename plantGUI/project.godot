@@ -20,9 +20,12 @@ Global="*res://guiPlants.gd"
 
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=800
+window/size/viewport_width=1350
 window/stretch/scale=2.0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [input]
 

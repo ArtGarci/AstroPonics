@@ -2,14 +2,13 @@ extends Node2D
 
 @onready var spriteAnim = $lowPlant
 var plantGrowing = false
-var inArea = false
 
 	
 # 1=lettace 2=radish 3=chives 4=potatoes 5=wheat 6=tomatoes
 # when the seed goes over a grow plot, the plant animation starts
 func _on_low_plant_coll_area_entered(area):
 	if Global.itSeed == true:
-		if area == get_node("/root/GUI/seedDrag/lettaceSeedDrag/Area2D"):
+		if area.name == "seedArea":
 			if Global.lightLevel == 1:
 				if Global.seedSelected == 0:
 					spriteAnim.play("none")
@@ -29,3 +28,14 @@ func _on_low_plant_coll_area_entered(area):
 			spriteAnim.animation = "none"
 			Global.seedSelected = 0
 
+# used for testing
+func setGlobalVariables(itSeed, lightLevel, seedSelected):
+	Global.itSeed = itSeed
+	Global.lightLevel = lightLevel
+	Global.seedSelected = seedSelected
+	
+func isPlantGrowing():
+	return plantGrowing
+
+func setPlantGrowing(isGrowing):
+	plantGrowing = isGrowing

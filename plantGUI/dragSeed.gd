@@ -12,7 +12,7 @@ func _process(delta):
 #when the seed enters the bin area it hides sets global variables to zero,
 #and hides the seed then queue frees the seed to get rid of the instance
 func _on_area_2d_area_entered(area):
-	if area == get_node("/root/GUI/trashBin/trashButton/trashArea"):
+	if area.name == "trashArea":
 		Global.seedSelected = 0
 		Global.lightLevel = 0
 		Global.itSeed = false
@@ -20,4 +20,15 @@ func _on_area_2d_area_entered(area):
 		get_node("/root/GUI/trashBin").hide()
 		self.queue_free()
 
-
+# used for testing
+func isVisbale():
+	return self.is_visible()
+	
+func whatIsSeed():
+	return Global.seedSelected
+	
+func lightLevel():
+	return Global.lightLevel
+	
+func isItSeed():
+	return Global.itSeed

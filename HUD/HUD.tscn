@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ba2kt0ani0abt"]
+[gd_scene load_steps=2 format=3 uid="uid://ba2kt0ani0abt"]
+
+[ext_resource type="Script" path="res://HUD/ReferenceMenuButton.gd" id="1_86stp"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -7,6 +9,7 @@ offset_right = 110.0
 offset_bottom = 54.0
 text = "Handbook
 (Placeholder)"
+script = ExtResource("1_86stp")
 
 [node name="Toolbar" type="Label" parent="."]
 offset_left = 896.0
@@ -43,3 +46,5 @@ offset_bottom = 52.0
 grow_horizontal = 0
 text = "Gameplay Clock
 (Placeholder)"
+
+[connection signal="pressed" from="ReferenceMenuButton" to="ReferenceMenuButton" method="_on_pressed"]

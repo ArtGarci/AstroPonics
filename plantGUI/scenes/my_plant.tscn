@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8q12rkrf4u75"]
+[gd_scene load_steps=15 format=3 uid="uid://c8q12rkrf4u75"]
 
 [ext_resource type="Texture2D" uid="uid://ddydyv7nm5phr" path="res://images/farmingTilesheetComplete.png" id="1_eadwm"]
 [ext_resource type="Script" path="res://my_plant.gd" id="1_ro1o4"]
+[ext_resource type="Texture2D" uid="uid://5dvxnwg761w0" path="res://images/dirtTile.png" id="3_r4dn6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xen47"]
 atlas = ExtResource("1_eadwm")
@@ -90,13 +91,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnvn2"]
-size = Vector2(17.3333, 28)
+size = Vector2(22.6667, 34)
 
 [node name="myPlant" type="Node2D"]
 script = ExtResource("1_ro1o4")
 
+[node name="plantButton" type="TextureButton" parent="."]
+offset_left = -6.75
+offset_top = -9.0
+offset_right = 10.25
+offset_bottom = 10.0
+scale = Vector2(1.2, 1.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_r4dn6")
+
 [node name="plantGrowing" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -1)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_22ypc")
 animation = &"none"
@@ -104,8 +115,9 @@ animation = &"none"
 [node name="plantCollision" type="Area2D" parent="plantGrowing"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plantGrowing/plantCollision"]
-position = Vector2(-0.666667, 5.33333)
+position = Vector2(2, 0.666666)
 scale = Vector2(1, 0.666667)
 shape = SubResource("RectangleShape2D_dnvn2")
 
+[connection signal="pressed" from="plantButton" to="." method="_on_plant_button_pressed"]
 [connection signal="area_entered" from="plantGrowing/plantCollision" to="." method="_on_plant_collision_area_entered"]

@@ -3,7 +3,13 @@ extends Node2D
 @onready var spriteAnim = $lowPlant
 var plantGrowing = false
 
-	
+func _on_low_light_but_pressed():
+	if Global.itTrowel == true:
+		if plantGrowing == true:
+			plantGrowing = false
+			spriteAnim.animation = "none"
+			Global.seedSelected = 0
+
 # 1=lettace 2=radish 3=chives 4=potatoes 5=wheat 6=tomatoes
 # when the seed goes over a grow plot, the plant animation starts
 func _on_low_plant_coll_area_entered(area):
@@ -22,11 +28,11 @@ func _on_low_plant_coll_area_entered(area):
 				if Global.seedSelected == 3 and plantGrowing == false:
 					spriteAnim.play("chivesGrow")
 					plantGrowing = true
-	if Global.itTrowel == true:
-		if plantGrowing == true:
-			plantGrowing = false
-			spriteAnim.animation = "none"
-			Global.seedSelected = 0
+	#if Global.itTrowel == true:
+	#	if plantGrowing == true:
+	#		plantGrowing = false
+	#		spriteAnim.animation = "none"
+	#		Global.seedSelected = 0
 
 # used for testing
 func setGlobalVariables(itSeed, lightLevel, seedSelected, itTrowel=false):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgm5gm8di213u"]
+[gd_scene load_steps=15 format=3 uid="uid://dgm5gm8di213u"]
 
 [ext_resource type="Texture2D" uid="uid://ddydyv7nm5phr" path="res://images/farmingTilesheetComplete.png" id="1_gwmwe"]
 [ext_resource type="Script" path="res://low_light_plant.gd" id="1_rrji6"]
+[ext_resource type="Texture2D" uid="uid://5dvxnwg761w0" path="res://images/dirtTile.png" id="2_jjy5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6avgp"]
 atlas = ExtResource("1_gwmwe")
@@ -90,21 +91,31 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7f0p"]
-size = Vector2(17.333, 28)
+size = Vector2(17, 25.4948)
 
 [node name="lowLightPlant" type="Node2D"]
 script = ExtResource("1_rrji6")
 
+[node name="lowLightBut" type="TextureButton" parent="."]
+offset_left = -9.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 7.0
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("2_jjy5l")
+
 [node name="lowPlant" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_wsk6c")
 animation = &"none"
 
 [node name="lowPlantColl" type="Area2D" parent="lowPlant"]
+position = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lowPlant/lowPlantColl"]
-position = Vector2(-0.667, 5.333)
+position = Vector2(-0.5, 4.4975)
 scale = Vector2(1, 0.667)
 shape = SubResource("RectangleShape2D_l7f0p")
 
+[connection signal="pressed" from="lowLightBut" to="." method="_on_low_light_but_pressed"]
 [connection signal="area_entered" from="lowPlant/lowPlantColl" to="." method="_on_low_plant_coll_area_entered"]

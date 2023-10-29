@@ -31,18 +31,17 @@ size_flags_horizontal = 4
 
 [node name="seedButton" type="Control" parent="."]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="buttonForMenu" type="TextureButton" parent="seedButton"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.136
-anchor_top = 0.821
-anchor_right = 0.136
-anchor_bottom = 0.821
-offset_left = -127.672
-offset_top = -127.905
-offset_right = 384.328
-offset_bottom = 384.095
+offset_left = 225.0
+offset_top = -658.0
+offset_right = 737.0
+offset_bottom = -146.0
+grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_jshow")
@@ -161,7 +160,7 @@ text = "Exit"
 
 [node name="trashBin" parent="." instance=ExtResource("7_21v35")]
 visible = false
-position = Vector2(-61, 1493)
+position = Vector2(-42, 1308)
 
 [node name="seedDrag" type="Node" parent="."]
 

@@ -28,11 +28,9 @@ func _on_plant_collision_area_entered(area):
 			Global.seedSelected = 0
 
 # used for testing
-func setGlobalVariables(itSeed, lightLevel, seedSelected):
-	if itSeed == true:
-		Global.itSeed = itSeed
-	if itSeed == false:
-		Global.itTrowel = true
+func setGlobalVariables(itSeed, lightLevel, seedSelected, isTrowel=false):
+	Global.itSeed = itSeed
+	Global.itTrowel = isTrowel
 	Global.lightLevel = lightLevel
 	Global.seedSelected = seedSelected
 	

@@ -13,10 +13,26 @@ func _process(delta):
 
 func _on_trowel_area_area_entered(area):
 	if Global.itTrowel == true:
-		if area == get_node("/root/GUI/trashBin/trashButton/trashArea"):
+		if area.name == "trashArea":
 			Global.seedSelected = 0
 			Global.lightLevel = 0
 			Global.itTrowel = false
 			Global.mouseClick = false
-			get_node("/root/GUI/trashBin").hide()
+			var getArea = area.get_parent()
+			getArea = getArea.get_parent()
+			getArea = getArea.get_path()
+			get_node(getArea).hide()
 			self.queue_free()
+			
+# used for testing
+func isVisbale():
+	return self.is_visible()
+	
+func whatIsSeed():
+	return Global.seedSelected
+	
+func lightLevel():
+	return Global.lightLevel
+	
+func isItTrowel():
+	return Global.itTrowel

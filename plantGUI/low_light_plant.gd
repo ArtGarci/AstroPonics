@@ -29,10 +29,11 @@ func _on_low_plant_coll_area_entered(area):
 			Global.seedSelected = 0
 
 # used for testing
-func setGlobalVariables(itSeed, lightLevel, seedSelected):
+func setGlobalVariables(itSeed, lightLevel, seedSelected, itTrowel=false):
 	Global.itSeed = itSeed
 	Global.lightLevel = lightLevel
 	Global.seedSelected = seedSelected
+	Global.itTrowel = itTrowel
 	
 func isPlantGrowing():
 	return plantGrowing

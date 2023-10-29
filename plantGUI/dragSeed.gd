@@ -17,7 +17,10 @@ func _on_area_2d_area_entered(area):
 		Global.lightLevel = 0
 		Global.itSeed = false
 		Global.mouseClick = false
-		get_node("/root/GUI/trashBin").hide()
+		var getArea = area.get_parent()
+		getArea = getArea.get_parent()
+		getArea = getArea.get_path()
+		get_node(getArea).hide()
 		self.queue_free()
 
 # used for testing

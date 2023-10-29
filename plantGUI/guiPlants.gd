@@ -23,7 +23,7 @@ func _ready():
 # top left button on menu
 func _on_lettace_seed_gui_input(event):
 	# check to see if the event it a click
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and Global.itTrowel == false:
 		Global.seedSelected = 1			# global seed is set
 		Global.lightLevel = 1			# gloabal light level is set
 		Global.itSeed = true
@@ -33,7 +33,6 @@ func _on_lettace_seed_gui_input(event):
 		get_node("seedDrag").add_child(seedPreview)		# makes new instance of seed
 		get_node("seedMenu").hide()
 		get_node("trashBin").show()						# show trash bin
-		
 
 func _on_radish_seed_gui_input(event):
 	if event is InputEventMouseButton:
@@ -108,3 +107,24 @@ func _on_texture_button_gui_input(event):
 		get_node("seedDrag").add_child(trowelPreview) 	# maes a new instance of seed
 		get_node("seedMenu").hide()						# hide seed menu
 		get_node("trashBin").show()						# show trash bin
+
+# used for testing
+func isMenuVisable():
+	return get_node("seedMenu").is_visible_in_tree()
+
+func setGlobalVars(selectedSeed, newLevel, isSeed):
+	Global.seedSelected = selectedSeed
+	Global.lightLevel = newLevel
+	Global.itSeed = isSeed
+
+func whatIsSeed():
+	return Global.seedSelected
+	
+func whatIsLightLevel():
+	return Global.lightLevel
+	
+func isItSeed():
+	return Global.itSeed
+	
+func isItTrowel():
+	return Global.itTrowel

@@ -159,11 +159,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 71
 text = "Exit"
 
-[node name="seedDrag" type="Node" parent="."]
-
 [node name="trashBin" parent="." instance=ExtResource("7_21v35")]
 visible = false
 position = Vector2(-61, 1493)
+
+[node name="seedDrag" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(1000, 800)

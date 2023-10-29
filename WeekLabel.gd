@@ -16,6 +16,10 @@ func _process(delta):
 		weeks_passed += 1
 		elapsed_real_time -= seconds_per_gameplay_week
 		update_weeks_display()
+		
+	#check if the game should end after 12 weeks
+	if weeks_passed >=12:
+		end_game() # call a function to end the game
 
 func get_gameplay_time():
 	# Return the total gameplay time in seconds
@@ -23,3 +27,8 @@ func get_gameplay_time():
 
 func update_weeks_display():
 	text = "Week: " + str(weeks_passed)
+	
+func end_game():
+	#access the current scene make call to exit game
+	get_tree().quit()
+	

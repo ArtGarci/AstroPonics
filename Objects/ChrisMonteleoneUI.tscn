@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://n3rjhi11d55q"]
+[gd_scene load_steps=4 format=3 uid="uid://cy4sbarorkj37"]
 
 [ext_resource type="Texture2D" uid="uid://dt6wf3yiwwses" path="res://chemical-drop.png" id="1_xrjcd"]
 [ext_resource type="Texture2D" uid="uid://d13767nuvwmjc" path="res://watering-can.png" id="2_hfefa"]
@@ -17,6 +17,7 @@ offset_top = -98.0
 offset_right = 600.0
 offset_bottom = 2.0
 grow_vertical = 0
+tooltip_text = "pH Game"
 icon = ExtResource("1_xrjcd")
 expand_icon = true
 
@@ -33,6 +34,7 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
+tooltip_text = "Watering Game"
 icon = ExtResource("2_hfefa")
 expand_icon = true
 
@@ -48,5 +50,6 @@ offset_right = -452.0
 offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
+tooltip_text = "Trimming Game"
 icon = ExtResource("3_seyst")
 expand_icon = true

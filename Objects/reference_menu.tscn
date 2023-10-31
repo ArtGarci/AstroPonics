@@ -18,6 +18,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ReferenceGuideText" type="RichTextLabel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0277778
+anchor_top = 0.0987654
+anchor_right = 0.554688
+anchor_bottom = 0.938272
+offset_right = 1.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Placeholder Reference Text"
+script = ExtResource("1_yu732")
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="Background"]
 layout_mode = 1
 offset_right = 250.0
@@ -27,21 +40,6 @@ theme_override_font_sizes/font_size = 32
 text = "Reference Guide"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ReferenceGuideText" type="RichTextLabel" parent="Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1791.0
-offset_bottom = -915.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 32
-text = "Placeholder text for reference menu items"
-fit_content = true
-script = ExtResource("1_yu732")
-metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Background"]
 layout_mode = 1
@@ -54,70 +52,64 @@ offset_top = 64.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/ScrollContainer"]
+[node name="PlantVBoxContainer" type="VBoxContainer" parent="Background/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="Plant 1" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+[node name="Plant 1" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-toggle_mode = true
 text = "Plant #1 (Placeholder)"
 
-[node name="Plant 2" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+[node name="Plant 2" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-toggle_mode = true
 text = "Plant #2 (Placeholder)"
 
-[node name="Plant 3" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+[node name="Plant 3" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-toggle_mode = true
 text = "Plant #3 (Placeholder)"
 
-[node name="Plant 4" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+[node name="Plant 4" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-toggle_mode = true
 text = "Plant #4 (Placeholder)"
 
-[node name="Plant 5" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+[node name="Plant 5" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-toggle_mode = true
 text = "Plant #5 (Placeholder)"
 
-[node name="Plant 6" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+[node name="Plant 6" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-toggle_mode = true
 text = "Plant #6 (Placeholder)"
 
-[node name="Plant 7" type="Button" parent="Background/ScrollContainer/VBoxContainer"]
+[node name="Plant 7" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-toggle_mode = true
 text = "Plant #7 (Placeholder)"
 
-[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 1" to="Background/ReferenceGuideText" method="_on_plant_1_toggled"]
-[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 2" to="Background/ReferenceGuideText" method="_on_plant_2_toggled"]
-[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 3" to="Background/ReferenceGuideText" method="_on_plant_3_toggled"]
-[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 4" to="Background/ReferenceGuideText" method="_on_plant_4_toggled"]
-[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 5" to="Background/ReferenceGuideText" method="_on_plant_5_toggled"]
-[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 6" to="Background/ReferenceGuideText" method="_on_plant_6_toggled"]
-[connection signal="toggled" from="Background/ScrollContainer/VBoxContainer/Plant 7" to="Background/ReferenceGuideText" method="_on_plant_7_toggled"]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/Plant 1" to="Background/ReferenceGuideText" method="_on_plant_1_pressed" binds= ["btn-1"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/Plant 2" to="Background/ReferenceGuideText" method="_on_plant_2_pressed" binds= ["btn-2"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/Plant 3" to="Background/ReferenceGuideText" method="_on_plant_3_pressed" binds= ["btn-3"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/Plant 4" to="Background/ReferenceGuideText" method="_on_plant_4_pressed" binds= ["btn-4"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/Plant 5" to="Background/ReferenceGuideText" method="_on_plant_5_pressed" binds= ["btn-5"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/Plant 6" to="Background/ReferenceGuideText" method="_on_plant_6_pressed" binds= ["btn-6"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/Plant 7" to="Background/ReferenceGuideText" method="_on_plant_7_pressed" binds= ["btn-7"]]

@@ -1,10 +1,14 @@
 PR Requirements:
-- Description: Short summary of changes made
-- Screenshot: Visual aid of changes implemented in Debug window
-- Define purpose: Bug fix / New Feature / Refactoring / Breaking change
-- Discuss Issues: explain if you had trouble implementing a feature
+  - Description: Short summary of changes made
+  - Screenshot: Visual aid of changes implemented in Debug window
+  - Define purpose: Bug fix / New Feature / Refactoring / Breaking change
+  - Discuss Issues: explain if you had trouble implementing a feature
 
 Considerations:
-- Does the code follow the style of project?
-- Do I need to change the documentation for this code?
-- Test Cases
+  - Does the code follow the style of project?
+  - Do I need to change the documentation for this code?
+  - Test Cases
+
+PR Code Review:
+  - Does the PR provide the 4 PR reqs?
+  - Does the code meet the considerations?

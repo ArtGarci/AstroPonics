@@ -1,0 +1,171 @@
+[gd_scene load_steps=11 format=3 uid="uid://eultllaxwx7x"]
+
+[ext_resource type="Texture2D" uid="uid://bpitcc2sjy74y" path="res://images/seedimage.png" id="1_jshow"]
+[ext_resource type="Script" path="res://guiPlants.gd" id="1_yo1vl"]
+[ext_resource type="Texture2D" uid="uid://cy0wluqqtd48c" path="res://images/seedimage_negate.png" id="2_vq8qn"]
+[ext_resource type="Texture2D" uid="uid://dvwweq2hxurmp" path="res://images/background.png" id="3_sa3vx"]
+[ext_resource type="Texture2D" uid="uid://sgleevgun4bf" path="res://images/seedtmp1.png" id="4_g0ydw"]
+[ext_resource type="Texture2D" uid="uid://c8liqloj0ypja" path="res://images/seedtmppress.png" id="5_m4qwi"]
+[ext_resource type="Script" path="res://scenes/lettaceSeed.gd" id="7_5kuwa"]
+[ext_resource type="Script" path="res://scenes/seedPack.gd" id="7_nf4wf"]
+[ext_resource type="PackedScene" uid="uid://0exr3nat38w" path="res://scenes/drag_seed.tscn" id="9_k0lco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hspsp"]
+radius = 5.0
+
+[node name="GUI" type="MarginContainer"]
+offset_right = 1027.0
+offset_bottom = 805.0
+script = ExtResource("1_yo1vl")
+
+[node name="seedButton" type="Control" parent="."]
+layout_mode = 2
+
+[node name="buttonForMenu" type="TextureButton" parent="seedButton"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -291.0
+offset_right = 1014.0
+offset_bottom = 514.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_jshow")
+texture_pressed = ExtResource("2_vq8qn")
+
+[node name="seedMenu" type="Control" parent="."]
+layout_mode = 2
+
+[node name="background" type="NinePatchRect" parent="seedMenu"]
+layout_mode = 0
+offset_right = 1022.0
+offset_bottom = 464.0
+texture = ExtResource("3_sa3vx")
+
+[node name="BoxContainer" type="BoxContainer" parent="seedMenu/background"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1010.0
+offset_bottom = 448.0
+
+[node name="leftButtonCont" type="VBoxContainer" parent="seedMenu/background/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="topLeftCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/leftButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lettaceSeed" type="TextureButton" parent="seedMenu/background/BoxContainer/leftButtonCont/topLeftCont"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+script = ExtResource("7_5kuwa")
+
+[node name="leftCentCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/leftButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton2" type="TextureButton" parent="seedMenu/background/BoxContainer/leftButtonCont/leftCentCont"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="leftLowCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/leftButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton3" type="TextureButton" parent="seedMenu/background/BoxContainer/leftButtonCont/leftLowCont"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="centButtonCont" type="VBoxContainer" parent="seedMenu/background/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="topRightCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/centButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton4" type="TextureButton" parent="seedMenu/background/BoxContainer/centButtonCont/topRightCont"]
+layout_mode = 2
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="rightCentCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/centButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton5" type="TextureButton" parent="seedMenu/background/BoxContainer/centButtonCont/rightCentCont"]
+layout_mode = 2
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="rightLowCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/centButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton6" type="TextureButton" parent="seedMenu/background/BoxContainer/centButtonCont/rightLowCont"]
+layout_mode = 2
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="rightCont" type="VBoxContainer" parent="seedMenu/background/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="empty2" type="VBoxContainer" parent="seedMenu/background/BoxContainer/rightCont"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="empty" type="VBoxContainer" parent="seedMenu/background/BoxContainer/rightCont"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="exit" type="VBoxContainer" parent="seedMenu/background/BoxContainer/rightCont"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="exitButton" type="Button" parent="seedMenu/background/BoxContainer/rightCont/exit"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 71
+text = "Exit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(515, 390)
+zoom = Vector2(0.25, 0.25)
+
+[node name="seedPack" type="StaticBody2D" parent="."]
+visible = false
+script = ExtResource("7_nf4wf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="seedPack"]
+position = Vector2(83, 59)
+
+[node name="Area2D" type="Area2D" parent="seedPack"]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="seedPack/Area2D"]
+position = Vector2(83, 57)
+shape = SubResource("CircleShape2D_hspsp")
+
+[node name="dragSeed" parent="." instance=ExtResource("9_k0lco")]
+visible = false
+position = Vector2(282, 84)
+
+[connection signal="pressed" from="seedButton/buttonForMenu" to="." method="_on_button_for_menu_pressed"]
+[connection signal="pressed" from="seedMenu/background/BoxContainer/rightCont/exit/exitButton" to="." method="_on_exit_button_pressed"]

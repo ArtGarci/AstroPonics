@@ -1,0 +1,180 @@
+[gd_scene load_steps=11 format=3 uid="uid://eultllaxwx7x"]
+
+[ext_resource type="Texture2D" uid="uid://bpitcc2sjy74y" path="res://images/seedimage.png" id="1_jshow"]
+[ext_resource type="Script" path="res://guiPlants.gd" id="1_yo1vl"]
+[ext_resource type="Texture2D" uid="uid://cy0wluqqtd48c" path="res://images/seedimage_negate.png" id="2_vq8qn"]
+[ext_resource type="Texture2D" uid="uid://dvwweq2hxurmp" path="res://images/background.png" id="3_sa3vx"]
+[ext_resource type="Texture2D" uid="uid://sgleevgun4bf" path="res://images/seedtmp1.png" id="4_g0ydw"]
+[ext_resource type="Texture2D" uid="uid://c8liqloj0ypja" path="res://images/seedtmppress.png" id="5_m4qwi"]
+[ext_resource type="PackedScene" uid="uid://cogrckninwxv6" path="res://scenes/trash_bin.tscn" id="7_21v35"]
+[ext_resource type="PackedScene" uid="uid://dst2oncus4vxp" path="res://scenes/pot_ui.tscn" id="8_htlee"]
+[ext_resource type="Texture2D" uid="uid://b4cxevao1nb6j" path="res://images/trowel2.0.png" id="8_jwrec"]
+[ext_resource type="Texture2D" uid="uid://b83mafkd4d56c" path="res://images/invertTrowel2.0.png" id="9_40m62"]
+
+[node name="GUI" type="MarginContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1245.0
+offset_top = -800.0
+offset_right = 1000.0
+offset_bottom = 1036.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_yo1vl")
+
+[node name="potUI" parent="." instance=ExtResource("8_htlee")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="seedButton" type="Control" parent="."]
+layout_mode = 2
+
+[node name="buttonForMenu" type="TextureButton" parent="seedButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = 0.821
+anchor_right = 0.136
+anchor_bottom = 0.821
+offset_left = -127.672
+offset_top = -127.905
+offset_right = 384.328
+offset_bottom = 384.095
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_jshow")
+texture_pressed = ExtResource("2_vq8qn")
+
+[node name="seedMenu" type="Control" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="background" type="NinePatchRect" parent="seedMenu"]
+layout_mode = 0
+offset_right = 1022.0
+offset_bottom = 464.0
+texture = ExtResource("3_sa3vx")
+
+[node name="BoxContainer" type="BoxContainer" parent="seedMenu/background"]
+layout_mode = 0
+offset_right = 1021.0
+offset_bottom = 470.0
+
+[node name="leftButtonCont" type="VBoxContainer" parent="seedMenu/background/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="topLeftCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/leftButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lettaceSeed" type="TextureButton" parent="seedMenu/background/BoxContainer/leftButtonCont/topLeftCont"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="leftCentCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/leftButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="radishSeed" type="TextureButton" parent="seedMenu/background/BoxContainer/leftButtonCont/leftCentCont"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="leftLowCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/leftButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="chivesSeed" type="TextureButton" parent="seedMenu/background/BoxContainer/leftButtonCont/leftLowCont"]
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="centButtonCont" type="VBoxContainer" parent="seedMenu/background/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="topRightCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/centButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="potatoesSeed" type="TextureButton" parent="seedMenu/background/BoxContainer/centButtonCont/topRightCont"]
+layout_mode = 2
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="rightCentCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/centButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="wheatSeed" type="TextureButton" parent="seedMenu/background/BoxContainer/centButtonCont/rightCentCont"]
+layout_mode = 2
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="rightLowCont" type="HBoxContainer" parent="seedMenu/background/BoxContainer/centButtonCont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="tomatoesSeeds" type="TextureButton" parent="seedMenu/background/BoxContainer/centButtonCont/rightLowCont"]
+layout_mode = 2
+texture_normal = ExtResource("4_g0ydw")
+texture_pressed = ExtResource("5_m4qwi")
+
+[node name="rightCont" type="VBoxContainer" parent="seedMenu/background/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="trowel" type="VBoxContainer" parent="seedMenu/background/BoxContainer/rightCont"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="seedMenu/background/BoxContainer/rightCont/trowel"]
+layout_mode = 2
+texture_normal = ExtResource("8_jwrec")
+texture_pressed = ExtResource("9_40m62")
+
+[node name="empty" type="VBoxContainer" parent="seedMenu/background/BoxContainer/rightCont"]
+layout_mode = 2
+
+[node name="exit" type="VBoxContainer" parent="seedMenu/background/BoxContainer/rightCont"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="exitButton" type="Button" parent="seedMenu/background/BoxContainer/rightCont/exit"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+text = "Exit"
+
+[node name="seedDrag" type="Node" parent="."]
+
+[node name="trashBin" parent="." instance=ExtResource("7_21v35")]
+visible = false
+position = Vector2(-61, 1493)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(1000, 800)
+zoom = Vector2(0.25, 0.25)
+
+[connection signal="pressed" from="seedButton/buttonForMenu" to="." method="_on_button_for_menu_pressed"]
+[connection signal="gui_input" from="seedMenu/background/BoxContainer/leftButtonCont/topLeftCont/lettaceSeed" to="." method="_on_lettace_seed_gui_input"]
+[connection signal="gui_input" from="seedMenu/background/BoxContainer/leftButtonCont/leftCentCont/radishSeed" to="." method="_on_radish_seed_gui_input"]
+[connection signal="gui_input" from="seedMenu/background/BoxContainer/leftButtonCont/leftLowCont/chivesSeed" to="." method="_on_chives_seed_gui_input"]
+[connection signal="gui_input" from="seedMenu/background/BoxContainer/centButtonCont/topRightCont/potatoesSeed" to="." method="_on_potatoes_seed_gui_input"]
+[connection signal="gui_input" from="seedMenu/background/BoxContainer/centButtonCont/rightCentCont/wheatSeed" to="." method="_on_wheat_seed_gui_input"]
+[connection signal="gui_input" from="seedMenu/background/BoxContainer/centButtonCont/rightLowCont/tomatoesSeeds" to="." method="_on_tomatoes_seeds_gui_input"]
+[connection signal="gui_input" from="seedMenu/background/BoxContainer/rightCont/trowel/TextureButton" to="." method="_on_texture_button_gui_input"]
+[connection signal="pressed" from="seedMenu/background/BoxContainer/rightCont/exit/exitButton" to="." method="_on_exit_button_pressed"]

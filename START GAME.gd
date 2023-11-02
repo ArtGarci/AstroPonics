@@ -1,7 +1,7 @@
 extends Button
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://scenes/guiPlants.tscn")
 
 func _on_ref_guide_pressed():
 	get_tree().change_scene_to_file("res://reference_menu.tscn")

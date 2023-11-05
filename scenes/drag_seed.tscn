@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://0exr3nat38w"]
+
+[ext_resource type="Texture2D" uid="uid://sgleevgun4bf" path="res://images/seedtmp1.png" id="1_ak6cd"]
+[ext_resource type="Script" path="res://dragSeed.gd" id="1_w66uh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87hwg"]
+atlas = ExtResource("1_ak6cd")
+region = Rect2(0, 0, 135, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v223d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87hwg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_euj2u"]
+radius = 60.0833
+
+[node name="lettaceSeedDrag" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_v223d")
+script = ExtResource("1_w66uh")
+
+[node name="seedArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="seedArea"]
+shape = SubResource("CircleShape2D_euj2u")
+
+[connection signal="area_entered" from="seedArea" to="." method="_on_area_2d_area_entered"]

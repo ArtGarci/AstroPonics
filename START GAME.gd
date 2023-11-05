@@ -1,7 +1,6 @@
 extends Button
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://Tutorials/tutorial_page_1.tscn")
 
 func _on_ref_guide_pressed():
 	get_tree().change_scene_to_file("res://Objects/reference_menu.tscn")

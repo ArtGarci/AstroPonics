@@ -79,10 +79,10 @@ environment = SubResource("Environment_bnq7m")
 
 [node name="Overlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_gwyn4")
-offset_left = -581.0
-offset_top = -1511.0
-offset_right = 12538.0
-offset_bottom = 6215.0
+offset_left = -612.0
+offset_top = 1691.0
+offset_right = 12507.0
+offset_bottom = 9417.0
 
 [node name="Control" type="Control" parent="."]
 z_index = 1

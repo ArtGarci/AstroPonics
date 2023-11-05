@@ -1,8 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy4sbarorkj37"]
-
-[ext_resource type="Texture2D" uid="uid://dt6wf3yiwwses" path="res://chemical-drop.png" id="1_xrjcd"]
-[ext_resource type="Texture2D" uid="uid://d13767nuvwmjc" path="res://watering-can.png" id="2_hfefa"]
-[ext_resource type="Texture2D" uid="uid://eiarechyqb5h" path="res://scissors.png" id="3_seyst"]
+[gd_scene format=3 uid="uid://cy4sbarorkj37"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,7 +13,6 @@ offset_top = -98.0
 offset_right = 600.0
 offset_bottom = 2.0
 grow_vertical = 0
-icon = ExtResource("1_xrjcd")
 expand_icon = true
 
 [node name="waterMicroGame" type="Button" parent="MicroGames"]
@@ -33,7 +28,6 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-icon = ExtResource("2_hfefa")
 expand_icon = true
 
 [node name="trimMicroGame" type="Button" parent="MicroGames"]
@@ -48,5 +42,4 @@ offset_right = -452.0
 offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
-icon = ExtResource("3_seyst")
 expand_icon = true

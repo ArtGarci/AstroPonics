@@ -13,11 +13,28 @@ offset_bottom = 647.0
 text = "Next"
 
 [node name="Label" type="Label" parent="."]
-offset_right = 1148.0
-offset_bottom = 572.0
+offset_right = 1153.0
+offset_bottom = 139.0
 theme_override_font_sizes/font_size = 25
-text = "This is the first page of the tutorial (bound to change)"
+text = "Controls
+"
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1087.0
+offset_top = 3.0
+offset_right = 1148.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "X"
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 60.0
+offset_right = 1150.0
+offset_bottom = 571.0
+theme_override_colors/font_shadow_color = Color(0.101961, 0.666667, 0.933333, 1)
+text = "To plant, click on an empty soil slot and click on the plant you would want to plant
+After planting, you will need to take care of the plant by using the different minigames on the tab"
 
 [connection signal="pressed" from="Button" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy4sbarorkj37"]
+[gd_scene load_steps=5 format=3 uid="uid://cy4sbarorkj37"]
 
+[ext_resource type="Script" path="res://Objects/ChrisMonteleoneUI.gd" id="1_jxxfa"]
 [ext_resource type="Texture2D" uid="uid://caq1mruwgyx8y" path="res://Objects/chemical-drop.png" id="1_ngot2"]
 [ext_resource type="Texture2D" uid="uid://l2ed7rsic4o8" path="res://Objects/watering-can.png" id="2_chsxv"]
 [ext_resource type="Texture2D" uid="uid://p4wv5hiti5g1" path="res://Objects/scissors.png" id="3_lrx8p"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_jxxfa")
 
 [node name="MicroGames" type="CanvasLayer" parent="."]
 
@@ -53,3 +55,7 @@ grow_vertical = 0
 tooltip_text = "Trimming Game"
 icon = ExtResource("3_lrx8p")
 expand_icon = true
+
+[connection signal="pressed" from="MicroGames/pHMicroGame" to="." method="_on_p_h_micro_game_pressed"]
+[connection signal="pressed" from="MicroGames/waterMicroGame" to="." method="_on_water_micro_game_pressed"]
+[connection signal="pressed" from="MicroGames/trimMicroGame" to="." method="_on_trim_micro_game_pressed"]

@@ -15,6 +15,11 @@ run/main_scene="res://gameplay_demo.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icons/icon.svg"
 
+[autoload]
+
+TestGameplayClock="res://test_gameplayClock.gd"
+TestScoring="res://test_Scoring.gd"
+
 [display]
 
 window/size/viewport_width=1920

@@ -1,0 +1,482 @@
+[gd_scene load_steps=40 format=3 uid="uid://dst2oncus4vxp"]
+
+[ext_resource type="Script" path="res://pot_ui.gd" id="1_k0exx"]
+[ext_resource type="Texture2D" uid="uid://ddydyv7nm5phr" path="res://images/farmingTilesheetComplete.png" id="1_nhnwu"]
+[ext_resource type="PackedScene" uid="uid://c8q12rkrf4u75" path="res://scenes/my_plant.tscn" id="3_e0uhg"]
+[ext_resource type="PackedScene" uid="uid://dgm5gm8di213u" path="res://scenes/low_light_plant.tscn" id="4_3exl8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm0fh"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hm03"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm0fh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi1cq"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tdye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi1cq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly4c2"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahmfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly4c2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki4lw"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5kgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki4lw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v80y"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu67e"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfc8p"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a31br"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(96, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d2bv"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0nnx"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ei8y"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k065l"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb72u"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju2px"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(176, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcgf7"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(160, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujhba"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(144, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6bka"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7ngr"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(192, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkbx6"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(176, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ut5c"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h62x"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyij4"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipi1v"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(192, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oor7e"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6x8p"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci4g0"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olrmd"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdcjl"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vch3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v80y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu67e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfc8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a31br")
+}],
+"loop": true,
+"name": &"chivesAnime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d2bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0nnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ei8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k065l")
+}],
+"loop": true,
+"name": &"lettaceAnime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb72u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju2px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcgf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujhba")
+}],
+"loop": true,
+"name": &"potatoeAnime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6bka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkbx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ut5c")
+}],
+"loop": true,
+"name": &"radishAnime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h62x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyij4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipi1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oor7e")
+}],
+"loop": true,
+"name": &"tomatoeAnime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6x8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci4g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olrmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdcjl")
+}],
+"loop": true,
+"name": &"wheatAnime",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j80ns"]
+atlas = ExtResource("1_nhnwu")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfltb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j80ns")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="potUI" type="Control"]
+layout_mode = 3
+anchor_left = -0.516
+anchor_top = -0.632
+anchor_right = 0.484
+anchor_bottom = 0.367
+offset_left = 0.384033
+offset_top = -0.399963
+offset_right = 3.38397
+offset_bottom = 5.39999
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k0exx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+
+[node name="potHolder" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 2
+anchor_top = -0.007
+anchor_bottom = -0.007
+offset_top = 13.16
+offset_right = 1027.0
+offset_bottom = 818.16
+size_flags_horizontal = 3
+
+[node name="highLightPots" type="HBoxContainer" parent="NinePatchRect/potHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="potOneH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spriteOne" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potOneH"]
+visible = false
+position = Vector2(117, 192.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_1hm03")
+
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potOneH" instance=ExtResource("3_e0uhg")]
+position = Vector2(78.2159, 210.776)
+scale = Vector2(10, 23)
+
+[node name="potTwoH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="spriteTwo" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potTwoH"]
+visible = false
+position = Vector2(16.9999, 10.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_2tdye")
+centered = false
+
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potTwoH" instance=ExtResource("3_e0uhg")]
+position = Vector2(85.216, 208.776)
+scale = Vector2(10, 23)
+
+[node name="potThreeH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="spriteThree" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potThreeH"]
+visible = false
+position = Vector2(18.9999, 9.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_ahmfu")
+centered = false
+
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potThreeH" instance=ExtResource("3_e0uhg")]
+position = Vector2(76.2159, 209.776)
+scale = Vector2(10, 23)
+
+[node name="potFourH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="spriteFour" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potFourH"]
+visible = false
+position = Vector2(31.9999, 9.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_b5kgw")
+centered = false
+
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potFourH" instance=ExtResource("3_e0uhg")]
+position = Vector2(79.2159, 208.776)
+scale = Vector2(10, 23)
+
+[node name="potFiveH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="spriteFive" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/highLightPots/potFiveH"]
+visible = false
+position = Vector2(13.9999, 13.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_vch3h")
+animation = &"lettaceAnime"
+centered = false
+
+[node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potFiveH" instance=ExtResource("3_e0uhg")]
+position = Vector2(87.2159, 208.776)
+scale = Vector2(10, 23)
+
+[node name="lowLightPots" type="HBoxContainer" parent="NinePatchRect/potHolder"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="potOneL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spriteOneL" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/lowLightPots/potOneL"]
+visible = false
+position = Vector2(30, 17.8399)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_rfltb")
+centered = false
+
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potOneL" instance=ExtResource("4_3exl8")]
+position = Vector2(98.2159, 284.776)
+scale = Vector2(10, 23)
+
+[node name="potTwoL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spriteTwoL" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/lowLightPots/potTwoL"]
+visible = false
+position = Vector2(17.9999, 17.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_vch3h")
+animation = &"lettaceAnime"
+centered = false
+
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potTwoL" instance=ExtResource("4_3exl8")]
+position = Vector2(105.216, 279.776)
+scale = Vector2(10, 23)
+
+[node name="potThreeL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spriteThreeL" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/lowLightPots/potThreeL"]
+visible = false
+position = Vector2(24.9999, 16.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_vch3h")
+animation = &"lettaceAnime"
+centered = false
+
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potThreeL" instance=ExtResource("4_3exl8")]
+position = Vector2(97.2159, 277.776)
+scale = Vector2(10, 23)
+
+[node name="potFourL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spriteFourL" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/lowLightPots/potFourL"]
+visible = false
+position = Vector2(27.9999, 19.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_vch3h")
+animation = &"lettaceAnime"
+centered = false
+
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potFourL" instance=ExtResource("4_3exl8")]
+position = Vector2(98.216, 275.776)
+scale = Vector2(10, 23)
+
+[node name="potFiveL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spriteFiveL" type="AnimatedSprite2D" parent="NinePatchRect/potHolder/lowLightPots/potFiveL"]
+visible = false
+position = Vector2(14.9999, 13.84)
+scale = Vector2(10, 23)
+sprite_frames = SubResource("SpriteFrames_vch3h")
+animation = &"lettaceAnime"
+centered = false
+
+[node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potFiveL" instance=ExtResource("4_3exl8")]
+position = Vector2(106.216, 278.776)
+scale = Vector2(10, 23)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(800, 0)
+zoom = Vector2(0.1, 0.1)
+
+[node name="potatoeTimer" type="Timer" parent="."]
+
+[node name="wheatTimer" type="Timer" parent="."]
+
+[node name="tomatoeTimer" type="Timer" parent="."]

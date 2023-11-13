@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfyge5d55rjwm"]
+
+[ext_resource type="Texture2D" uid="uid://bpitcc2sjy74y" path="res://seedimage.png" id="1_5oh8g"]
+[ext_resource type="Script" path="res://plantButton.gd" id="1_fbprv"]
+[ext_resource type="Texture2D" uid="uid://cy0wluqqtd48c" path="res://seedimage_negate.png" id="2_uktgm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 132.0
+offset_top = 60.0
+offset_right = 132.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fbprv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 184.0
+offset_right = 515.0
+offset_bottom = 407.0
+
+[node name="TextureButton" type="TextureButton" parent="Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.5
+offset_top = -257.5
+offset_right = 259.5
+offset_bottom = 254.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_5oh8g")
+texture_pressed = ExtResource("2_uktgm")
+
+[node name="PopupMenu" type="PopupMenu" parent="Button"]
+visible = true

@@ -10,18 +10,21 @@ func _process(delta):
 		self.show()
 		
 
-
+# makes trowel delete itself and sets all Global variables to default
 func _on_trowel_area_area_entered(area):
-	if Global.itTrowel == true:
-		if area.name == "trashArea":
+	if Global.itTrowel == true:				# checks that it is the trowel
+		if area.name == "trashArea":		# makes sure it is in trash bin area
+			# sets globals to defaults
 			Global.seedSelected = 0
 			Global.lightLevel = 0
 			Global.itTrowel = false
 			Global.mouseClick = false
+			# gets trash bin node and hides it
 			var getArea = area.get_parent()
 			getArea = getArea.get_parent()
 			getArea = getArea.get_path()
 			get_node(getArea).hide()
+			# frees trowel node
 			self.queue_free()
 			
 # used for testing

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://biltrovquco1y"]
+
+[ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
+
+[node name="Game" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 516.0
+offset_top = 318.0
+offset_right = 739.0
+offset_bottom = 421.0
+text = "Game go here"
+
+[node name="GUI" parent="." instance=ExtResource("1_is64n")]

@@ -8,6 +8,8 @@ var mouseClick = false # true seed following mouse
 var mouseEntered = false
 var itSeed = false
 var itTrowel = false
+#tmp for making plants work
+signal nextWeekSignal
 
 # when seed bag is pressed the seed menu is shown
 func _on_button_for_menu_pressed():
@@ -16,9 +18,6 @@ func _on_button_for_menu_pressed():
 # when the exit button is pressed on seed menu the menu disappears
 func _on_exit_button_pressed():
 	get_node("seedMenu").hide()
-
-func _ready():
-	pass
 
 # top left button on menu
 func _on_lettace_seed_gui_input(event):
@@ -128,3 +127,7 @@ func isItSeed():
 	
 func isItTrowel():
 	return Global.itTrowel
+
+# used for next day signal
+func _on_tmp_next_day_pressed()	:
+	Global.nextWeekSignal.emit()

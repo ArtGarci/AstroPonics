@@ -1,15 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://xefllb52d60y"]
+[gd_scene load_steps=10 format=3 uid="uid://xefllb52d60y"]
 
 [ext_resource type="Script" path="res://Tutorials/tutorial2.gd" id="1_d1sxh"]
+[ext_resource type="Texture2D" uid="uid://0j0gd37gfemk" path="res://Tutorials/frame_0_delay-0.09s.png" id="2_tf2yy"]
+[ext_resource type="Texture2D" uid="uid://dqlitp6l4d2sa" path="res://Tutorials/frame_1_delay-0.09s.png" id="3_f2yve"]
+[ext_resource type="Texture2D" uid="uid://dkapowncp0h8k" path="res://Tutorials/frame_2_delay-0.09s.png" id="4_hufnr"]
+[ext_resource type="Texture2D" uid="uid://b5wv5gbc5sxes" path="res://Tutorials/frame_3_delay-0.09s.png" id="5_hueo8"]
+[ext_resource type="Texture2D" uid="uid://d0mkafj86t2ml" path="res://Tutorials/frame_4_delay-0.09s.png" id="6_xu3sh"]
+[ext_resource type="Texture2D" uid="uid://dtbir7oguac84" path="res://Tutorials/frame_5_delay-0.09s.png" id="7_qwrua"]
+[ext_resource type="FontFile" uid="uid://cs1xyqg7valt" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" id="8_7vonm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmk6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tf2yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f2yve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hufnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hueo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xu3sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qwrua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="tutorial_page_2" type="Node2D"]
 script = ExtResource("1_d1sxh")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(572, 324.5)
+scale = Vector2(3.80263, 2.79915)
+sprite_frames = SubResource("SpriteFrames_hmk6q")
+autoplay = "default"
+
 [node name="Label" type="Label" parent="."]
 offset_right = 1148.0
-offset_bottom = 572.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("8_7vonm")
 theme_override_font_sizes/font_size = 25
-text = "This is the second page of the tutorial (bound to change)"
+text = "Minigames"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -27,5 +67,23 @@ offset_right = 836.0
 offset_bottom = 647.0
 text = "Previous"
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 1087.0
+offset_top = 3.0
+offset_right = 1148.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "X"
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 60.0
+offset_right = 1150.0
+offset_bottom = 571.0
+theme_override_colors/font_shadow_color = Color(0.101961, 0.666667, 0.933333, 1)
+theme_override_fonts/font = ExtResource("8_7vonm")
+text = "When maintaining these plants, you will encounter minigames. Completing these minigames and how effective you complete these games will
+determine your score. Your goal is to get the highest score."
+
 [connection signal="pressed" from="Button" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

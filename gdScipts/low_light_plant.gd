@@ -3,6 +3,8 @@ extends Node2D
 @onready var spriteAnim = $lowPlant
 var plantGrowing = false
 var weeksAlive = 0
+var isHarvestable = false
+var score = 100
 
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))
@@ -15,18 +17,21 @@ func weekSignal():
 	if $Anima.assigned_animation == "lettaceAnim1": 
 		if weeksAlive == 8:
 			$Anima.play("lettaceAnim2")
+			isHarvestable = true
 	if $Anima.assigned_animation == "radishAnim0":
 		if weeksAlive == 2:
 			$Anima.play("radishAnim1")
 	if $Anima.assigned_animation == "radishAnim1":
 		if weeksAlive == 4:
 			$Anima.play("radishAnim2")
+			isHarvestable = true
 	if $Anima.assigned_animation == "chivesAnim0":
 		if weeksAlive == 2:
 			$Anima.play("chivesAnim1")
 	if $Anima.assigned_animation == "chivesAnim1": 
 		if weeksAlive == 4:
 			$Anima.play("chivesAnim2")
+			isHarvestable = true
 
 func _on_low_light_but_pressed():
 	if Global.itTrowel == true:				# checks that trowel is picked
@@ -36,6 +41,14 @@ func _on_low_light_but_pressed():
 			$Anima.play("none")
 			Global.seedSelected = 0			# sets Global Variable seed selections to 0
 			weeksAlive = 0
+	if isHarvestable == true:
+		plantGrowing = false			# sets plant growing to false
+		$Anima.clear_queue()						# removes animation
+		$Anima.play("none")
+		Global.seedSelected = 0			# sets Global Variable seed selections to 0
+		weeksAlive = 0
+		isHarvestable = false
+		return score
 
 # 1=lettace 2=radish 3=chives 4=potatoes 5=wheat 6=tomatoes
 # when the seed goes over a grow plot, the plant animation starts

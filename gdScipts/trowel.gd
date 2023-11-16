@@ -1,7 +1,5 @@
 extends Node2D
 
-var plantLoad = preload("res://scenes/my_plant.tscn")
-
 func _process(delta):
 	global_position = get_global_mouse_position()
 	
@@ -18,7 +16,6 @@ func _on_trowel_area_area_entered(area):
 			Global.seedSelected = 0
 			Global.lightLevel = 0
 			Global.itTrowel = false
-			Global.mouseClick = false
 			# gets trash bin node and hides it
 			var getArea = area.get_parent()
 			getArea = getArea.get_parent()

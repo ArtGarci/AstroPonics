@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.1")
 
 Global="*res://gdScipts/global.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [input]
 
 click={

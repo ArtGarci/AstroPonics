@@ -1,21 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://c43725kyoq0kh"]
+[gd_scene load_steps=9 format=3 uid="uid://c43725kyoq0kh"]
 
 [ext_resource type="PackedScene" uid="uid://bti088r13m3wu" path="res://menu.tscn" id="1_c2pgt"]
+[ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="1_dxtot"]
+[ext_resource type="Texture2D" uid="uid://wb8r4mold5oe" path="res://Art and textures/pixel_earth.png" id="2_guw6b"]
+[ext_resource type="Script" path="res://menu_background_movement.gd" id="2_x87p0"]
+[ext_resource type="Script" path="res://Earth_Sprite.gd" id="3_k4dru"]
+[ext_resource type="Texture2D" uid="uid://l7bxe7m7lxew" path="res://Art and textures/title_image.png" id="4_vp20j"]
+[ext_resource type="Texture2D" uid="uid://do5eajyd3iqe5" path="res://Art and textures/ISS_Sprite.png" id="6_ohysx"]
+[ext_resource type="Script" path="res://ISS_Sprite.gd" id="7_56hcc"]
 
 [node name="Main_Menu_Display" type="Node2D"]
 
-[node name="Menu" parent="." instance=ExtResource("1_c2pgt")]
-offset_left = 505.0
-offset_top = 419.0
-offset_right = 505.0
-offset_bottom = 419.0
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_x87p0")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 536.0
-offset_top = 241.0
-offset_right = 628.0
-offset_bottom = 281.0
-text = "AstroPonics"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 2005)
+
+[node name="Galaxy_splash_sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(568, -326)
+scale = Vector2(0.333479, 0.333479)
+texture = ExtResource("1_dxtot")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_top = -1.0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Earth_Sprite" type="Sprite2D" parent="MarginContainer2/VBoxContainer"]
+position = Vector2(577, 971)
+scale = Vector2(0.491738, 0.491738)
+texture = ExtResource("2_guw6b")
+script = ExtResource("3_k4dru")
+
+[node name="Title_Sprite" type="Sprite2D" parent="MarginContainer2/VBoxContainer"]
+position = Vector2(583, 141)
+texture = ExtResource("4_vp20j")
+
+[node name="ISS_Sprite" type="Sprite2D" parent="MarginContainer2/VBoxContainer"]
+position = Vector2(179, 501)
+scale = Vector2(0.528037, 0.528037)
+texture = ExtResource("6_ohysx")
+script = ExtResource("7_56hcc")
+
+[node name="Menu" parent="MarginContainer2" instance=ExtResource("1_c2pgt")]
+layout_mode = 2
+size_flags_horizontal = 4

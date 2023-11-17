@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://17hdd8xx6243"]
+
+[ext_resource type="Script" path="res://gdScipts/trowel.gd" id="1_lvxip"]
+[ext_resource type="Texture2D" uid="uid://b83mafkd4d56c" path="res://images/invertTrowel2.0.png" id="2_ns5c4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_02maq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ns5c4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxeq6"]
+radius = 43.0
+height = 207.0
+
+[node name="trowel" type="Node2D"]
+script = ExtResource("1_lvxip")
+
+[node name="trowelSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 2)
+sprite_frames = SubResource("SpriteFrames_02maq")
+
+[node name="trowelArea" type="Area2D" parent="trowelSprite"]
+position = Vector2(-438, -427)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trowelSprite/trowelArea"]
+position = Vector2(439, 426.5)
+shape = SubResource("CapsuleShape2D_dxeq6")
+
+[connection signal="area_entered" from="trowelSprite/trowelArea" to="." method="_on_trowel_area_area_entered"]

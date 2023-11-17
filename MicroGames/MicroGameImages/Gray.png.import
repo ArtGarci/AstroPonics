@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l2ed7rsic4o8"
-path="res://.godot/imported/watering-can.png-b639945d16835e83d753ca3724739895.ctex"
+uid="uid://di6ijgitwrcqx"
+path="res://.godot/imported/Gray.png-37d09c5ce2c491347f66d0f8050caa76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/watering-can.png"
-dest_files=["res://.godot/imported/watering-can.png-b639945d16835e83d753ca3724739895.ctex"]
+source_file="res://MicroGames/MicroGameImages/Gray.png"
+dest_files=["res://.godot/imported/Gray.png-37d09c5ce2c491347f66d0f8050caa76.ctex"]
 
 [params]
 

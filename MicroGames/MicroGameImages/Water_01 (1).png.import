@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p4wv5hiti5g1"
-path="res://.godot/imported/scissors.png-9f8d9fe8a0d48822d1d53c113cd10df5.ctex"
+uid="uid://b7kblaa5uo0u4"
+path="res://.godot/imported/Water_01 (1).png-32aa3a9eed42f462fc9fe3511958d99a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/scissors.png"
-dest_files=["res://.godot/imported/scissors.png-9f8d9fe8a0d48822d1d53c113cd10df5.ctex"]
+source_file="res://MicroGames/MicroGameImages/Water_01 (1).png"
+dest_files=["res://.godot/imported/Water_01 (1).png-32aa3a9eed42f462fc9fe3511958d99a.ctex"]
 
 [params]
 

@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://vwq4h7tb6dnl"]
+
+[ext_resource type="Script" path="res://MicroGames/MicroGameScripts/water_drop.gd" id="1_54yfm"]
+[ext_resource type="Texture2D" uid="uid://b7kblaa5uo0u4" path="res://MicroGames/MicroGameImages/Water_01 (1).png" id="2_16k2u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15ng7"]
+atlas = ExtResource("2_16k2u")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxs4"]
+atlas = ExtResource("2_16k2u")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyjy0"]
+atlas = ExtResource("2_16k2u")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfn6m"]
+atlas = ExtResource("2_16k2u")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvcut"]
+atlas = ExtResource("2_16k2u")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtb07"]
+atlas = ExtResource("2_16k2u")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_173ui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15ng7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekxs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyjy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfn6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvcut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtb07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gi5lf"]
+
+[node name="WaterDrop" type="Area2D"]
+script = ExtResource("1_54yfm")
+move_speed = 100.0
+move_dir = Vector2(0, 500)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(54, 48)
+rotation = -1.5708
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_173ui")
+frame_progress = 0.29994
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(54, 52)
+shape = SubResource("CapsuleShape2D_gi5lf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -26,7 +26,7 @@ func get_gameplay_time():
 	return weeks_passed * seconds_per_gameplay_week
 
 func update_weeks_display():
-	text = "Week: " + str(weeks_passed)
+	text = str(weeks_passed) + "/ 12"
 	
 func end_game():
 	#access the current scene make call to exit game

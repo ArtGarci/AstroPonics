@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cs1xyqg7valt" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" id="2_e280j"]
 [ext_resource type="Script" path="res://gdScipts/WeekLabel.gd" id="2_m3j3x"]
 [ext_resource type="Texture2D" uid="uid://dhkymqchk3y8l" path="res://Art and textures/scoreBoxBackground.png" id="5_tutus"]
-[ext_resource type="Script" path="res://gdScipts/ScoreLabelGlobal.gd" id="6_rvsfg"]
+[ext_resource type="Script" path="res://gdScipts/GlobalScoreLabel.gd" id="6_syt6x"]
 [ext_resource type="Script" path="res://gdScipts/ScoreLog.gd" id="7_vib1w"]
 
 [sub_resource type="Theme" id="Theme_h5407"]
@@ -60,7 +60,7 @@ scale = Vector2(0.556473, 0.827278)
 theme = SubResource("Theme_jcafy")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: 0"
-script = ExtResource("6_rvsfg")
+script = ExtResource("6_syt6x")
 
 [node name="ScoreLogButton" type="Button" parent="."]
 offset_left = 5459.0

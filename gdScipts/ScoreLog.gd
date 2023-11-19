@@ -2,8 +2,6 @@ extends Node
 
 #Score Log Script Global
 
-
-
 var log_history = []
 var log_panel: Panel
 var log_label: RichTextLabel

@@ -15,7 +15,9 @@ func _process(delta):
 func set_score(message,score):
 	
 	#update UI text
-	text = "Score: " + str(score)
+	var labelText =get_tree().get_root().get_node("Game2/ScoreBoxBackground/ScoreLabel")
+	labelText.text = "Score: " + str(score)
+	
 	#call function in the score log script to update score log
 	GlobalScoreLog.add_log_entry(message, score)
 	

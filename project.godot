@@ -18,8 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://gdScipts/global.gd"
-ScoreLabelGlobal="res://gdScipts/ScoreLabelGlobal.gd"
-ScoreLog="res://gdScipts/ScoreLog.gd"
 
 [editor_plugins]
 

@@ -25,6 +25,10 @@ GlobalScoreLabel="*res://gdScipts/GlobalScoreLabel.gd"
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [input]
 
 click={

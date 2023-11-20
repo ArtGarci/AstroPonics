@@ -16,7 +16,6 @@ func _on_area_2d_area_entered(area):
 		Global.seedSelected = 0
 		Global.lightLevel = 0
 		Global.itSeed = false
-		Global.mouseClick = false
 		var getArea = area.get_parent()
 		getArea = getArea.get_parent()
 		getArea = getArea.get_path()

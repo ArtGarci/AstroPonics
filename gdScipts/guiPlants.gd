@@ -4,8 +4,6 @@ var SEEDPREVIEW = preload("res://scenes/drag_seed.tscn")
 var TROWELPREVIEW = preload("res://scenes/trowel.tscn")
 var seedSelected = 0 # 1=lettace 2=radish 3=chives 4=potatoes 5=wheat 6=tomatoes
 var lightLevel = 0 #1=low,2=high
-var mouseClick = false # true seed following mouse
-var mouseEntered = false
 var itSeed = false
 var itTrowel = false
 #tmp for making plants work
@@ -26,7 +24,6 @@ func _on_lettace_seed_gui_input(event):
 		Global.seedSelected = 1			# global seed is set
 		Global.lightLevel = 1			# gloabal light level is set
 		Global.itSeed = true
-		Global.mouseClick = true
 		var seedPreview = SEEDPREVIEW.instantiate()		# make instance of the see image
 		seedPreview.set_position(event.position)		# set position to mouse location
 		get_node("seedDrag").add_child(seedPreview)		# makes new instance of seed
@@ -38,7 +35,6 @@ func _on_radish_seed_gui_input(event):
 		Global.seedSelected = 2			# global seed is set
 		Global.lightLevel = 1			# gloabal light level is set
 		Global.itSeed = true
-		Global.mouseClick = true
 		var seedPreview = SEEDPREVIEW.instantiate()		# make instance of the see image
 		seedPreview.set_position(event.position)		# set position to mouse location
 		get_node("seedDrag").add_child(seedPreview)		# makes new instance of seed
@@ -51,7 +47,6 @@ func _on_chives_seed_gui_input(event):
 		Global.seedSelected = 3			# global seed is set
 		Global.lightLevel = 1			# gloabal light level is set
 		Global.itSeed = true
-		Global.mouseClick = true
 		var seedPreview = SEEDPREVIEW.instantiate()		# make instance of the see image
 		seedPreview.set_position(event.position)		# set position to mouse location
 		get_node("seedDrag").add_child(seedPreview) 	# maes a new instance of seed
@@ -76,7 +71,6 @@ func _on_wheat_seed_gui_input(event):
 		Global.seedSelected = 5			# global seed is set
 		Global.lightLevel = 2			# gloabal light level is set
 		Global.itSeed = true
-		Global.mouseClick = true
 		var seedPreview = SEEDPREVIEW.instantiate()		# make instance of the see image
 		seedPreview.set_position(event.position)		# set position to mouse location
 		get_node("seedDrag").add_child(seedPreview) 	# maes a new instance of seed
@@ -89,7 +83,6 @@ func _on_tomatoes_seeds_gui_input(event):
 		Global.seedSelected = 6			# global seed is set
 		Global.lightLevel = 2			# gloabal light level is set
 		Global.itSeed = true
-		Global.mouseClick = true
 		var seedPreview = SEEDPREVIEW.instantiate()		# make instance of the see image
 		seedPreview.set_position(event.position)		# set position to mouse location
 		get_node("seedDrag").add_child(seedPreview) 	# maes a new instance of seed

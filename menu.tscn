@@ -42,18 +42,21 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ul6u")
 theme_override_font_sizes/font_size = 22
 text = "REFERENCE GUIDE"
+script = ExtResource("1_kvhvj")
 
 [node name="credits_info" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ul6u")
 theme_override_font_sizes/font_size = 22
 text = "CREDITS"
+script = ExtResource("1_kvhvj")
 
 [node name="exit_game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ul6u")
 theme_override_font_sizes/font_size = 22
 text = "EXIT GAME"
+script = ExtResource("1_kvhvj")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start game" to="MarginContainer/VBoxContainer/start game" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ref guide" to="MarginContainer/VBoxContainer/start game" method="_on_ref_guide_pressed"]

@@ -5,7 +5,7 @@
  "dirs": [
   "res://tests"
  ],
- "disable_colors": true,
+ "disable_colors": false,
  "double_strategy": 1,
  "errors_do_not_cause_failure": false,
  "font_color": "ccccccff",
@@ -23,7 +23,7 @@
  "paint_after": 0.1,
  "panel_options": {
   "font_name": "CourierPrime",
-  "font_size": 30,
+  "font_size": 10,
   "hide_output_text": false,
   "hide_result_tree": false,
   "hide_settings": false,

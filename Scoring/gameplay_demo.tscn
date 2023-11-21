@@ -1,22 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://l76fm1ugtqlb"]
+[gd_scene load_steps=11 format=3 uid="uid://l76fm1ugtqlb"]
 
 [ext_resource type="Texture2D" uid="uid://cn4t08j8lx25t" path="res://icons/plant.svg" id="1_4qrwm"]
+[ext_resource type="Texture2D" uid="uid://dfayrbw6118t1" path="res://Pixel Space.jpeg" id="1_fl4w1"]
 [ext_resource type="Theme" uid="uid://b72ue2005ai4h" path="res://health_barTheme.tres" id="2_tga82"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="3_wtcik"]
 [ext_resource type="Script" path="res://ScoreLabel.gd" id="4_ehb4x"]
+[ext_resource type="Theme" uid="uid://vicuqsngc0s8" path="res://TextTheme.tres" id="4_vf72v"]
 [ext_resource type="Script" path="res://Button.gd" id="5_ebt1y"]
+[ext_resource type="Texture2D" uid="uid://byppl4vv1wllj" path="res://icons/scoreBoxBackground.png" id="5_mkpjy"]
+[ext_resource type="Script" path="res://WeekLabel.gd" id="6_5c7py"]
+[ext_resource type="Texture2D" uid="uid://bj8no3owqxerq" path="res://icons/week_background.png" id="9_kgd73"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
+anchor_left = 0.00729167
 anchor_top = 0.01
 anchor_right = 1.001
 anchor_bottom = 1.0
-offset_top = -10.8
-offset_right = -0.92009
-offset_bottom = 2.0
+offset_left = -16.0
+offset_top = -12.8
+offset_right = -16.9201
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="PixelSpace" type="Sprite2D" parent="."]
+position = Vector2(970, 538)
+scale = Vector2(2.59443, 2.59443)
+texture = ExtResource("1_fl4w1")
 
 [node name="Plant" type="Sprite2D" parent="."]
 position = Vector2(932, 842)
@@ -39,6 +50,11 @@ value = 50.0
 script = ExtResource("3_wtcik")
 metadata/_edit_use_anchors_ = true
 
+[node name="ScoreBoxBackground" type="Sprite2D" parent="."]
+position = Vector2(1639, 48)
+scale = Vector2(0.287543, 0.287543)
+texture = ExtResource("5_mkpjy")
+
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -46,10 +62,11 @@ anchor_left = 0.798
 anchor_top = 0.001
 anchor_right = 0.95
 anchor_bottom = 0.045
-offset_left = 0.0419276
-offset_top = -0.0820001
-offset_right = 0.0499084
-offset_bottom = 11.31
+offset_left = 15.214
+offset_top = 33.918
+offset_right = 15.222
+offset_bottom = 45.31
+theme = ExtResource("4_vf72v")
 text = "Score: 0"
 uppercase = true
 script = ExtResource("4_ehb4x")
@@ -65,6 +82,28 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Next Day"
 script = ExtResource("5_ebt1y")
+metadata/_edit_use_anchors_ = true
+
+[node name="WeekBackground" type="Sprite2D" parent="."]
+position = Vector2(1447, 1015)
+scale = Vector2(0.163333, 0.163333)
+texture = ExtResource("9_kgd73")
+
+[node name="WeekLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.732056
+anchor_top = 0.915531
+anchor_right = 0.788892
+anchor_bottom = 0.959333
+offset_left = -0.280166
+offset_top = 0.395957
+offset_right = -30.4612
+offset_bottom = -8.99802
+scale = Vector2(1.3885, 1.24094)
+theme = ExtResource("4_vf72v")
+text = "1/ 12"
+script = ExtResource("6_5c7py")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

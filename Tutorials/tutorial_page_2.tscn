@@ -1,13 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://xefllb52d60y"]
+[gd_scene load_steps=14 format=3 uid="uid://xefllb52d60y"]
 
 [ext_resource type="Script" path="res://Tutorials/tutorial2.gd" id="1_d1sxh"]
+[ext_resource type="Texture2D" uid="uid://0j0gd37gfemk" path="res://Tutorials/frame_0_delay-0.09s.png" id="2_tf2yy"]
+[ext_resource type="Texture2D" uid="uid://dqlitp6l4d2sa" path="res://Tutorials/frame_1_delay-0.09s.png" id="3_f2yve"]
+[ext_resource type="Texture2D" uid="uid://dkapowncp0h8k" path="res://Tutorials/frame_2_delay-0.09s.png" id="4_hufnr"]
+[ext_resource type="Texture2D" uid="uid://b5wv5gbc5sxes" path="res://Tutorials/frame_3_delay-0.09s.png" id="5_hueo8"]
+[ext_resource type="Texture2D" uid="uid://d0mkafj86t2ml" path="res://Tutorials/frame_4_delay-0.09s.png" id="6_xu3sh"]
+[ext_resource type="Texture2D" uid="uid://dtbir7oguac84" path="res://Tutorials/frame_5_delay-0.09s.png" id="7_qwrua"]
+[ext_resource type="FontFile" uid="uid://cs1xyqg7valt" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" id="8_7vonm"]
+[ext_resource type="FontFile" uid="uid://bax17lxjdupj4" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="9_tde6i"]
+[ext_resource type="Texture2D" uid="uid://l2ed7rsic4o8" path="res://MicroGames/MicroGameImages/watering-can.png" id="10_xvd1k"]
+[ext_resource type="Texture2D" uid="uid://caq1mruwgyx8y" path="res://MicroGames/MicroGameImages/chemical-drop.png" id="11_54tje"]
+[ext_resource type="Texture2D" uid="uid://p4wv5hiti5g1" path="res://MicroGames/MicroGameImages/scissors.png" id="12_e1mgi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmk6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tf2yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f2yve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hufnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hueo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xu3sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qwrua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="tutorial_page_2" type="Node2D"]
 script = ExtResource("1_d1sxh")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 323)
+scale = Vector2(3.80263, 2.79915)
+sprite_frames = SubResource("SpriteFrames_hmk6q")
+autoplay = "default"
+
 [node name="Label" type="Label" parent="."]
 offset_right = 1148.0
 offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("8_7vonm")
 theme_override_font_sizes/font_size = 25
 text = "Minigames"
 horizontal_alignment = 1
@@ -18,6 +62,7 @@ offset_left = 860.0
 offset_top = 575.0
 offset_right = 1148.0
 offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("9_tde6i")
 text = "Next"
 
 [node name="Button2" type="Button" parent="."]
@@ -25,6 +70,7 @@ offset_left = 548.0
 offset_top = 575.0
 offset_right = 836.0
 offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("9_tde6i")
 text = "Previous"
 
 [node name="Button3" type="Button" parent="."]
@@ -36,12 +82,58 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "X"
 
 [node name="Label2" type="Label" parent="."]
-offset_top = 60.0
-offset_right = 1150.0
-offset_bottom = 571.0
+offset_left = 218.0
+offset_top = 62.0
+offset_right = 879.0
+offset_bottom = 131.0
 theme_override_colors/font_shadow_color = Color(0.101961, 0.666667, 0.933333, 1)
-text = "When maintaining these plants, you will encounter minigames. Completing these minigames and how effective you complete these games will
+theme_override_fonts/font = ExtResource("8_7vonm")
+text = "When maintaining these plants, you will have to use tools which will start the minigames.
+Completing these minigames and how effective you complete these games will
 determine your score. Your goal is to get the highest score."
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 208.0
+offset_top = 173.0
+offset_right = 955.0
+offset_bottom = 242.0
+theme_override_colors/font_shadow_color = Color(0.101961, 0.666667, 0.933333, 1)
+theme_override_fonts/font = ExtResource("8_7vonm")
+text = "To water the plants, click on the watering can. To get a high score, you must collect the
+water droplets using the mouse to control the can. "
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 205.0
+offset_top = 311.0
+offset_right = 952.0
+offset_bottom = 380.0
+theme_override_colors/font_shadow_color = Color(0.101961, 0.666667, 0.933333, 1)
+theme_override_fonts/font = ExtResource("8_7vonm")
+text = "To test the plant's PH level, click on the test tube."
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 195.0
+offset_top = 431.0
+offset_right = 942.0
+offset_bottom = 500.0
+theme_override_colors/font_shadow_color = Color(0.101961, 0.666667, 0.933333, 1)
+theme_override_fonts/font = ExtResource("8_7vonm")
+text = "To trim the plant, click on the scissors."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(112, 210)
+scale = Vector2(0.248047, 0.192383)
+texture = ExtResource("10_xvd1k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(111, 354)
+scale = Vector2(0.248047, 0.192383)
+texture = ExtResource("11_54tje")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(108, 471)
+scale = Vector2(0.248047, 0.192383)
+texture = ExtResource("12_e1mgi")
 
 [connection signal="pressed" from="Button" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_prev_pressed"]

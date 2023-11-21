@@ -4,7 +4,6 @@ extends Node2D
 var plantGrowing = false
 var weeksAlive = 0
 var isHarvestable = false
-var score = 100
 
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))
@@ -48,14 +47,23 @@ func _on_low_light_but_pressed():
 			Global.seedSelected = 0			# sets Global Variable seed selections to 0
 			weeksAlive = 0
 	if isHarvestable == true:
+		var message = ""
+		# harvest points:lettace-> 15 points,Radish-> 12 points, chives-> 10 points
+		if $Anima.assigned_animation == "lettaceAnim2":
+			message = "Lettace Harvested"
+			GlobalScoreLabel.set_score(message, 15)		# points added to score and message put in log
+		if $Anima.assigned_animation == "radishAnim2":
+			message = "Radish Harvested"
+			GlobalScoreLabel.set_score(message, 12)		# points added to score and message put in log
+		if $Anima.assigned_animation == "chivesAnim2":
+			message = "Chives Harvested"
+			GlobalScoreLabel.set_score(message, 10)		# points added to score and message put in log
 		plantGrowing = false			# sets plant growing to false
 		$Anima.clear_queue()			# removes animation
 		$Anima.play("none")
 		Global.seedSelected = 0			# sets Global Variable seed selections to 0
 		weeksAlive = 0					# resset weeks alive
 		isHarvestable = false			# set havestable to false
-		score = 100						# set score tmp fow now
-		return score					# returns score
 
 # 1=lettace 2=radish 3=chives 4=potatoes 5=wheat 6=tomatoes
 # when the seed goes over a grow plot, the plant animation starts

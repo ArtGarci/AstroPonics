@@ -94,7 +94,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7f0p"]
-size = Vector2(17, 25.4948)
+size = Vector2(11, 19.4903)
 
 [sub_resource type="Animation" id="Animation_8cl81"]
 resource_name = "chivesAnim0"
@@ -531,7 +531,7 @@ animation = &"none"
 position = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lowPlant/lowPlantColl"]
-position = Vector2(-0.5, 4.4975)
+position = Vector2(-0.5, 4.5)
 scale = Vector2(1, 0.667)
 shape = SubResource("RectangleShape2D_l7f0p")
 

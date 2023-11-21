@@ -16,7 +16,8 @@ func set_score(message,score):
 	
 	#update UI text
 	var labelText =get_tree().get_root().get_node("Game2/ScoreBoxBackground/ScoreLabel")
-	labelText.text = "Score: " + str(score)
+	GlobalScoreLog.POINTS += score
+	labelText.text = "Score: " + str(GlobalScoreLog.POINTS)
 	
 	#call function in the score log script to update score log
 	GlobalScoreLog.add_log_entry(message, score)

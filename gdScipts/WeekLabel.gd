@@ -6,7 +6,7 @@ var seconds_per_gameplay_week = 10 * 60  # 10 minutes in seconds
 
 func _ready():
 	update_weeks_display()
-	GlobalScoreLabel.set_score("Test", 100)
+	GlobalScoreLabel.set_score("TEST", 0)
 
 func _process(delta):
 	# Update elapsed real-time

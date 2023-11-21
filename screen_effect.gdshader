@@ -1,12 +1,11 @@
 shader_type canvas_item;
 
-uniform float onoff=1; 
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
-// SHADER PARAMETER FOR NOISE 
-uniform sampler2D noise : repeat_enable, filter_linear_mipmap; 
+uniform sampler2D dissolve_pattern;
+
+uniform float dissolve_state : hint_range(0, 1.1) = 0;
 
 void fragment() {
-	vec2 uv_offset = SCREEN_UV + texture(noise, UV).r * cos(TIME) * 0.05; // script shifts scale. 
-	vec4 screenColor = texture(SCREEN_TEXTURE, uv_offset);
-	COLOR = screenColor * onoff;  
+	COLOR = texture(TEXTURE, UV);
+	float pattern_val = texture(dissolve_pattern, UV).r;
+	COLOR.a *= step(dissolve_state, pattern_val);
 }

@@ -1,50 +1,89 @@
-extends Node
+# how to use: (ASSUMING CALLING FROM EXTERNAL NODE !
+# global var t
+#_ready():
+#	t = RE.new()
+#	add_child(t)
+#func _process(delta):
+#	t.launcher(20)
 
+class_name RE 
+# export (Material) var material1 setget mat1
+extends Label # changed from Node to Label now to try to show text that RE started
+# had to make a child node of RE label to show animated text for now ... ^ 
 var spawnerObject; # RE launcher one for the random events it generates.
 var currRunning = false; # bool that says if it is running an event 
- 
-# how to use: 
-# ASSUMING CALLING FROM EXTERNAL NODE 
-# has _read() then does not need .new(), simply call .launch() 
-# var script = preload("res://re_launcher.gd").new();
-# RE_launcher.launch(20); // WHERE 20 (default) IS THE PERCENTAGE, IT GETS HANDLED INTO FLOAT
+# GENERATION OF NODES TO SCENE 
 var rng = RandomNumberGenerator.new()
 var timerStarted = false 
 var overlay : ShaderMaterial 
-# signal stuff 
+var distort_shader : Shader
+var crt : Shader 
+var crt_effect : ShaderMaterial # using Overlay as centralized point for shaders.
+var overlay_node
+var camera_node
+var animate_text
 
 func _init(): # CONSTRUCTOR, built before child nodes 
 	pass
+	
+static func build():
+	pass 
 
 # Called when the node enters the scene tree for the first time. child nodes come back ready() 
 func _ready():
-	overlay = $Overlay.get_material()
-	pass  
+	# OVERLAY NODE - DISTORTION DEFAULT
+	overlay_node = get_node("/root/Main2D/Overlay")
+	overlay_node.set_visible(true)
+	overlay = overlay_node.get_material()
+	distort_shader = preload("res://distort.gdshader")
+	# CRT 
+	crt = preload("res://crt.gdshader")
+	crt_effect = ShaderMaterial.new()
+	crt_effect.set_shader(crt)
+	# CAMERA NODE
+	camera_node = get_node("/root/Main2D/Camera2D")
+	animate_text = get_node("/root/Main2D/RandomEvents/AnimateText")
 
 func get_curr():
 	return currRunning; 
+	
+func alarm_blare(): # set animate text visiblity
+	var x = get_curr()
+	if (x):
+		animate_text.set("fade", true)
+	else:
+		animate_text.set("fade", false)	
+	
+func cam_effect(): 
+	camera_node.camera_effect()
 
-func cam_effect():
-	$Camera2D.camera_effect()
-# SUCCESS! now call a random event. 
-func activateRE():
+func activateRE(): # SUCCESS! now call a random event. 
 	currRunning = true 
-	get_node("Alarm").show()
+	alarm_blare()
 	if !timerStarted: # or $Alarm_Timer.is_stopped() 
 		timerStarted = true 
-	spawnerObject = rng.randi_range(1,2) 
+	spawnerObject = rng.randi_range(1,3) # 4 
 	match spawnerObject:
 		1: # DISTORT
+			push_warning("distortion")
+			overlay_node.set_material(overlay)
 			overlay.set_shader_parameter("onoff", 1.0)
-			# insert countdown timer here... instead of this code
+			await get_tree().create_timer(5).timeout # wait 5 secs 
 			overlay.set_shader_parameter("onoff", 0.0)
-			
-		2: # SHAKE SCREEN 
-			cam_effect()
-		# 3: # DUST particles floating in air  
-		# get_node("Dust").show() 
-		#4: PERIODIC screen crack / glitch?
+		2: # SHAKE SCREEN
+			push_warning("screen shake") 
+			camera_node.set("shake", true)
+			#cam_effect()
+			await get_tree().create_timer(5).timeout # wait 5 secs 
+			camera_node.set("shake", false)
+		3: # CRT MONITOR EFFECT
+			push_warning("crt effect")
+			overlay_node.material.shader = crt
+			await get_tree().create_timer(3).timeout # wait 5 secs 
+			overlay_node.material.shader = distort_shader
 		#5: # PH IMBALANCE
+	currRunning = false # reset 
+	alarm_blare()
 	timerStarted = false
 	
 func launcher(rndNum): 
@@ -52,14 +91,8 @@ func launcher(rndNum):
 	var myRndNum = rng.randf_range(0, 1); # 0 to 100% chance
 	if (myRndNum <= rndNum):
 		push_warning("succesful hit!")
-		activateRE();
-		await get_tree().create_timer(3).timeout # wait 3 secs 
-		currRunning = false # reset 
-		get_node("Alarm").hide()
-
-
+		activateRE(); # ALARM BLARES !!
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta): 
-	self.launcher(100) # calls script sees if works 
 	pass
-

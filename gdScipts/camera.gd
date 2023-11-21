@@ -6,6 +6,7 @@ var rand = RandomNumberGenerator.new()
 var shake_strength: float = 0.0 
 var noise = FastNoiseLite.new() # for better shakes , add later.
 var shake = false 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true) # going to shake!

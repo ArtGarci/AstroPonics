@@ -32,7 +32,7 @@ static func build():
 # Called when the node enters the scene tree for the first time. child nodes come back ready() 
 func _ready():
 	# OVERLAY NODE - DISTORTION DEFAULT
-	overlay_node = get_node("/root/Main2D/Overlay")
+	overlay_node = get_node("/root/Game2/Overlay")
 	overlay_node.set_visible(true)
 	overlay = overlay_node.get_material()
 	distort_shader = preload("res://distort.gdshader")
@@ -41,8 +41,8 @@ func _ready():
 	crt_effect = ShaderMaterial.new()
 	crt_effect.set_shader(crt)
 	# CAMERA NODE
-	camera_node = get_node("/root/Main2D/Camera2D")
-	animate_text = get_node("/root/Main2D/RandomEvents/AnimateText")
+	camera_node = get_node("/root/Game2/Camera2D")
+	animate_text = get_node("/root/Game2/RandomEvents/AnimateText")
 
 func get_curr():
 	return currRunning; 

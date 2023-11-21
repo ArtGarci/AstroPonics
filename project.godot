@@ -10,12 +10,24 @@ config_version=5
 
 [application]
 
+config/name="AstroPonics"
 run/main_scene="res://Tutorials/tutorial_page_1.tscn"
 config/features=PackedStringArray("4.1")
+config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://gdScipts/global.gd"
+GlobalScoreLog="*res://gdScipts/GlobalScoreLog.gd"
+GlobalScoreLabel="*res://gdScipts/GlobalScoreLabel.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [input]
 

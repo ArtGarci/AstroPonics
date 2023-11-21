@@ -1,14 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://biltrovquco1y"]
+[gd_scene load_steps=10 format=3 uid="uid://biltrovquco1y"]
 
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
+[ext_resource type="Texture2D" uid="uid://byd6h6ya644wh" path="res://Art and textures/week_background.png" id="2_djlbb"]
+[ext_resource type="FontFile" uid="uid://cs1xyqg7valt" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" id="2_e280j"]
+[ext_resource type="Script" path="res://gdScipts/WeekLabel.gd" id="2_m3j3x"]
+[ext_resource type="Texture2D" uid="uid://dhkymqchk3y8l" path="res://Art and textures/scoreBoxBackground.png" id="5_tutus"]
+[ext_resource type="Script" path="res://gdScipts/GlobalScoreLabel.gd" id="6_syt6x"]
+[ext_resource type="Script" path="res://gdScipts/ScoreLog.gd" id="7_vib1w"]
 
-[node name="Game" type="Node2D"]
+[sub_resource type="Theme" id="Theme_h5407"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 516.0
-offset_top = 318.0
-offset_right = 739.0
-offset_bottom = 421.0
-text = "Game go here"
+[sub_resource type="Theme" id="Theme_jcafy"]
+default_font = ExtResource("2_e280j")
+default_font_size = 150
+
+[node name="Game2" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource("1_is64n")]
+
+[node name="WeekBackground" type="Sprite2D" parent="."]
+position = Vector2(5858, 1909)
+texture = ExtResource("2_djlbb")
+
+[node name="WeekLabel" type="Label" parent="WeekBackground"]
+anchors_preset = -1
+anchor_left = 0.262
+anchor_top = 0.349
+anchor_right = 0.775667
+anchor_bottom = 0.564
+offset_left = -633.4
+offset_top = -620.8
+offset_right = -540.8
+offset_bottom = -574.8
+scale = Vector2(0.874429, 1.06083)
+theme = SubResource("Theme_h5407")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_e280j")
+theme_override_font_sizes/font_size = 250
+text = "1/12"
+script = ExtResource("2_m3j3x")
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreBoxBackground" type="Sprite2D" parent="."]
+position = Vector2(4058, -3740)
+scale = Vector2(2.89255, 1.80143)
+texture = ExtResource("5_tutus")
+
+[node name="ScoreLabel" type="Label" parent="ScoreBoxBackground"]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.1
+anchor_right = 0.542
+anchor_bottom = 0.786
+offset_left = -413.336
+offset_top = -118.118
+offset_right = -86.4859
+offset_bottom = -76.1164
+scale = Vector2(0.556473, 0.827278)
+theme = SubResource("Theme_jcafy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("6_syt6x")
+
+[node name="ScoreLogButton" type="Button" parent="."]
+offset_left = 5459.0
+offset_top = -3874.0
+offset_right = 5612.0
+offset_bottom = -3788.0
+scale = Vector2(1.99577, 3.28211)
+
+[node name="ScoreLog" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_vib1w")
+
+[node name="Panel" type="Panel" parent="ScoreLog"]
+layout_mode = 0
+offset_left = 2831.0
+offset_top = -3319.0
+offset_right = 5451.0
+offset_bottom = -1382.0
+scale = Vector2(1.33327, 1.46901)
+
+[node name="LogLabel" type="RichTextLabel" parent="ScoreLog/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00182
+anchor_bottom = 0.989959
+offset_left = 9.00024
+offset_top = 4.99976
+offset_right = -0.779541
+offset_bottom = 0.44873
+theme_override_fonts/normal_font = ExtResource("2_e280j")
+theme_override_font_sizes/normal_font_size = 100
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ScoreLogButton" to="ScoreLog" method="toggle_log_panel"]

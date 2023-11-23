@@ -132,6 +132,7 @@ theme_override_font_sizes/normal_font_size = 100
 metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_d23jw")
 offset_left = -6034.0
 offset_top = -4210.0
@@ -140,6 +141,7 @@ offset_bottom = 3561.0
 mouse_filter = 2
 
 [node name="RandomEvents" type="Label" parent="."]
+visible = false
 offset_left = -3032.0
 offset_top = -658.0
 offset_right = -347.0
@@ -151,6 +153,7 @@ visible_ratio = 0.0
 script = ExtResource("10_imp6m")
 
 [node name="AnimateText" type="RichTextLabel" parent="RandomEvents"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.384
@@ -174,6 +177,7 @@ scale = Vector2(3.30127, 1.45077)
 texture = ExtResource("12_klnm5")
 
 [node name="Alarm" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_o24rc")
 position = Vector2(505, -5045)

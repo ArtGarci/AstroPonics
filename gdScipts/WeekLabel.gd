@@ -2,7 +2,7 @@ extends Label
 
 var weeks_passed = 0  # Initialize the number of weeks
 var elapsed_real_time = 0  # Initialize the elapsed real-time
-var seconds_per_gameplay_week = 10 * 60  # 10 minutes in seconds
+var seconds_per_gameplay_week = 10 * 30  # 5 minutes in seconds
 
 var t
 func _ready():
@@ -19,6 +19,7 @@ func _process(delta):
 	# Check if a week has passed
 	if elapsed_real_time >= seconds_per_gameplay_week:
 		weeks_passed += 1
+		Global.nextWeekSignal.emit()
 		elapsed_real_time -= seconds_per_gameplay_week
 		update_weeks_display()
 		t.launcher(20) # ASSUMES that the node presides on same scene

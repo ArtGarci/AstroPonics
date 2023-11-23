@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c43725kyoq0kh"]
+[gd_scene load_steps=8 format=3 uid="uid://c43725kyoq0kh"]
 
 [ext_resource type="PackedScene" uid="uid://bti088r13m3wu" path="res://menu.tscn" id="1_c2pgt"]
-[ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="1_dxtot"]
 [ext_resource type="Texture2D" uid="uid://wb8r4mold5oe" path="res://Art and textures/pixel_earth.png" id="2_guw6b"]
 [ext_resource type="Script" path="res://menu_background_movement.gd" id="2_x87p0"]
 [ext_resource type="Script" path="res://Earth_Sprite.gd" id="3_k4dru"]
@@ -20,7 +19,7 @@ motion_mirroring = Vector2(0, 2005)
 [node name="Galaxy_splash_sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(568, -326)
 scale = Vector2(0.333479, 0.333479)
-texture = ExtResource("1_dxtot")
+texture = ExtResource("2_guw6b")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 offset_top = -1.0

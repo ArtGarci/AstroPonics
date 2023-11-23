@@ -38,6 +38,7 @@ func _ready():
 	distort_shader = preload("res://distort.gdshader")
 	# CRT 
 	crt = preload("res://gdScipts/crt.gdshader")
+
 	crt_effect = ShaderMaterial.new()
 	crt_effect.set_shader(crt)
 	# CAMERA NODE

@@ -153,6 +153,7 @@ theme_override_font_sizes/normal_font_size = 100
 metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_d23jw")
 offset_left = -5785.0
 offset_top = -4103.0

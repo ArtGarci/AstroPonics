@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://biltrovquco1y"]
+[gd_scene load_steps=25 format=3 uid="uid://biltrovquco1y"]
 
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
 [ext_resource type="Script" path="res://gdScipts/camera.gd" id="1_vwpgh"]
@@ -9,8 +9,9 @@
 [ext_resource type="Script" path="res://gdScipts/GlobalScoreLabel.gd" id="6_syt6x"]
 [ext_resource type="Script" path="res://gdScipts/ScoreLog.gd" id="7_vib1w"]
 [ext_resource type="Theme" uid="uid://cncdj4jccq7mo" path="res://Art and textures/Themes/buttonTheme.tres" id="7_yaiqs"]
-[ext_resource type="Theme" uid="uid://cvudgqrwabmjg" path="res://Art and textures/Themes/panelTheme.tres" id="9_4tfmt"]
 [ext_resource type="Shader" path="res://distort.gdshader" id="8_3ntmt"]
+[ext_resource type="Theme" uid="uid://cvudgqrwabmjg" path="res://Art and textures/Themes/panelTheme.tres" id="9_4tfmt"]
+[ext_resource type="Texture2D" uid="uid://gi3m2ru2dp5j" path="res://Art and textures/Trophy.png" id="9_cjboo"]
 [ext_resource type="Script" path="res://gdScipts/RE_launcher.gd" id="10_imp6m"]
 [ext_resource type="Script" path="res://AnimatedText.gd" id="11_apllg"]
 [ext_resource type="Texture2D" uid="uid://d3hxganvn6it7" path="res://images/main_menu_background.jpg" id="12_klnm5"]
@@ -99,12 +100,26 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 script = ExtResource("6_syt6x")
 
 [node name="ScoreLogButton" type="Button" parent="."]
-offset_left = 5319.0
-offset_top = -3953.0
-offset_right = 5603.0
-offset_bottom = -3800.0
-scale = Vector2(1.81431, 2.7448)
+offset_left = 5309.0
+offset_top = -3927.0
+offset_right = 5551.0
+offset_bottom = -3787.0
+scale = Vector2(1.8898, 2.77592)
 theme = ExtResource("7_yaiqs")
+
+[node name="TextureRect" type="TextureRect" parent="ScoreLogButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.248163
+anchor_top = 0.204497
+anchor_right = 0.762163
+anchor_bottom = 0.721497
+offset_left = 0.0719995
+offset_top = 0.0439997
+offset_right = 0.0959778
+offset_bottom = -0.0569992
+texture = ExtResource("9_cjboo")
+metadata/_edit_use_anchors_ = true
 
 [node name="ScoreLog" type="Control" parent="."]
 layout_mode = 3
@@ -139,13 +154,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_d23jw")
-offset_left = -6034.0
-offset_top = -4210.0
-offset_right = 6775.0
-offset_bottom = 3561.0
+offset_left = -5785.0
+offset_top = -4103.0
+offset_right = 7024.0
+offset_bottom = 3668.0
+scale = Vector2(1, 0.993401)
 mouse_filter = 2
 
 [node name="RandomEvents" type="Label" parent="."]
+visible = false
 offset_left = -3032.0
 offset_top = -658.0
 offset_right = -347.0
@@ -157,6 +174,7 @@ visible_ratio = 0.0
 script = ExtResource("10_imp6m")
 
 [node name="AnimateText" type="RichTextLabel" parent="RandomEvents"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.384
@@ -180,6 +198,7 @@ scale = Vector2(3.30127, 1.45077)
 texture = ExtResource("12_klnm5")
 
 [node name="Alarm" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_o24rc")
 position = Vector2(505, -5045)

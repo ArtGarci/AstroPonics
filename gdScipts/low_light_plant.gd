@@ -4,7 +4,6 @@ extends Node2D
 var plantGrowing = false
 var weeksAlive = 0
 var isHarvestable = false
-var score = 100
 
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))
@@ -12,23 +11,29 @@ func _ready():
 func weekSignal():
 	weeksAlive += 1
 	if $Anima.assigned_animation == "lettaceAnim0":
+		# at 4 weeks lettace animation will change
 		if weeksAlive == 4:
 			$Anima.play("lettaceAnim1")
 	if $Anima.assigned_animation == "lettaceAnim1": 
+		# at 8 weeks lettace animation will change and plant is harvestable
 		if weeksAlive == 8:
 			$Anima.play("lettaceAnim2")
 			isHarvestable = true
 	if $Anima.assigned_animation == "radishAnim0":
+		# at 2 weeks radish animation will change
 		if weeksAlive == 2:
 			$Anima.play("radishAnim1")
 	if $Anima.assigned_animation == "radishAnim1":
+		# at 4 weeks radish animation will change and plant is harvestable
 		if weeksAlive == 4:
 			$Anima.play("radishAnim2")
 			isHarvestable = true
 	if $Anima.assigned_animation == "chivesAnim0":
+		# at 2 weeks chives animation will change
 		if weeksAlive == 2:
 			$Anima.play("chivesAnim1")
 	if $Anima.assigned_animation == "chivesAnim1": 
+		# at 4 weeks chives animation will change and plant is harvestable
 		if weeksAlive == 4:
 			$Anima.play("chivesAnim2")
 			isHarvestable = true
@@ -42,13 +47,23 @@ func _on_low_light_but_pressed():
 			Global.seedSelected = 0			# sets Global Variable seed selections to 0
 			weeksAlive = 0
 	if isHarvestable == true:
+		var message = ""
+		# harvest points:lettace-> 15 points,Radish-> 12 points, chives-> 10 points
+		if $Anima.assigned_animation == "lettaceAnim2":
+			message = "Lettace Harvested"
+			GlobalScoreLabel.set_score(message, 15)		# points added to score and message put in log
+		if $Anima.assigned_animation == "radishAnim2":
+			message = "Radish Harvested"
+			GlobalScoreLabel.set_score(message, 12)		# points added to score and message put in log
+		if $Anima.assigned_animation == "chivesAnim2":
+			message = "Chives Harvested"
+			GlobalScoreLabel.set_score(message, 10)		# points added to score and message put in log
 		plantGrowing = false			# sets plant growing to false
-		$Anima.clear_queue()						# removes animation
+		$Anima.clear_queue()			# removes animation
 		$Anima.play("none")
 		Global.seedSelected = 0			# sets Global Variable seed selections to 0
-		weeksAlive = 0
-		isHarvestable = false
-		return score
+		weeksAlive = 0					# resset weeks alive
+		isHarvestable = false			# set havestable to false
 
 # 1=lettace 2=radish 3=chives 4=potatoes 5=wheat 6=tomatoes
 # when the seed goes over a grow plot, the plant animation starts
@@ -82,3 +97,6 @@ func isPlantGrowing():
 
 func setPlantGrowing(isGrowing):
 	plantGrowing = isGrowing
+	
+func returnAnima():
+	return $Anima.assigned_animation

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://biltrovquco1y"]
+[gd_scene load_steps=22 format=3 uid="uid://biltrovquco1y"]
 
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
+[ext_resource type="Script" path="res://gdScipts/camera.gd" id="1_vwpgh"]
 [ext_resource type="Texture2D" uid="uid://byd6h6ya644wh" path="res://Art and textures/week_background.png" id="2_djlbb"]
 [ext_resource type="FontFile" uid="uid://cs1xyqg7valt" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" id="2_e280j"]
 [ext_resource type="Script" path="res://gdScipts/WeekLabel.gd" id="2_m3j3x"]
@@ -9,6 +10,13 @@
 [ext_resource type="Script" path="res://gdScipts/ScoreLog.gd" id="7_vib1w"]
 [ext_resource type="Theme" uid="uid://cncdj4jccq7mo" path="res://Art and textures/Themes/buttonTheme.tres" id="7_yaiqs"]
 [ext_resource type="Theme" uid="uid://cvudgqrwabmjg" path="res://Art and textures/Themes/panelTheme.tres" id="9_4tfmt"]
+[ext_resource type="Shader" path="res://distort.gdshader" id="8_3ntmt"]
+[ext_resource type="Script" path="res://gdScipts/RE_launcher.gd" id="10_imp6m"]
+[ext_resource type="Script" path="res://AnimatedText.gd" id="11_apllg"]
+[ext_resource type="Texture2D" uid="uid://d3hxganvn6it7" path="res://images/main_menu_background.jpg" id="12_klnm5"]
+[ext_resource type="Shader" path="res://pulse.gdshader" id="13_g4bt6"]
+[ext_resource type="Texture2D" uid="uid://bitemim18ttqw" path="res://images/alarmbell.png" id="14_20b3p"]
+[ext_resource type="Script" path="res://Setup_Alarm.gd" id="15_5lq74"]
 
 [sub_resource type="Theme" id="Theme_h5407"]
 
@@ -16,7 +24,34 @@
 default_font = ExtResource("2_e280j")
 default_font_size = 150
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_30dgm"]
+offset = Vector3(4.34783e+07, 0, 0)
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uchnk"]
+noise = SubResource("FastNoiseLite_30dgm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d23jw"]
+shader = ExtResource("8_3ntmt")
+shader_parameter/onoff = 0.0
+shader_parameter/noise = SubResource("NoiseTexture2D_uchnk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o24rc"]
+shader = ExtResource("13_g4bt6")
+shader_parameter/color1 = null
+shader_parameter/color2 = null
+shader_parameter/threshold = null
+shader_parameter/intensity = null
+shader_parameter/opacity = null
+shader_parameter/glow_color = null
+
 [node name="Game2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
+position = Vector2(540, -837)
+zoom = Vector2(0.098, 0.098)
+script = ExtResource("1_vwpgh")
 
 [node name="GUI" parent="." instance=ExtResource("1_is64n")]
 
@@ -101,5 +136,55 @@ offset_bottom = 0.44873
 theme_override_fonts/normal_font = ExtResource("2_e280j")
 theme_override_font_sizes/normal_font_size = 100
 metadata/_edit_use_anchors_ = true
+
+[node name="Overlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_d23jw")
+offset_left = -6034.0
+offset_top = -4210.0
+offset_right = 6775.0
+offset_bottom = 3561.0
+mouse_filter = 2
+
+[node name="RandomEvents" type="Label" parent="."]
+offset_left = -3032.0
+offset_top = -658.0
+offset_right = -347.0
+offset_bottom = 859.0
+theme_override_font_sizes/font_size = 370
+text = "A RANDOM EVENT INITIATED!"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("10_imp6m")
+
+[node name="AnimateText" type="RichTextLabel" parent="RandomEvents"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.384
+anchor_top = 1.763
+anchor_right = 6.525
+anchor_bottom = 6.905
+offset_left = -4729.04
+offset_top = -4427.47
+offset_right = -5251.63
+offset_bottom = -4608.89
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 300
+text = "A RANDOM EVENT INITIATED!"
+script = ExtResource("11_apllg")
+
+[node name="Frame" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(154, -3631)
+scale = Vector2(3.30127, 1.45077)
+texture = ExtResource("12_klnm5")
+
+[node name="Alarm" type="Sprite2D" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_o24rc")
+position = Vector2(505, -5045)
+scale = Vector2(8.20819, 7.56693)
+texture = ExtResource("14_20b3p")
+script = ExtResource("15_5lq74")
 
 [connection signal="pressed" from="ScoreLogButton" to="ScoreLog" method="toggle_log_panel"]

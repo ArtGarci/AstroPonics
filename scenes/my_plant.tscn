@@ -21,7 +21,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnvn2"]
-size = Vector2(22.6667, 34)
+size = Vector2(14.6667, 26)
 
 [sub_resource type="Animation" id="Animation_vj33v"]
 resource_name = "none"
@@ -548,7 +548,7 @@ animation = &"none"
 [node name="plantCollision" type="Area2D" parent="plantGrowing"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plantGrowing/plantCollision"]
-position = Vector2(2, 0.666666)
+position = Vector2(2, 0.666667)
 scale = Vector2(1, 0.666667)
 shape = SubResource("RectangleShape2D_dnvn2")
 

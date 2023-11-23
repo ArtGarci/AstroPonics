@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://hdgydnspai2i"]
+[gd_scene load_steps=20 format=3 uid="uid://hdgydnspai2i"]
 
 [ext_resource type="Texture2D" uid="uid://cbuu1bvd1c8mb" path="res://Assets/plant.png" id="1_a00l3"]
 [ext_resource type="Script" path="res://RE_launcher.gd" id="1_dperj"]
@@ -7,10 +7,12 @@
 [ext_resource type="Script" path="res://camera.gd" id="2_6egxt"]
 [ext_resource type="Shader" path="res://pulse.gdshader" id="2_a2f7d"]
 [ext_resource type="Texture2D" uid="uid://cy3qcvgv2qxww" path="res://Assets/background.png" id="2_nnbnl"]
-[ext_resource type="Script" path="res://blare.gd" id="5_jqggu"]
-[ext_resource type="Shader" path="res://screen_effect.gdshader" id="6_2cjhq"]
+[ext_resource type="Script" path="res://Setup_Alarm.gd" id="5_xujcs"]
+[ext_resource type="Shader" path="res://distort.gdshader" id="7_ivwi8"]
 [ext_resource type="Texture2D" uid="uid://dc8kx0vsucabt" path="res://Assets/gauge_under.png" id="8_wf6xq"]
 [ext_resource type="Texture2D" uid="uid://jxxjcah47yq5" path="res://Assets/gauge_fill.png" id="9_1et8x"]
+[ext_resource type="Script" path="res://WeekLabel.gd" id="11_hx7nu"]
+[ext_resource type="Script" path="res://AnimatedText.gd" id="13_88moi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6srk0"]
 animations = [{
@@ -42,13 +44,12 @@ domain_warp_enabled = true
 noise = SubResource("FastNoiseLite_vgh15")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gwyn4"]
-shader = ExtResource("6_2cjhq")
-shader_parameter/onoff = 1.0
+shader = ExtResource("7_ivwi8")
+shader_parameter/onoff = 0.0
 shader_parameter/noise = SubResource("NoiseTexture2D_uchnk")
 
 [node name="Main2D" type="Node2D"]
 position = Vector2(20, 93)
-script = ExtResource("1_dperj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5930, 3437)
@@ -63,21 +64,22 @@ sprite_frames = SubResource("SpriteFrames_6srk0")
 [node name="Alarm" type="Sprite2D" parent="."]
 z_index = 1
 material = SubResource("ShaderMaterial_b35m5")
-position = Vector2(5058, 357)
+position = Vector2(5912, 101)
 scale = Vector2(8.20819, 7.56693)
 texture = ExtResource("1_jj5mb")
-script = ExtResource("5_jqggu")
+script = ExtResource("5_xujcs")
 
 [node name="Frame" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(18987, 3784)
-scale = Vector2(19.7954, 18.9522)
+position = Vector2(6631, 3673)
+scale = Vector2(20.9292, 19.9603)
 texture = ExtResource("2_nnbnl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bnq7m")
 
 [node name="Overlay" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_gwyn4")
 offset_left = -612.0
 offset_top = 1691.0
@@ -117,6 +119,37 @@ offset_bottom = 1414.0
 fill_mode = 1
 texture_under = ExtResource("8_wf6xq")
 texture_progress = ExtResource("9_1et8x")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("11_hx7nu")
+
+[node name="RandomEvents" type="Label" parent="."]
+offset_left = -3032.0
+offset_top = -658.0
+offset_right = -347.0
+offset_bottom = 859.0
+theme_override_font_sizes/font_size = 370
+text = "A RANDOM EVENT INITIATED!"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("1_dperj")
+
+[node name="AnimateText" type="RichTextLabel" parent="RandomEvents"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.384
+anchor_top = 1.763
+anchor_right = 6.525
+anchor_bottom = 6.905
+offset_left = 522.96
+offset_top = 181.529
+offset_right = 0.375
+offset_bottom = 0.114258
+theme_override_font_sizes/normal_font_size = 300
+text = "A RANDOM EVENT INITIATED!"
+script = ExtResource("13_88moi")
 
 [connection signal="hidden" from="Overlay" to="." method="_on_overlay_hidden"]
 [connection signal="visibility_changed" from="Overlay" to="." method="_on_overlay_visibility_changed"]

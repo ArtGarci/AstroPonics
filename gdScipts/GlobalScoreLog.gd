@@ -2,6 +2,7 @@ extends Node
 
 var log_history :=[]
 var max_log_entries := 5
+var POINTS = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,4 +34,4 @@ func update_ui():
 			
 			# Update the Label text with the log entries
 		for entry in log_history:
-			log_label.text += entry["message"] + ": " + str(entry["points"]) + "\n"
+			log_label.text += entry["message"] + ": " + str(entry["points"]) + " Points	" + "\n"

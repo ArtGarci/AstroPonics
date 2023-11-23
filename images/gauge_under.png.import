@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caq1mruwgyx8y"
-path="res://.godot/imported/chemical-drop.png-56d9cc167b1605180db7546d63b9485b.ctex"
+uid="uid://bagnahb1s3cm5"
+path="res://.godot/imported/gauge_under.png-a5aa28b07ece336630123d7e31f13bcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/chemical-drop.png"
-dest_files=["res://.godot/imported/chemical-drop.png-56d9cc167b1605180db7546d63b9485b.ctex"]
+source_file="res://images/gauge_under.png"
+dest_files=["res://.godot/imported/gauge_under.png-a5aa28b07ece336630123d7e31f13bcb.ctex"]
 
 [params]
 

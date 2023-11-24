@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bqxgevq21jgwv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 457.0
+offset_top = 383.0
+offset_right = 666.0
+offset_bottom = 483.0
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 390.0
+offset_top = 232.0
+offset_right = 743.0
+offset_bottom = 361.0
+text = "Trim Microgame Go Here
+"
+horizontal_alignment = 1

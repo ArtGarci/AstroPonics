@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://driavqeeh2psj"]
+[gd_scene load_steps=3 format=3 uid="uid://driavqeeh2psj"]
 
 [ext_resource type="Script" path="res://Objects/ReferenceGuideText.gd" id="1_yu732"]
+[ext_resource type="Texture2D" uid="uid://bdtbxj3donsr8" path="res://images/lettuce icon.png" id="2_66255"]
 
 [node name="ReferenceMenu" type="Control"]
 layout_mode = 3
@@ -57,12 +58,22 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="LettuceBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="Background/ScrollContainer/PlantVBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_66255")
+expand_mode = 3
+
+[node name="LettuceBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Lettuce (Lactuca sativa)"
+alignment = 2
 
 [node name="RadishBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
@@ -99,7 +110,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Wheat (Triticum aestivum)"
 
-[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/LettuceBtn" to="Background/ReferenceGuideText" method="_on_plant_1_pressed" binds= ["btn-1"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/HBoxContainer/LettuceBtn" to="Background/ReferenceGuideText" method="_on_plant_1_pressed" binds= ["btn-1"]]
 [connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/RadishBtn" to="Background/ReferenceGuideText" method="_on_plant_2_pressed" binds= ["btn-2"]]
 [connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/ChivesBtn" to="Background/ReferenceGuideText" method="_on_plant_3_pressed" binds= ["btn-3"]]
 [connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/PotatoBtn" to="Background/ReferenceGuideText" method="_on_plant_4_pressed" binds= ["btn-4"]]

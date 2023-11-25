@@ -1,0 +1,107 @@
+[gd_scene load_steps=20 format=3 uid="uid://cm86qor4y6q5f"]
+
+[ext_resource type="Texture2D" uid="uid://j5dq27taffpv" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F1.png" id="1_scgh6"]
+[ext_resource type="Texture2D" uid="uid://cxeegeqhyc3k4" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F2.png" id="2_pusmk"]
+[ext_resource type="Texture2D" uid="uid://371k5pccmtoc" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F3.png" id="3_f7nhc"]
+[ext_resource type="Texture2D" uid="uid://ck1r346252v5s" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F4.png" id="4_rkbef"]
+[ext_resource type="Texture2D" uid="uid://cjiat8w5pk3w3" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F5.png" id="5_04ksw"]
+[ext_resource type="Texture2D" uid="uid://cwk1xsx0b2gjx" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F6.png" id="6_lgyqo"]
+[ext_resource type="Texture2D" uid="uid://w28y4lmwuevu" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_F1.png" id="7_vm30e"]
+[ext_resource type="Texture2D" uid="uid://dqlhc1gv28ek3" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_F2.png" id="8_ivlyx"]
+[ext_resource type="Texture2D" uid="uid://b6tofkn0bxswr" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_F3.png" id="9_sw33e"]
+[ext_resource type="Texture2D" uid="uid://chdbrdp22d8vn" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_F4.png" id="10_8kpof"]
+[ext_resource type="Texture2D" uid="uid://d4bj5bjuk1wh7" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_F5.png" id="11_jhl57"]
+[ext_resource type="Texture2D" uid="uid://cfm4oi5whbobc" path="res://Art and textures/spaceman thinking/Spaceman_pondering_F1.png" id="12_jg7kh"]
+[ext_resource type="Texture2D" uid="uid://68fy6jemhot1" path="res://Art and textures/spaceman thinking/Spaceman_pondering_F2.png" id="13_bxxvm"]
+[ext_resource type="Texture2D" uid="uid://468wgnrccm1i" path="res://Art and textures/spaceman talking/Spaceman_talking_F1.png" id="14_843kn"]
+[ext_resource type="Texture2D" uid="uid://db5e8h6ocicrl" path="res://Art and textures/spaceman talking/Spaceman_talking_F2_and_F5.png" id="15_4b6ty"]
+[ext_resource type="Texture2D" uid="uid://c5linpgclqmjx" path="res://Art and textures/spaceman talking/Spaceman_talking_F3.png" id="16_76ncc"]
+[ext_resource type="Texture2D" uid="uid://dh2257wfqy0ns" path="res://Art and textures/spaceman talking/Spaceman_talking_F4.png" id="17_82uok"]
+[ext_resource type="Texture2D" uid="uid://cfnlogwrnk2iv" path="res://Art and textures/spaceman talking/Spaceman_talking_F6.png" id="18_i6w5s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eogwe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_scgh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pusmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f7nhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkbef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_04ksw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lgyqo")
+}],
+"loop": true,
+"name": &"exclamation_hands",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_vm30e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ivlyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sw33e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8kpof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jhl57")
+}],
+"loop": true,
+"name": &"exclamation_only",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jg7kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bxxvm")
+}],
+"loop": true,
+"name": &"question_mark",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_843kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4b6ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_76ncc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_82uok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4b6ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i6w5s")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 8.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Spaceman_Head" type="AnimatedSprite2D" parent="."]
+position = Vector2(561, 328)
+sprite_frames = SubResource("SpriteFrames_eogwe")
+animation = &"talking"

@@ -1,45 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://driavqeeh2psj"]
+[gd_scene load_steps=8 format=3 uid="uid://driavqeeh2psj"]
 
-[ext_resource type="Script" path="res://Objects/ReferenceGuideText.gd" id="1_yu732"]
+[ext_resource type="Script" path="res://Objects/ReferenceGuideText.gd" id="1_jr356"]
+[ext_resource type="Texture2D" uid="uid://b5lfg2x2b6t2y" path="res://images/lettuceIcon.png" id="2_jpc5c"]
+[ext_resource type="Texture2D" uid="uid://dnpvqncoi8to3" path="res://images/radishIcon.png" id="3_etnbx"]
+[ext_resource type="Texture2D" uid="uid://cbirf2wykkhdr" path="res://images/chivesIcon.png" id="4_ge6jp"]
+[ext_resource type="Texture2D" uid="uid://2do6b2d3kng" path="res://images/potatoIcon.png" id="5_exiyl"]
+[ext_resource type="Texture2D" uid="uid://b81uhxbrlxnim" path="res://images/tomatoIcon.png" id="6_a5wwx"]
+[ext_resource type="Texture2D" uid="uid://pg52cdn0qeap" path="res://images/wheatIcon.png" id="7_j1sm1"]
 
 [node name="ReferenceMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="Panel" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -768.0
+offset_bottom = -432.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ReferenceGuideText" type="RichTextLabel" parent="Background"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0277778
-anchor_top = 0.0987654
-anchor_right = 0.499132
-anchor_bottom = 1.0
-offset_right = 1.0
-theme_override_font_sizes/normal_font_size = 32
-text = "This guide provides all the information you'll need  to be a successful space farmer!"
-script = ExtResource("1_yu732")
-metadata/_edit_use_anchors_ = true
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 0
+offset_right = 544.0
+offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="Background"]
-layout_mode = 1
-offset_right = 250.0
-offset_bottom = 48.0
+[node name="Label" type="Label" parent="Background/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Reference Guide"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ReferenceGuideText" type="RichTextLabel" parent="Background/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 32
+text = "This guide provides all the information you'll need  to be a successful space farmer!"
+script = ExtResource("1_jr356")
+metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Background"]
 layout_mode = 1
@@ -47,61 +56,112 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = 64.0
+offset_left = -590.0
+offset_top = 24.0
 grow_horizontal = 0
 grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
 [node name="PlantVBoxContainer" type="VBoxContainer" parent="Background/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="LettuceBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
+[node name="LettuceHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
+layout_mode = 2
+
+[node name="LettuceTextureRect" type="TextureRect" parent="Background/ScrollContainer/PlantVBoxContainer/LettuceHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_jpc5c")
+expand_mode = 3
+
+[node name="LettuceBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/LettuceHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Lettuce (Lactuca sativa)"
+alignment = 2
 
-[node name="RadishBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
+[node name="RadishHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
+layout_mode = 2
+
+[node name="RadishTextureRect" type="TextureRect" parent="Background/ScrollContainer/PlantVBoxContainer/RadishHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_etnbx")
+expand_mode = 3
+
+[node name="RadishBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/RadishHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Radish (Raphanus raphanistrum) "
 
-[node name="ChivesBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
+[node name="ChivesHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/ScrollContainer/PlantVBoxContainer/ChivesHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_ge6jp")
+expand_mode = 2
+
+[node name="ChivesBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/ChivesHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Chives (Allium schoenoprasum)"
 
-[node name="PotatoBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
+[node name="PotatoHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/ScrollContainer/PlantVBoxContainer/PotatoHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_exiyl")
+expand_mode = 3
+
+[node name="PotatoBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/PotatoHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Potato (Solanum tuberosum)"
 
-[node name="TomatoBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
+[node name="TomatoHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/ScrollContainer/PlantVBoxContainer/TomatoHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_a5wwx")
+expand_mode = 3
+
+[node name="TomatoBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/TomatoHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Tomato (Solanum lycopersicum)"
 
-[node name="WheatBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer"]
+[node name="WheatHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/ScrollContainer/PlantVBoxContainer/WheatHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_j1sm1")
+expand_mode = 3
+
+[node name="WheatBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/WheatHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Wheat (Triticum aestivum)"
 
-[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/LettuceBtn" to="Background/ReferenceGuideText" method="_on_plant_1_pressed" binds= ["btn-1"]]
-[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/RadishBtn" to="Background/ReferenceGuideText" method="_on_plant_2_pressed" binds= ["btn-2"]]
-[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/ChivesBtn" to="Background/ReferenceGuideText" method="_on_plant_3_pressed" binds= ["btn-3"]]
-[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/PotatoBtn" to="Background/ReferenceGuideText" method="_on_plant_4_pressed" binds= ["btn-4"]]
-[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/TomatoBtn" to="Background/ReferenceGuideText" method="_on_plant_5_pressed" binds= ["btn-5"]]
-[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/WheatBtn" to="Background/ReferenceGuideText" method="_on_plant_6_pressed" binds= ["btn-6"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/LettuceHBoxContainer/LettuceBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_1_pressed" binds= ["btn-1"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/RadishHBoxContainer/RadishBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_2_pressed" binds= ["btn-2"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/ChivesHBoxContainer/ChivesBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_3_pressed" binds= ["btn-3"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/PotatoHBoxContainer/PotatoBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_4_pressed" binds= ["btn-4"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/TomatoHBoxContainer/TomatoBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_5_pressed" binds= ["btn-5"]]
+[connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/WheatHBoxContainer/WheatBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_6_pressed" binds= ["btn-6"]]

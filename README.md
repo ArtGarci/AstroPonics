@@ -19,7 +19,7 @@ To play Astroponics, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/astroponics.git
+   git clone https://github.com/ArtGarci/astroponics.git
    ```
 
 2. **Open in Godot:**

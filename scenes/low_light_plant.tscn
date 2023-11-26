@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://dgm5gm8di213u"]
+[gd_scene load_steps=25 format=3 uid="uid://dgm5gm8di213u"]
 
 [ext_resource type="Script" path="res://gdScipts/low_light_plant.gd" id="1_03p0b"]
 [ext_resource type="Texture2D" uid="uid://ddydyv7nm5phr" path="res://images/farmingTilesheetComplete.png" id="1_gwmwe"]
-[ext_resource type="Texture2D" uid="uid://5dvxnwg761w0" path="res://images/dirtTile.png" id="2_jjy5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6avgp"]
 atlas = ExtResource("1_gwmwe")
@@ -94,7 +93,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7f0p"]
-size = Vector2(11, 19.4903)
+size = Vector2(27, 8.9955)
 
 [sub_resource type="Animation" id="Animation_8cl81"]
 resource_name = "chivesAnim0"
@@ -520,7 +519,6 @@ offset_top = -12.0
 offset_right = 8.0
 offset_bottom = 7.0
 scale = Vector2(1.2, 1.2)
-texture_normal = ExtResource("2_jjy5l")
 
 [node name="lowPlant" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
@@ -531,7 +529,7 @@ animation = &"none"
 position = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lowPlant/lowPlantColl"]
-position = Vector2(-0.5, 4.5)
+position = Vector2(0, 10)
 scale = Vector2(1, 0.667)
 shape = SubResource("RectangleShape2D_l7f0p")
 

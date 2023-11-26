@@ -324,7 +324,7 @@ scale = Vector2(20, 46)
 sprite_frames = SubResource("SpriteFrames_1hm03")
 
 [node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potOneH" instance=ExtResource("3_e0uhg")]
-position = Vector2(218, 403)
+position = Vector2(-2235, -485)
 scale = Vector2(27, 45)
 
 [node name="potTwoH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
@@ -339,7 +339,7 @@ sprite_frames = SubResource("SpriteFrames_2tdye")
 centered = false
 
 [node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potTwoH" instance=ExtResource("3_e0uhg")]
-position = Vector2(209, 405)
+position = Vector2(-1355, -485)
 scale = Vector2(27, 45)
 
 [node name="potThreeH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
@@ -354,7 +354,7 @@ sprite_frames = SubResource("SpriteFrames_ahmfu")
 centered = false
 
 [node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potThreeH" instance=ExtResource("3_e0uhg")]
-position = Vector2(192, 402)
+position = Vector2(-475, -485)
 scale = Vector2(27, 45)
 
 [node name="potFourH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
@@ -369,7 +369,7 @@ sprite_frames = SubResource("SpriteFrames_b5kgw")
 centered = false
 
 [node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potFourH" instance=ExtResource("3_e0uhg")]
-position = Vector2(171, 405)
+position = Vector2(415, -485)
 scale = Vector2(27, 45)
 
 [node name="potFiveH" type="VBoxContainer" parent="NinePatchRect/potHolder/highLightPots"]
@@ -385,7 +385,7 @@ animation = &"lettaceAnime"
 centered = false
 
 [node name="myPlant" parent="NinePatchRect/potHolder/highLightPots/potFiveH" instance=ExtResource("3_e0uhg")]
-position = Vector2(163, 401)
+position = Vector2(1295, -485)
 scale = Vector2(27, 45)
 
 [node name="lowLightPots" type="HBoxContainer" parent="NinePatchRect/potHolder"]
@@ -404,7 +404,7 @@ sprite_frames = SubResource("SpriteFrames_rfltb")
 centered = false
 
 [node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potOneL" instance=ExtResource("4_3exl8")]
-position = Vector2(264, 613)
+position = Vector2(-2925, 120)
 scale = Vector2(27, 45)
 
 [node name="potTwoL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
@@ -420,7 +420,7 @@ animation = &"lettaceAnime"
 centered = false
 
 [node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potTwoL" instance=ExtResource("4_3exl8")]
-position = Vector2(271, 612)
+position = Vector2(25, 120)
 scale = Vector2(27, 45)
 
 [node name="potThreeL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
@@ -436,7 +436,7 @@ animation = &"lettaceAnime"
 centered = false
 
 [node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potThreeL" instance=ExtResource("4_3exl8")]
-position = Vector2(263, 619)
+position = Vector2(-2240, 120)
 scale = Vector2(27, 45)
 
 [node name="potFourL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
@@ -452,7 +452,7 @@ animation = &"lettaceAnime"
 centered = false
 
 [node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potFourL" instance=ExtResource("4_3exl8")]
-position = Vector2(246, 621)
+position = Vector2(772, 120)
 scale = Vector2(27, 45)
 
 [node name="potFiveL" type="VBoxContainer" parent="NinePatchRect/potHolder/lowLightPots"]
@@ -468,7 +468,7 @@ animation = &"lettaceAnime"
 centered = false
 
 [node name="lowLightPlant" parent="NinePatchRect/potHolder/lowLightPots/potFiveL" instance=ExtResource("4_3exl8")]
-position = Vector2(239, 626)
+position = Vector2(2027, 120)
 scale = Vector2(27, 45)
 
 [node name="Camera2D" type="Camera2D" parent="."]

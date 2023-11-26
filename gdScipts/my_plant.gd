@@ -4,6 +4,7 @@ extends Node2D
 var plantGrowing = false
 var weeksAlive = 0
 var isHarvestable = false
+var currPH = 0.0
 
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))

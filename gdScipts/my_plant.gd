@@ -8,9 +8,26 @@ var currPH = 0.0
 
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))
+	#signal from random effect that changes ph here
+	#signal from mini game that fixes ph here
+
+func phChange():
+	# random number generated and if 0 or 1 then PH is changed (20% chance)
+	if (randi() % 10) < 2 :
+		# random generated and if 0 then add random number between 1 and 3
+		if randi() % 2 == 0:
+			currPH = currPH + randf_range(1,3)	# adds random number between 1 and 3
+			currPH = snapped(currPH, .01)		# round to the nearest tenth(.01)
+		# if random number not 0 then subtract number between 1 and 3
+		else:
+			currPH = currPH - randf_range(1,3)	# subtracts random number between 1 and 3
+			currPH = snapped(currPH, .01)		# round to the nearest tenth(.01)
 
 func weekSignal():
+	if plantGrowing == true:
+		phChange()
 	weeksAlive += 1		# increment the amount of weeks alive
+	
 	if $Anima.assigned_animation == "potateAnim0":
 		# at 8 weeks potatoe animation will change
 		if weeksAlive == 8:
@@ -65,6 +82,7 @@ func _on_plant_button_pressed():
 		Global.seedSelected = 0			# sets Global Variable seed selections to 0
 		weeksAlive = 0					# set weeks alive to zero
 		isHarvestable = false			# set to not harvestable
+		currPH = 0.0
 
 # 1=lettace 2=radish 3=chives 4=potatoes 5=wheat 6=tomatoes
 # when the seed goes over a grow plot, the plant animation starts
@@ -77,13 +95,16 @@ func _on_plant_collision_area_entered(area):
 					plantGrowing = false
 				# grows plant depending on global variable seedSelected and plant is not growing
 				if Global.seedSelected == 4 and plantGrowing == false:	
-					$Anima.play("potateAnim0")
+					$Anima.play("potateAnim0")	# set animation for potatoes
+					currPH = 5.0				# set ph level
 					plantGrowing = true
 				if Global.seedSelected == 5 and plantGrowing == false:
-					$Anima.play("wheatAnim0")
+					$Anima.play("wheatAnim0")	# set animation for wheat
+					currPH = 5.5				# set ph level
 					plantGrowing = true
 				if Global.seedSelected == 6 and plantGrowing == false:
-					$Anima.play("tomatoeAnim0")
+					$Anima.play("tomatoeAnim0")	# set animation for tomatoes
+					currPH = 5.5				# set ph level
 					plantGrowing = true
 
 # used for testing

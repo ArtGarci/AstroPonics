@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bpitcc2sjy74y" path="res://images/seedimage.png" id="1_jshow"]
 [ext_resource type="Script" path="res://gdScipts/guiPlants.gd" id="1_xc667"]
 [ext_resource type="Texture2D" uid="uid://cy0wluqqtd48c" path="res://images/seedimage_negate.png" id="2_vq8qn"]
-[ext_resource type="Texture2D" uid="uid://dvwweq2hxurmp" path="res://images/background.png" id="3_sa3vx"]
 [ext_resource type="Texture2D" uid="uid://sgleevgun4bf" path="res://images/seedtmp1.png" id="4_g0ydw"]
+[ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="5_7n4p4"]
 [ext_resource type="Texture2D" uid="uid://c8liqloj0ypja" path="res://images/seedtmppress.png" id="5_m4qwi"]
 [ext_resource type="PackedScene" uid="uid://cogrckninwxv6" path="res://scenes/trash_bin.tscn" id="7_21v35"]
 [ext_resource type="PackedScene" uid="uid://dst2oncus4vxp" path="res://scenes/pot_ui.tscn" id="8_htlee"]
@@ -65,7 +65,7 @@ offset_left = -75.0
 offset_top = 362.0
 offset_right = 2067.0
 offset_bottom = 1629.0
-texture = ExtResource("3_sa3vx")
+texture = ExtResource("5_7n4p4")
 
 [node name="BoxContainer" type="BoxContainer" parent="seedMenu/seedMenuCont/background"]
 layout_mode = 0
@@ -86,7 +86,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
-tooltip_text = "Lettace"
+tooltip_text = "Lettuce"
 texture_normal = ExtResource("4_g0ydw")
 texture_pressed = ExtResource("5_m4qwi")
 stretch_mode = 0
@@ -99,7 +99,7 @@ size_flags_vertical = 3
 [node name="radishSeed" type="TextureButton" parent="seedMenu/seedMenuCont/background/BoxContainer/leftButtonCont/leftCentCont"]
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Radish"
+tooltip_text = "Radishes"
 texture_normal = ExtResource("4_g0ydw")
 texture_pressed = ExtResource("5_m4qwi")
 stretch_mode = 0
@@ -181,7 +181,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="tmpNextDay" type="Button" parent="seedMenu/seedMenuCont/background/BoxContainer/rightCont/empty"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 70

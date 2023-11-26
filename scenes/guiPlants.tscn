@@ -177,11 +177,11 @@ texture_pressed = ExtResource("9_40m62")
 stretch_mode = 0
 
 [node name="empty" type="VBoxContainer" parent="seedMenu/seedMenuCont/background/BoxContainer/rightCont"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="tmpNextDay" type="Button" parent="seedMenu/seedMenuCont/background/BoxContainer/rightCont/empty"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 70

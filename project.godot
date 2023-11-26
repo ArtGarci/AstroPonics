@@ -21,6 +21,10 @@ Global="*res://gdScipts/global.gd"
 GlobalScoreLog="*res://gdScipts/GlobalScoreLog.gd"
 GlobalScoreLabel="*res://gdScipts/GlobalScoreLabel.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")

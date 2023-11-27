@@ -9,12 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://dtbir7oguac84" path="res://Tutorials/frame_5_delay-0.09s.png" id="7_6lkf0"]
 [ext_resource type="FontFile" uid="uid://bax17lxjdupj4" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="8_llyco"]
 [ext_resource type="Texture2D" uid="uid://bn6r0ur0lqcvb" path="res://Art and textures/dialogue_boxes.png" id="8_v0l1c"]
-[ext_resource type="Texture2D" uid="uid://j5dq27taffpv" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F1.png" id="9_mhtk0"]
-[ext_resource type="Texture2D" uid="uid://cxeegeqhyc3k4" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F2.png" id="10_01b53"]
-[ext_resource type="Texture2D" uid="uid://371k5pccmtoc" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F3.png" id="11_tf3gl"]
-[ext_resource type="Texture2D" uid="uid://ck1r346252v5s" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F4.png" id="12_n8m10"]
-[ext_resource type="Texture2D" uid="uid://cjiat8w5pk3w3" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F5.png" id="13_iv6t8"]
-[ext_resource type="Texture2D" uid="uid://cwk1xsx0b2gjx" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F6.png" id="14_j128q"]
+[ext_resource type="Texture2D" uid="uid://468wgnrccm1i" path="res://Art and textures/spaceman talking/Spaceman_talking_F1.png" id="10_mr2i2"]
+[ext_resource type="Texture2D" uid="uid://djpdygihxb3nt" path="res://Art and textures/b_right_arrow.png" id="10_t368j"]
+[ext_resource type="Texture2D" uid="uid://db5e8h6ocicrl" path="res://Art and textures/spaceman talking/Spaceman_talking_F2_and_F5.png" id="11_fy4ob"]
+[ext_resource type="Texture2D" uid="uid://c5linpgclqmjx" path="res://Art and textures/spaceman talking/Spaceman_talking_F3.png" id="12_uqi3h"]
+[ext_resource type="Texture2D" uid="uid://dh2257wfqy0ns" path="res://Art and textures/spaceman talking/Spaceman_talking_F4.png" id="13_0pjk1"]
+[ext_resource type="Texture2D" uid="uid://cfnlogwrnk2iv" path="res://Art and textures/spaceman talking/Spaceman_talking_F6.png" id="14_8us5o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5nsyu"]
 animations = [{
@@ -46,26 +46,26 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_mhtk0")
+"texture": ExtResource("10_mr2i2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_01b53")
+"texture": ExtResource("11_fy4ob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_tf3gl")
+"texture": ExtResource("12_uqi3h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_n8m10")
+"texture": ExtResource("13_0pjk1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_iv6t8")
+"texture": ExtResource("11_fy4ob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_j128q")
+"texture": ExtResource("14_8us5o")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 3.0
 }]
 
 [node name="tutorial_page1" type="Node2D"]
@@ -83,13 +83,12 @@ position = Vector2(569.5, 554)
 scale = Vector2(1.8898, 0.757813)
 texture = ExtResource("8_v0l1c")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 860.0
-offset_top = 575.0
-offset_right = 1148.0
-offset_bottom = 647.0
-theme_override_fonts/font = ExtResource("8_llyco")
-text = "Next"
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 942.0
+offset_top = 493.0
+offset_right = 1134.0
+offset_bottom = 685.0
+texture_normal = ExtResource("10_t368j")
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 1087.0
@@ -104,18 +103,18 @@ position = Vector2(146, 369)
 scale = Vector2(0.48, 0.466)
 sprite_frames = SubResource("SpriteFrames_kicpr")
 autoplay = "default"
-frame_progress = 0.501311
+frame_progress = 0.999234
 
 [node name="Label" type="Label" parent="."]
 offset_left = 37.0
 offset_top = 480.0
 offset_right = 1096.0
 offset_bottom = 633.0
-text = "The goal of this game is to get the highest score from planting crops.
-To start planting, click on the bag of seeds and hover over the soil to plant them.
+theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_fonts/font = ExtResource("8_llyco")
+text = "Hello, Welcome to AstroPonics. I am here to guide you during your journey of growing hydroponic crops in space!
 
-To get the highest score, maintain the plants using the tools provided and gain high
-efficiency in the minigames."
+Let's start with the controls!"
 
-[connection signal="pressed" from="Button" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

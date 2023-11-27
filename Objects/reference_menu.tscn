@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://driavqeeh2psj"]
+[gd_scene load_steps=9 format=3 uid="uid://driavqeeh2psj"]
 
 [ext_resource type="Script" path="res://Objects/ReferenceGuideText.gd" id="1_jr356"]
+[ext_resource type="Script" path="res://Objects/ExitBtn.gd" id="1_yquri"]
 [ext_resource type="Texture2D" uid="uid://b5lfg2x2b6t2y" path="res://images/lettuceIcon.png" id="2_jpc5c"]
 [ext_resource type="Texture2D" uid="uid://dnpvqncoi8to3" path="res://images/radishIcon.png" id="3_etnbx"]
 [ext_resource type="Texture2D" uid="uid://cbirf2wykkhdr" path="res://images/chivesIcon.png" id="4_ge6jp"]
@@ -34,7 +35,17 @@ layout_mode = 0
 offset_right = 544.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="Background/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ExitBtn" type="Button" parent="Background/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "X"
+script = ExtResource("1_yquri")
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
@@ -159,6 +170,7 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Wheat (Triticum aestivum)"
 
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/ExitBtn" to="Background/VBoxContainer/HBoxContainer/ExitBtn" method="_on_pressed"]
 [connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/LettuceHBoxContainer/LettuceBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_1_pressed" binds= ["btn-1"]]
 [connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/RadishHBoxContainer/RadishBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_2_pressed" binds= ["btn-2"]]
 [connection signal="pressed" from="Background/ScrollContainer/PlantVBoxContainer/ChivesHBoxContainer/ChivesBtn" to="Background/VBoxContainer/ReferenceGuideText" method="_on_plant_3_pressed" binds= ["btn-3"]]

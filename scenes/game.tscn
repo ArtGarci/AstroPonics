@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://biltrovquco1y"]
+[gd_scene load_steps=34 format=3 uid="uid://biltrovquco1y"]
 
 [ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="1_8w225"]
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
@@ -21,6 +21,12 @@
 [ext_resource type="Shader" path="res://pulse.gdshader" id="13_g4bt6"]
 [ext_resource type="Texture2D" uid="uid://bitemim18ttqw" path="res://images/alarmbell.png" id="14_20b3p"]
 [ext_resource type="Script" path="res://Setup_Alarm.gd" id="15_5lq74"]
+[ext_resource type="Texture2D" uid="uid://caq1mruwgyx8y" path="res://MicroGames/MicroGameImages/chemical-drop.png" id="22_ljlml"]
+[ext_resource type="Texture2D" uid="uid://l2ed7rsic4o8" path="res://MicroGames/MicroGameImages/watering-can.png" id="23_em07t"]
+[ext_resource type="Script" path="res://MicroGames/MicroGameScripts/pHButton.gd" id="23_ligiw"]
+[ext_resource type="Texture2D" uid="uid://p4wv5hiti5g1" path="res://MicroGames/MicroGameImages/scissors.png" id="24_4mv26"]
+[ext_resource type="Script" path="res://MicroGames/MicroGameScripts/waterButton.gd" id="25_jovse"]
+[ext_resource type="Script" path="res://scenes/trim_button.gd" id="27_pndmy"]
 
 [sub_resource type="Theme" id="Theme_h5407"]
 
@@ -76,8 +82,8 @@ script = ExtResource("1_vwpgh")
 [node name="GUI" parent="." instance=ExtResource("1_is64n")]
 
 [node name="WeekBackground" type="Sprite2D" parent="."]
-position = Vector2(5893.5, 1924.5)
-scale = Vector2(1.825, 1.825)
+position = Vector2(5793, 1829.79)
+scale = Vector2(2.16, 2.14071)
 texture = ExtResource("2_djlbb")
 
 [node name="WeekLabel" type="Label" parent="."]
@@ -86,10 +92,10 @@ anchor_left = 0.262
 anchor_top = 0.349
 anchor_right = 0.775667
 anchor_bottom = 0.564
-offset_left = 5597.0
-offset_top = 1751.0
-offset_right = 6256.0
-offset_bottom = 2055.0
+offset_left = 5421.0
+offset_top = 1640.0
+offset_right = 6338.0
+offset_bottom = 1944.0
 scale = Vector2(0.874429, 1.06083)
 theme = SubResource("Theme_h5407")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -220,4 +226,51 @@ scale = Vector2(8.20819, 7.56693)
 texture = ExtResource("14_20b3p")
 script = ExtResource("15_5lq74")
 
+[node name="pHMicroGame" type="Button" parent="."]
+offset_left = -800.0
+offset_top = 1300.0
+offset_right = -50.0
+offset_bottom = 2050.0
+tooltip_text = "pH Game"
+icon = ExtResource("22_ljlml")
+expand_icon = true
+script = ExtResource("23_ligiw")
+
+[node name="waterMicroGame" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 1300.0
+offset_right = 750.0
+offset_bottom = 2050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+tooltip_text = "Watering Game"
+icon = ExtResource("23_em07t")
+expand_icon = true
+script = ExtResource("25_jovse")
+
+[node name="trimMicroGame" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 808.0
+offset_top = 1300.0
+offset_right = 1558.0
+offset_bottom = 2050.0
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Trimming Game"
+icon = ExtResource("24_4mv26")
+expand_icon = true
+script = ExtResource("27_pndmy")
+
 [connection signal="pressed" from="ScoreLogButton" to="ScoreLog" method="toggle_log_panel"]
+[connection signal="pressed" from="pHMicroGame" to="pHMicroGame" method="_on_pressed"]
+[connection signal="pressed" from="waterMicroGame" to="waterMicroGame" method="_on_pressed"]
+[connection signal="pressed" from="trimMicroGame" to="trimMicroGame" method="_on_pressed"]

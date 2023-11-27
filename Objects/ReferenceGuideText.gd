@@ -4,24 +4,30 @@ extends RichTextLabel
 
 # Define the text for each plant
 var lettuceTextLabel = "Lettuce (grows in 8 weeks)\n
+Recommended pH level: 6.0–6.5
 It is most often grown as a leaf vegetable, but sometimes for its stem and seeds. 
 Lettuce is most often used for salads, although it is also seen in other kinds of food, such as soups, sandwiches and wraps; it can also be grilled.
 "
 var radishTextLabel = "Radishes (grows in 4 weeks)\n
+Recommended pH level: 6.5 - 7.0
 The radish (Raphanus raphanistrum subsp. sativus) is an edible root vegetable of the family Brassicaceae that was domesticated in Asia prior to Roman times.
 Radishes are grown and consumed throughout the world, being mostly raw as a crunchy salad vegetable with a pungent, slightly spicy flavor, varying in intensity depending on its growing environment. 
 "
 var chivesTextLabel = "Chives (grows in 4 weeks)\n
+Recommended pH level: 6.0 - 7.0
 Chives are a commonly used herb and can be found in grocery stores or grown in home gardens. 
 In culinary use, the green stalks (scapes) and the unopened, immature flower buds are diced and used as an ingredient for omelettes, fish, potatoes, soups, and many other dishes.
 "
 var potatoTextLabel = "Potatoes (grows in 12 weeks)\n
+Recommended pH level: 6.0 - 6.5
 Potatoes were introduced to Europe from the Americas by the Spanish in the second half of the 16th century. Potatoe are a staple food in many parts of the world and an integral part of much of the world's food supply. Following millennia of selective breeding, there are now over 5,000 different types of potatoes. Over 99% of potatoes presently cultivated worldwide descend from varieties that originated in the lowlands of south-central Chile. 
 "
 var tomatoTextLabel = "Tomatoes (grows in 12 weeks)\n
+Recommended pH level: 6.2 - 6.8
 Tomatoes are a significant source of umami flavor. They are consumed in diverse ways: raw or cooked, and in many dishes, sauces, salads, and drinks. While tomatoes are fruits—botanically classified as berries—they are commonly used culinarily as a vegetable ingredient or side dish.
 "
 var wheatTextLabel = "Wheat (grows in 8 weeks)\n
+Recommended pH level: 6.5
 Common wheat (Triticum aestivum), also known as bread wheat, is a cultivated wheat species. About 95% of wheat produced worldwide is common wheat; it is the most widely grown of all crops and the cereal with the highest monetary yield.
 "
 

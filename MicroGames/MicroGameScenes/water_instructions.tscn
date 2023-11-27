@@ -469,9 +469,10 @@ texture = ExtResource("2_f1100")
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
-offset_top = 73.0
-offset_right = 1156.0
-offset_bottom = 573.0
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 1157.0
+offset_bottom = 578.0
 theme_override_font_sizes/font_size = 50
 text = "Collect as much water as 
 you can in 30 seconds!

@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-run/main_scene="res://scenes/game.tscn"
+config/name="AstroPonics"
+run/main_scene="res://main_menu_display.tscn"
 config/features=PackedStringArray("4.1")
 config/icon="res://icon.svg"
 
@@ -19,6 +20,10 @@ config/icon="res://icon.svg"
 Global="*res://gdScipts/global.gd"
 GlobalScoreLog="*res://gdScipts/GlobalScoreLog.gd"
 GlobalScoreLabel="*res://gdScipts/GlobalScoreLabel.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

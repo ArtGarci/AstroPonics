@@ -12,5 +12,5 @@ func _process(delta):
 
 # Navigate to main menu
 func _on_pressed():
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://main_menu_display.tscn")
 	pass # Replace with function body.

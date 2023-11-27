@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://driavqeeh2psj"]
+[gd_scene load_steps=11 format=3 uid="uid://driavqeeh2psj"]
 
+[ext_resource type="Script" path="res://menu_background_movement.gd" id="1_ivxiw"]
 [ext_resource type="Script" path="res://Objects/ReferenceGuideText.gd" id="1_jr356"]
 [ext_resource type="Script" path="res://Objects/ExitBtn.gd" id="1_yquri"]
+[ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="2_v8c1i"]
 [ext_resource type="Texture2D" uid="uid://b61g4u1d70rqy" path="res://Art and textures/lettuceIcon.png" id="3_04b1s"]
 [ext_resource type="Texture2D" uid="uid://ru35doyqjxp1" path="res://Art and textures/radishIcon.png" id="4_0p77a"]
 [ext_resource type="Texture2D" uid="uid://cam2ues64uskk" path="res://Art and textures/chivesIcon.png" id="5_o1a2t"]
@@ -18,6 +20,17 @@ offset_right = 768.0
 offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_ivxiw")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 2005)
+
+[node name="Galaxy_splash_sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(568, -326)
+scale = Vector2(0.333479, 0.333479)
+texture = ExtResource("2_v8c1i")
 
 [node name="Background" type="Panel" parent="."]
 clip_contents = true

@@ -3,32 +3,53 @@
 extends RichTextLabel
 
 # Define the text for each plant
-var lettuceTextLabel = "Lettuce (grows in 8 weeks)\n
+var lettuceTextLabel = "Lettuce 
+Growth time: 8 weeks
 Recommended pH level: 6.0–6.5
-It is most often grown as a leaf vegetable, but sometimes for its stem and seeds. 
-Lettuce is most often used for salads, although it is also seen in other kinds of food, such as soups, sandwiches and wraps; it can also be grilled.
+
+Physical Traits: Lettuce is a leafy green vegetable with tender, mild-flavored leaves, often crisp and varying in color from pale green to deep red or purple.
+
+Food Description: Tossed with cherry tomatoes, cucumber slices, Kalamata olives, and a Greek feta dressing, this lettuce transforms into a refreshing Greek salad, showcasing its crisp texture and serving as the perfect base for a light and flavorful dish.
 "
-var radishTextLabel = "Radishes (grows in 4 weeks)\n
+var radishTextLabel = "Radishes
+Growth time: 4 weeks
 Recommended pH level: 6.5 - 7.0
-The radish (Raphanus raphanistrum subsp. sativus) is an edible root vegetable of the family Brassicaceae that was domesticated in Asia prior to Roman times.
-Radishes are grown and consumed throughout the world, being mostly raw as a crunchy salad vegetable with a pungent, slightly spicy flavor, varying in intensity depending on its growing environment. 
+
+Physical Traits: Radishes are small, round or elongated root vegetables with a vibrant red or pink skin and crisp, white flesh.
+
+Food Description: Sliced thinly and nestled atop a bed of arugula, feta cheese, and a zesty lemon vinaigrette, these radishes add a refreshing crunch and peppery kick to a vibrant spring salad, creating a perfect balance of flavors and textures.
 "
-var chivesTextLabel = "Chives (grows in 4 weeks)\n
+var chivesTextLabel = "Chives
+Growth time: 4 weeks
 Recommended pH level: 6.0 - 7.0
-Chives are a commonly used herb and can be found in grocery stores or grown in home gardens. 
-In culinary use, the green stalks (scapes) and the unopened, immature flower buds are diced and used as an ingredient for omelettes, fish, potatoes, soups, and many other dishes.
+
+Physical Traits: Chives are slender, green, hollow stems with a mild onion flavor and a delicate, grass-like appearance.
+
+Food Description: Whisked into a creamy sour cream and mayo blend, freshly chopped chives add a burst of freshness to classic baked potato toppings, creating a savory and tangy loaded baked potato dish that's both comforting and flavorful.
 "
-var potatoTextLabel = "Potatoes (grows in 12 weeks)\n
+var potatoTextLabel = "Potatoes
+Growth time: 12 weeks
 Recommended pH level: 6.0 - 6.5
-Potatoes were introduced to Europe from the Americas by the Spanish in the second half of the 16th century. Potatoe are a staple food in many parts of the world and an integral part of much of the world's food supply. Following millennia of selective breeding, there are now over 5,000 different types of potatoes. Over 99% of potatoes presently cultivated worldwide descend from varieties that originated in the lowlands of south-central Chile. 
+
+Physical Traits: The vegetable is starchy with a brownish, slightly rough skin, and a soft, white or yellowish flesh.
+
+Food Description: Sliced thinly and crisped to perfection, these potatoes transform into irresistible homemade potato chips, seasoned with a blend of sea salt, rosemary, and a hint of garlic, offering a delightful and crunchy snack for any occasion.
 "
-var tomatoTextLabel = "Tomatoes (grows in 12 weeks)\n
+var tomatoTextLabel = "Tomatoes
+Growth time: 12 weeks
 Recommended pH level: 6.2 - 6.8
-Tomatoes are a significant source of umami flavor. They are consumed in diverse ways: raw or cooked, and in many dishes, sauces, salads, and drinks. While tomatoes are fruits—botanically classified as berries—they are commonly used culinarily as a vegetable ingredient or side dish.
+
+Physical Traits: The vegetable is small, round, and typically red, with a smooth outer skin and juicy, pulpy flesh containing numerous seeds.
+
+Food Description: When sliced and combined with fresh basil, mozzarella cheese, and a drizzle of balsamic glaze, these tomatoes make a delectable Caprese salad, showcasing their vibrant flavors and enhancing the overall dish.
 "
-var wheatTextLabel = "Wheat (grows in 8 weeks)\n
+var wheatTextLabel = "Wheat
+Growth time: 8 weeks
 Recommended pH level: 6.5
-Common wheat (Triticum aestivum), also known as bread wheat, is a cultivated wheat species. About 95% of wheat produced worldwide is common wheat; it is the most widely grown of all crops and the cereal with the highest monetary yield.
+
+Physical Traits: Wheat is a cereal grain with slender, golden-brown stalks and kernels, typically harvested for its versatile and nutritious grains.
+
+Food Description: Ground into flour and kneaded into a dough, wheat becomes the heart of a classic baguette, achieving a golden-brown crust and airy interior, perfect for sandwiches or as a side to complement a variety of meals.
 "
 
 # Called when the node enters the scene tree for the first time.

@@ -45,7 +45,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
 layout_mode = 0
-offset_right = 544.0
+offset_right = 576.0
 offset_bottom = 648.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer"]
@@ -69,7 +69,7 @@ vertical_alignment = 1
 [node name="ReferenceGuideText" type="RichTextLabel" parent="Background/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 20
 text = "This guide provides all the information you'll need  to be a successful space farmer!"
 script = ExtResource("1_jr356")
 metadata/_edit_use_anchors_ = true
@@ -80,7 +80,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -590.0
+offset_left = -512.0
 offset_top = 24.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -90,7 +90,7 @@ vertical_scroll_mode = 2
 [node name="PlantVBoxContainer" type="VBoxContainer" parent="Background/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 53
 
 [node name="LettuceHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
 layout_mode = 2
@@ -102,9 +102,7 @@ expand_mode = 3
 
 [node name="LettuceBtn" type="Button" parent="Background/ScrollContainer/PlantVBoxContainer/LettuceHBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Lettuce (Lactuca sativa)"
 alignment = 2
 
@@ -120,7 +118,7 @@ expand_mode = 3
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Radish (Raphanus raphanistrum) "
 
 [node name="ChivesHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
@@ -135,7 +133,7 @@ expand_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Chives (Allium schoenoprasum)"
 
 [node name="PotatoHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
@@ -150,7 +148,7 @@ expand_mode = 3
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Potato (Solanum tuberosum)"
 
 [node name="TomatoHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
@@ -165,7 +163,7 @@ expand_mode = 3
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Tomato (Solanum lycopersicum)"
 
 [node name="WheatHBoxContainer" type="HBoxContainer" parent="Background/ScrollContainer/PlantVBoxContainer"]
@@ -180,7 +178,7 @@ expand_mode = 3
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Wheat (Triticum aestivum)"
 
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/ExitBtn" to="Background/VBoxContainer/HBoxContainer/ExitBtn" method="_on_pressed"]

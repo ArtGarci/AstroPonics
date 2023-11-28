@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://biltrovquco1y"]
+[gd_scene load_steps=29 format=3 uid="uid://biltrovquco1y"]
 
 [ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="1_8w225"]
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
@@ -17,16 +17,11 @@
 [ext_resource type="Theme" uid="uid://cvudgqrwabmjg" path="res://Art and textures/Themes/panelTheme.tres" id="9_4tfmt"]
 [ext_resource type="Texture2D" uid="uid://gi3m2ru2dp5j" path="res://Art and textures/Trophy.png" id="9_cjboo"]
 [ext_resource type="Script" path="res://gdScipts/RE_launcher.gd" id="10_imp6m"]
-[ext_resource type="Script" path="res://AnimatedText.gd" id="11_apllg"]
 [ext_resource type="Shader" path="res://pulse.gdshader" id="13_g4bt6"]
 [ext_resource type="Texture2D" uid="uid://bitemim18ttqw" path="res://images/alarmbell.png" id="14_20b3p"]
 [ext_resource type="Script" path="res://Setup_Alarm.gd" id="15_5lq74"]
-[ext_resource type="Texture2D" uid="uid://caq1mruwgyx8y" path="res://MicroGames/MicroGameImages/chemical-drop.png" id="22_ljlml"]
-[ext_resource type="Texture2D" uid="uid://l2ed7rsic4o8" path="res://MicroGames/MicroGameImages/watering-can.png" id="23_em07t"]
-[ext_resource type="Script" path="res://MicroGames/MicroGameScripts/pHButton.gd" id="23_ligiw"]
-[ext_resource type="Texture2D" uid="uid://p4wv5hiti5g1" path="res://MicroGames/MicroGameImages/scissors.png" id="24_4mv26"]
-[ext_resource type="Script" path="res://MicroGames/MicroGameScripts/waterButton.gd" id="25_jovse"]
-[ext_resource type="Script" path="res://scenes/trim_button.gd" id="27_pndmy"]
+[ext_resource type="Texture2D" uid="uid://78qbrbi6nim5" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
+[ext_resource type="Script" path="res://gdScipts/PH_Indicator.gd" id="22_hmup2"]
 
 [sub_resource type="Theme" id="Theme_h5407"]
 
@@ -189,7 +184,6 @@ scale = Vector2(1, 0.993401)
 mouse_filter = 2
 
 [node name="RandomEvents" type="Label" parent="."]
-visible = false
 offset_left = -3032.0
 offset_top = -658.0
 offset_right = -347.0
@@ -200,77 +194,51 @@ visible_characters = 0
 visible_ratio = 0.0
 script = ExtResource("10_imp6m")
 
-[node name="AnimateText" type="RichTextLabel" parent="RandomEvents"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 2.384
-anchor_top = 1.763
-anchor_right = 6.525
-anchor_bottom = 6.905
-offset_left = -4729.04
-offset_top = -4427.47
-offset_right = -5251.63
-offset_bottom = -4608.89
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 300
-text = "A RANDOM EVENT INITIATED!"
-script = ExtResource("11_apllg")
-
-[node name="Alarm" type="Sprite2D" parent="."]
+[node name="Alarm" type="Sprite2D" parent="RandomEvents"]
 visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_o24rc")
-position = Vector2(505, -5045)
-scale = Vector2(8.20819, 7.56693)
+position = Vector2(3665.09, -3287.02)
+scale = Vector2(6.37431, 5.20368)
 texture = ExtResource("14_20b3p")
 script = ExtResource("15_5lq74")
 
-[node name="pHMicroGame" type="Button" parent="."]
-offset_left = -800.0
-offset_top = 1300.0
-offset_right = -50.0
-offset_bottom = 2050.0
-tooltip_text = "pH Game"
-icon = ExtResource("22_ljlml")
-expand_icon = true
-script = ExtResource("23_ligiw")
+[node name="PH_UI" type="Sprite2D" parent="RandomEvents"]
+visible = false
+position = Vector2(-1461, -393)
+texture = ExtResource("21_ny0lh")
+script = ExtResource("22_hmup2")
 
-[node name="waterMicroGame" type="Button" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_top = 1300.0
-offset_right = 750.0
-offset_bottom = 2050.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-tooltip_text = "Watering Game"
-icon = ExtResource("23_em07t")
-expand_icon = true
-script = ExtResource("25_jovse")
+[node name="Sprite2D" type="Sprite2D" parent="RandomEvents/PH_UI"]
+position = Vector2(552.686, -1662.75)
+scale = Vector2(0.978746, 0.854991)
+texture = ExtResource("21_ny0lh")
 
-[node name="trimMicroGame" type="Button" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 808.0
-offset_top = 1300.0
-offset_right = 1558.0
-offset_bottom = 2050.0
-grow_horizontal = 0
-grow_vertical = 0
-tooltip_text = "Trimming Game"
-icon = ExtResource("24_4mv26")
-expand_icon = true
-script = ExtResource("27_pndmy")
+[node name="Sprite2D2" type="Sprite2D" parent="RandomEvents/PH_UI"]
+position = Vector2(-63.376, -1228.4)
+scale = Vector2(0.929504, 0.634249)
+texture = ExtResource("21_ny0lh")
+
+[node name="Sprite2D3" type="Sprite2D" parent="RandomEvents/PH_UI"]
+position = Vector2(10632, 504)
+rotation = 3.14159
+scale = Vector2(1.6399, 1.54524)
+texture = ExtResource("21_ny0lh")
+
+[node name="Sprite2D4" type="Sprite2D" parent="RandomEvents/PH_UI"]
+position = Vector2(10094, -551)
+rotation = 3.14159
+scale = Vector2(1.47818, 1.39285)
+texture = ExtResource("21_ny0lh")
+
+[node name="AnimateText" type="Label" parent="RandomEvents"]
+visible = false
+layout_mode = 0
+offset_left = 1523.0
+offset_top = -1098.0
+offset_right = 13277.0
+offset_bottom = 4599.0
+theme_override_font_sizes/font_size = 500
+text = "A RANDOM EVENT INITIATED!"
 
 [connection signal="pressed" from="ScoreLogButton" to="ScoreLog" method="toggle_log_panel"]
-[connection signal="pressed" from="pHMicroGame" to="pHMicroGame" method="_on_pressed"]
-[connection signal="pressed" from="waterMicroGame" to="waterMicroGame" method="_on_pressed"]
-[connection signal="pressed" from="trimMicroGame" to="trimMicroGame" method="_on_pressed"]

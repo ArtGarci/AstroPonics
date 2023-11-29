@@ -3,7 +3,10 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if Global.microGameScore != 0 and Global.microGameType != "":
+		set_score(Global.microGameType, Global.microGameScore)
+	else:
+		pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

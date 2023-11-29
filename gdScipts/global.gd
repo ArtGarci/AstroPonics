@@ -5,5 +5,6 @@ var lightLevel = 0 #1=low,2=high
 var itSeed = false
 var itTrowel = false
 var microGameScore = 0
+var microGameType = ""
 #tmp for making plants work
 signal nextWeekSignal

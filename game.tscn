@@ -77,8 +77,8 @@ script = ExtResource("1_vwpgh")
 [node name="GUI" parent="." instance=ExtResource("1_is64n")]
 
 [node name="WeekBackground" type="Sprite2D" parent="."]
-position = Vector2(5793, 1829.79)
-scale = Vector2(2.16, 2.14071)
+position = Vector2(5893.5, 1924.5)
+scale = Vector2(1.825, 1.825)
 texture = ExtResource("2_djlbb")
 
 [node name="WeekLabel" type="Label" parent="."]
@@ -87,10 +87,10 @@ anchor_left = 0.262
 anchor_top = 0.349
 anchor_right = 0.775667
 anchor_bottom = 0.564
-offset_left = 5421.0
-offset_top = 1640.0
-offset_right = 6338.0
-offset_bottom = 1944.0
+offset_left = 5597.0
+offset_top = 1751.0
+offset_right = 6256.0
+offset_bottom = 2055.0
 scale = Vector2(0.874429, 1.06083)
 theme = SubResource("Theme_h5407")
 theme_override_colors/font_color = Color(0, 0, 0, 1)

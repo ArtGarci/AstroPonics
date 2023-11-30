@@ -81,7 +81,7 @@ func activateRE(): # SUCCESS! now call a random event.
 	if !timerStarted: # or $Alarm_Timer.is_stopped() 
 		timerStarted = true
 	animate_text.visible = false 
-	spawnerObject = rng.randi_range(1,4) # RANGES 1->5
+	spawnerObject = rng.randi_range(1,5) # RANGES 1->5
 	match spawnerObject:
 		1: # PH IMBALANCE 
 			push_warning("PH effect")

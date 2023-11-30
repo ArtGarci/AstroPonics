@@ -9,11 +9,12 @@ var currPH = 0.0
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))
 	#signal from random effect that changes ph here
+	Global.connect("PHEFFECT", Callable(self, "phChange"))
 	#signal from mini game that fixes ph here
 
 func phChange():
 	# random number generated and if 0 or 1 then PH is changed (20% chance)
-	if (randi() % 10) < 2 :
+	if (randi() % 10) < 2:
 		# random generated and if 0 then add random number between 1 and 3
 		if randi() % 2 == 0:
 			currPH = currPH + randf_range(1,3)	# adds random number between 1 and 3

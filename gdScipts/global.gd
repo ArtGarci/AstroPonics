@@ -9,3 +9,4 @@ var microGameType = ""
 #tmp for making plants work
 signal nextWeekSignal
 signal PHEFFECT # why not ;p;
+signal MICRO

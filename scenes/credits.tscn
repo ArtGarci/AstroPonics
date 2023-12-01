@@ -1,3 +1,453 @@
-[gd_scene format=3 uid="uid://swctppem5k0m"]
+[gd_scene load_steps=16 format=3 uid="uid://swctppem5k0m"]
+
+[ext_resource type="Script" path="res://menu_background_movement.gd" id="1_dpx1a"]
+[ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="2_h655t"]
+[ext_resource type="Texture2D" uid="uid://ukuvjj7cb061" path="res://Art and textures/screen_sheen_frames/credits_border.png" id="3_k0s24"]
+[ext_resource type="Texture2D" uid="uid://4iwag7nkk0cn" path="res://Art and textures/screen_sheen_frames/screen_sheen_F1.png" id="4_3qjtd"]
+[ext_resource type="Texture2D" uid="uid://2f8euogld01l" path="res://Art and textures/screen_sheen_frames/screen_sheen_F2.png" id="5_fsuxo"]
+[ext_resource type="Texture2D" uid="uid://dm8x41hotxijj" path="res://Art and textures/screen_sheen_frames/screen_sheen_F3.png" id="6_ml7c0"]
+[ext_resource type="Texture2D" uid="uid://c3nf0f01v8t5k" path="res://Art and textures/screen_sheen_frames/screen_sheen_F4.png" id="7_3omht"]
+[ext_resource type="Texture2D" uid="uid://b1qtjfq0vctff" path="res://Art and textures/screen_sheen_frames/screen_sheen_F5.png" id="8_ht0ap"]
+[ext_resource type="Texture2D" uid="uid://dycw7jm8fx13b" path="res://Art and textures/screen_sheen_frames/screen_sheen_F6.png" id="9_b6rfl"]
+[ext_resource type="Texture2D" uid="uid://bmfudw4pavs7j" path="res://Art and textures/screen_sheen_frames/screen_sheen_F7.png" id="10_dw1q4"]
+[ext_resource type="Texture2D" uid="uid://cl4k3qv3pc5n" path="res://Art and textures/screen_sheen_frames/screen_sheen_F8.png" id="11_mcnad"]
+[ext_resource type="Texture2D" uid="uid://bkqe3fb30okbl" path="res://Art and textures/screen_sheen_frames/screen_sheen_F9.png" id="12_maky4"]
+[ext_resource type="FontFile" uid="uid://cs1xyqg7valt" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" id="13_ngvwv"]
+[ext_resource type="Script" path="res://return_to_main.gd" id="14_j8kss"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7x3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3qjtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fsuxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ml7c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3omht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ht0ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b6rfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dw1q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mcnad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_maky4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k0s24")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="credits" type="Node2D"]
+
+[node name="ShineAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(578, 324.25)
+scale = Vector2(0.603241, 0.603241)
+sprite_frames = SubResource("SpriteFrames_u7x3k")
+autoplay = "default"
+frame_progress = 0.751797
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_dpx1a")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 2005)
+
+[node name="Galaxy_splash_sprite" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(573, -356)
+scale = Vector2(0.333479, 0.333479)
+texture = ExtResource("2_h655t")
+
+[node name="RichTextLabel - Vanessa" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 654.0
+offset_top = 312.0
+offset_right = 1091.0
+offset_bottom = 416.0
+rotation = 0.483456
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "        
+     [tornado]Vanessa Nava-Camal[/tornado]"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Chris A" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 148.0
+offset_top = 546.0
+offset_right = 585.0
+offset_bottom = 650.0
+rotation = -0.270526
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "        
+             [tornado]Christopher Adatan[/tornado]"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Ace" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 6.0
+offset_top = 379.0
+offset_right = 443.0
+offset_bottom = 483.0
+rotation = -0.270526
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "        
+             [tornado]Ace Aceron[/tornado]"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Chris M" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 440.0
+offset_top = 181.0
+offset_right = 877.0
+offset_bottom = 285.0
+rotation = 0.109956
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "        
+             [tornado]Christopher Monteleone[/tornado]"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Arturo" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 114.0
+offset_top = 206.0
+offset_right = 551.0
+offset_bottom = 310.0
+rotation = -0.143117
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "        
+             [tornado]Arturo Garcia[/tornado]"
+autowrap_mode = 0
+
+[node name="RichTextLabel - May" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 650.0
+offset_top = 75.0
+offset_right = 1087.0
+offset_bottom = 179.0
+rotation = 0.109956
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "        
+             [tornado]Maylynn Dimalanta[/tornado]"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Finn" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = -69.0
+offset_top = 151.0
+offset_right = 368.0
+offset_bottom = 255.0
+rotation = -0.270526
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "        
+             [tornado]Finnick Lakeotes[/tornado]"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Title" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 336.0
+offset_top = -22.0
+offset_right = 773.0
+offset_bottom = 82.0
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "        
+  [shake]AstroPonics Developers"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Thanks" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 291.0
+offset_top = -187.0
+offset_right = 1004.0
+offset_bottom = -37.0
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "        
+  [rainbow sat=0.2 freq=1]Thank you for playing!"
+autowrap_mode = 0
+
+[node name="RichTextLabel - Egg" type="RichTextLabel" parent="ParallaxBackground/ParallaxLayer"]
+clip_contents = false
+offset_left = 390.0
+offset_top = -1005.0
+offset_right = 827.0
+offset_bottom = -901.0
+theme_override_fonts/normal_font = ExtResource("13_ngvwv")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "        
+[wave]You're still here??"
+autowrap_mode = 0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="start game" type="Button" parent="Timer"]
+offset_left = 465.0
+offset_top = 590.0
+offset_right = 698.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("13_ngvwv")
+theme_override_font_sizes/font_size = 22
+text = "RETURN TO MENU"
+script = ExtResource("14_j8kss")
+
+[connection signal="pressed" from="Timer/start game" to="Timer/start game" method="_on_pressed"]

@@ -84,11 +84,11 @@ func activateRE(): # SUCCESS! now call a random event.
 	spawnerObject = rng.randi_range(1,4) # RANGES 1->5
 	match spawnerObject:
 		1: # PH IMBALANCE 
-			push_warning("PH effect")
+			#push_warning("PH effect")
 			ph_ui_node.visible = true
 			ph_ui_node.callAnimation() # animate w/ arrows down
 			await get_tree().create_timer(2).timeout
-			Global.PHEFFECT.emit()
+			Global.PHEFFECT.emit(true)
 			ph_ui_node.visible = false
 		#1: BLUR EFFECT
 		#	push_warning("blur effect")
@@ -98,27 +98,27 @@ func activateRE(): # SUCCESS! now call a random event.
 		#	await get_tree().create_timer(2).timeout
 		#	overlay_node.material.shader = distort_shader 
 		2: # DISTORT
-			push_warning("distortion")
+			#push_warning("distortion")
 			overlay_node.set_material(overlay)
 			overlay.set_shader_parameter("onoff", 1.0)
 			await get_tree().create_timer(5).timeout # wait 5 secs 
 			overlay.set_shader_parameter("onoff", 0.0)
 		3: # SHAKE SCREEN
-			push_warning("screen shake") 
+			#push_warning("screen shake") 
 			camera_node.set("shake", true)
 			await get_tree().create_timer(5).timeout # wait 5 secs 
 			camera_node.set("shake", false)
 		4: # CRT MONITOR EFFECT
-			push_warning("crt effect")
+			#push_warning("crt effect")
 			overlay_node.material.shader = crt
 			await get_tree().create_timer(5).timeout # wait 5 secs 
 			overlay_node.material.shader = distort_shader
 		5: # PH IMBALANCE
-			push_warning("PH effect")
+			#push_warning("PH effect")
 			ph_ui_node.visible = true
 			ph_ui_node.callAnimation() # animate w/ arrows down
 			await get_tree().create_timer(2).timeout
-			Global.PHEFFECT.emit()
+			Global.PHEFFECT.emit(true)
 			ph_ui_node.visible = false
 		
 	alarm_node.visible = false 
@@ -126,13 +126,12 @@ func activateRE(): # SUCCESS! now call a random event.
 	timerStarted = false
 	
 func launcher(rndNum): 
-	rng.randomize() 
 	var chance = rng.randf_range(0, 100); # 0 to 100% chance
 	if (chance <= rndNum):
-		push_warning("succesful hit!")
+		#push_warning("succesful hit!")
 		activateRE(); # ALARM BLARES !!
-	else: 
-		push_warning("not successful!")
+	#else: 
+		#push_warning("not successful!")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta): 

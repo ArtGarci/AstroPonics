@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://MicroGames/MicroGameScripts/pH_microgame.gd" id="1_6lwtr"]
 [ext_resource type="Texture2D" uid="uid://di6ijgitwrcqx" path="res://MicroGames/MicroGameImages/Gray.png" id="2_hsgbt"]
 [ext_resource type="Texture2D" uid="uid://dgln8fgwbvvm6" path="res://MicroGames/MicroGameImages/Terrain (16x16).png" id="3_wt774"]
-[ext_resource type="Texture2D" uid="uid://2a0f01fnur0l" path="res://plant.png" id="4_kxek7"]
+[ext_resource type="Texture2D" uid="uid://bxpjfugs2uoxv" path="res://images/newPlant.png" id="4_2fw0w"]
 [ext_resource type="Script" path="res://MicroGames/MicroGameScripts/pH_plant.gd" id="5_4eajp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rj70"]
@@ -504,31 +504,31 @@ text = "20
 [node name="Plant" type="Sprite2D" parent="."]
 position = Vector2(212, 499)
 scale = Vector2(0.3, 0.319)
-texture = ExtResource("4_kxek7")
+texture = ExtResource("4_2fw0w")
 script = ExtResource("5_4eajp")
 
 [node name="Plant2" type="Sprite2D" parent="."]
 position = Vector2(400, 491)
 scale = Vector2(0.3, 0.344)
-texture = ExtResource("4_kxek7")
+texture = ExtResource("4_2fw0w")
 script = ExtResource("5_4eajp")
 
 [node name="Plant3" type="Sprite2D" parent="."]
 position = Vector2(588, 489)
 scale = Vector2(0.344, 0.344)
-texture = ExtResource("4_kxek7")
+texture = ExtResource("4_2fw0w")
 script = ExtResource("5_4eajp")
 
 [node name="Plant4" type="Sprite2D" parent="."]
 position = Vector2(778, 491)
 scale = Vector2(0.344, 0.344)
-texture = ExtResource("4_kxek7")
+texture = ExtResource("4_2fw0w")
 script = ExtResource("5_4eajp")
 
 [node name="Plant5" type="Sprite2D" parent="."]
 position = Vector2(941, 490)
 scale = Vector2(0.344, 0.344)
-texture = ExtResource("4_kxek7")
+texture = ExtResource("4_2fw0w")
 script = ExtResource("5_4eajp")
 
 [connection signal="timeout" from="spawn_timer" to="." method="_on_timer_timeout"]

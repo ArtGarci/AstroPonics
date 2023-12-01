@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://MicroGames/MicroGameScripts/trim_microgame.gd" id="1_a6ef5"]
 [ext_resource type="Texture2D" uid="uid://di6ijgitwrcqx" path="res://MicroGames/MicroGameImages/Gray.png" id="2_bg1v2"]
 [ext_resource type="Texture2D" uid="uid://dgln8fgwbvvm6" path="res://MicroGames/MicroGameImages/Terrain (16x16).png" id="3_dq5hx"]
-[ext_resource type="Texture2D" uid="uid://2a0f01fnur0l" path="res://plant.png" id="4_u77on"]
+[ext_resource type="Texture2D" uid="uid://bxpjfugs2uoxv" path="res://images/newPlant.png" id="4_6iw21"]
 [ext_resource type="Script" path="res://MicroGames/MicroGameScripts/Plant.gd" id="5_7pb80"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rj70"]
@@ -503,7 +503,7 @@ text = "10"
 [node name="Plant" type="Sprite2D" parent="."]
 position = Vector2(600, 325)
 scale = Vector2(0.459916, 0.406662)
-texture = ExtResource("4_u77on")
+texture = ExtResource("4_6iw21")
 script = ExtResource("5_7pb80")
 
 [node name="Label" type="Label" parent="."]

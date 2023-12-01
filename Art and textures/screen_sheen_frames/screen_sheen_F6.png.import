@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8epbc30to4q2"
-path="res://.godot/imported/alarmbell.png-84866e4a1b99f19520f14d33723d9672.ctex"
+uid="uid://dycw7jm8fx13b"
+path="res://.godot/imported/screen_sheen_F6.png-b7d8f141df1e102a144a414d3f212c20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art and textures/alarmbell.png"
-dest_files=["res://.godot/imported/alarmbell.png-84866e4a1b99f19520f14d33723d9672.ctex"]
+source_file="res://Art and textures/screen_sheen_frames/screen_sheen_F6.png"
+dest_files=["res://.godot/imported/screen_sheen_F6.png-b7d8f141df1e102a144a414d3f212c20.ctex"]
 
 [params]
 

@@ -86,8 +86,8 @@ scale = Vector2(1.8898, 0.757813)
 texture = ExtResource("8_juhcj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(799, 505)
-scale = Vector2(0.067444, 0.0844116)
+position = Vector2(365, 216)
+scale = Vector2(0.252213, 0.270126)
 texture = ExtResource("9_s1y0i")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -125,7 +125,7 @@ offset_left = 37.0
 offset_top = 480.0
 offset_right = 1096.0
 offset_bottom = 633.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_tde6i")
 text = "The goal of this game is to get the highest score from planting crops.
 To start planting, click on the bag of seeds and hover over the an empty soil spot 

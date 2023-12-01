@@ -137,7 +137,7 @@ offset_left = 117.0
 offset_top = 475.0
 offset_right = 1141.0
 offset_bottom = 524.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
 text = "To water the plants, click on the watering can. To get a high score, you must
 collect the water droplets using the ARROW keys to control the can."
@@ -155,7 +155,7 @@ offset_left = 111.0
 offset_top = 529.0
 offset_right = 1135.0
 offset_bottom = 578.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
 text = "To test the plant's PH level, click on the test tube"
 
@@ -164,7 +164,7 @@ offset_left = 110.0
 offset_top = 583.0
 offset_right = 1134.0
 offset_bottom = 632.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
 text = "To trim the plant, click on the scissors"
 

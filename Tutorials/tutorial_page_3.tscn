@@ -137,7 +137,7 @@ offset_left = 37.0
 offset_top = 480.0
 offset_right = 1096.0
 offset_bottom = 633.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_xm3ct")
 text = "When maintaining these plants, you will have to use tools which will start
 the minigames. Completing these minigames will give you points.

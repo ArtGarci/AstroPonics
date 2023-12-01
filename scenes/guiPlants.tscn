@@ -177,6 +177,7 @@ texture_pressed = ExtResource("9_40m62")
 stretch_mode = 0
 
 [node name="empty" type="VBoxContainer" parent="seedMenu/seedMenuCont/background/BoxContainer/rightCont"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 

@@ -1,17 +1,17 @@
 [remap]
 
 importer="texture"
-
-uid="uid://c8epbc30to4q2"
-path="res://.godot/imported/alarmbell.png-84866e4a1b99f19520f14d33723d9672.ctex"
+type="CompressedTexture2D"
+uid="uid://dm8x41hotxijj"
+path="res://.godot/imported/screen_sheen_F3.png-f6d03834f570c8820c84a00cf76927e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art and textures/alarmbell.png"
-dest_files=["res://.godot/imported/alarmbell.png-84866e4a1b99f19520f14d33723d9672.ctex"]
+source_file="res://Art and textures/screen_sheen_frames/screen_sheen_F3.png"
+dest_files=["res://.godot/imported/screen_sheen_F3.png-f6d03834f570c8820c84a00cf76927e1.ctex"]
 
 [params]
 

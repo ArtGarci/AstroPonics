@@ -88,18 +88,18 @@ scale = Vector2(1.8898, 0.757813)
 texture = ExtResource("8_8m1je")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(79, 588)
-scale = Vector2(0.107422, 0.118042)
+position = Vector2(286, 179)
+scale = Vector2(0.19873, 0.190643)
 texture = ExtResource("9_1f04p")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(206, 590)
-scale = Vector2(0.107422, 0.118042)
+position = Vector2(411, 183)
+scale = Vector2(0.192871, 0.212128)
 texture = ExtResource("10_qeik5")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(346, 587)
-scale = Vector2(0.107422, 0.118042)
+position = Vector2(547.625, 174.695)
+scale = Vector2(0.185059, 0.196503)
 texture = ExtResource("11_tu2d6")
 
 [node name="TextureButton" type="TextureButton" parent="."]

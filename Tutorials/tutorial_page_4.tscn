@@ -157,7 +157,8 @@ offset_right = 1135.0
 offset_bottom = 578.0
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
-text = "To test the plant's PH level, click on the test tube"
+text = "To control the PH level, click on the test tube. To get a high score, you must click
+on the plants that are changing."
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 110.0
@@ -166,7 +167,8 @@ offset_right = 1134.0
 offset_bottom = 632.0
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
-text = "To trim the plant, click on the scissors"
+text = "To trim the plant, click on the scissors. To get a high score, you must click
+on the plant really fast."
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

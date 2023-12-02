@@ -18,6 +18,8 @@ func _process(delta):
 func _on_countdown_timer_timeout():
 	if timeRemaining == 0:
 		Global.microGameScore = score
+		Global.microGameType = "pH Minigame"
+		Global.MICRO.emit()
 		get_tree().change_scene_to_file('res://MicroGames/MicroGameScenes/results.tscn')
 		return
 	timeRemaining -= 1

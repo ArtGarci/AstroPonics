@@ -9,11 +9,13 @@ var currPH = 0.0
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))
 	#signal from random effect that changes ph here
+	Global.connect("PHEFFECT", Callable(self, "phChange"))
 	#signal from mini game that fixes ph here
-
-func phChange():
+	Global.connect("MICRO", Callable(self, "fixPH"))
+	
+func phChange(reBool=false):
 	# random number generated and if 0 or 1 then PH is changed (20% chance)
-	if (randi() % 10) < 2 :
+	if (randi() % 10) < 2 or (reBool == true and plantGrowing == true):
 		# random generated and if 0 then add random number between 1 and 3
 		if randi() % 2 == 0:
 			currPH = currPH + randf_range(1,3)	# adds random number between 1 and 3
@@ -22,6 +24,14 @@ func phChange():
 		else:
 			currPH = currPH - randf_range(1,3)	# subtracts random number between 1 and 3
 			currPH = snapped(currPH, .01)		# round to the nearest tenth(.01)
+
+func fixPH():
+	if $Anima.assigned_animation == "potateAnim0" or $Anima.assigned_animation == "potateAnim1" or $Anima.assigned_animation == "potateAnim2":
+		currPH = 6.0
+	if $Anima.assigned_animation == "wheatAnim0" or $Anima.assigned_animation == "wheatAnim1" or $Anima.assigned_animation == "wheatAnim2":
+		currPH = 6.5
+	if $Anima.assigned_animation == "tomatoeAnim0" or $Anima.assigned_animation == "tomatoeAnim1" or $Anima.assigned_animation == "tomatoeAnim2":
+		currPH = 6.2
 
 func weekSignal():
 	if plantGrowing == true:
@@ -96,15 +106,15 @@ func _on_plant_collision_area_entered(area):
 				# grows plant depending on global variable seedSelected and plant is not growing
 				if Global.seedSelected == 4 and plantGrowing == false:	
 					$Anima.play("potateAnim0")	# set animation for potatoes
-					currPH = 5.0				# set ph level
+					currPH = 6.0				# set ph level
 					plantGrowing = true
 				if Global.seedSelected == 5 and plantGrowing == false:
 					$Anima.play("wheatAnim0")	# set animation for wheat
-					currPH = 5.5				# set ph level
+					currPH = 6.5				# set ph level
 					plantGrowing = true
 				if Global.seedSelected == 6 and plantGrowing == false:
 					$Anima.play("tomatoeAnim0")	# set animation for tomatoes
-					currPH = 5.5				# set ph level
+					currPH = 6.2				# set ph level
 					plantGrowing = true
 
 # used for testing

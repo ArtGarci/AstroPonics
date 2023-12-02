@@ -9,11 +9,13 @@ var currPH = 0.0
 func _ready():
 	Global.connect("nextWeekSignal", Callable(self, "weekSignal"))
 	#signal from random effect that changes ph here
+	Global.connect("PHEFFECT", Callable(self, "phChange"))
 	#signal from mini game that fixes ph here
+	Global.connect("MICRO", Callable(self, "fixPH"))
 
-func phChange():
+func phChange(reBool=false):
 	# random number generated and if 0 or 1 then PH is changed (20% chance)
-	if (randi() % 10) < 2 :
+	if (randi() % 10) < 2 or (reBool == true and plantGrowing == true):
 		# random generated and if 0 then add random number between 1 and 3
 		if randi() % 2 == 0:
 			currPH = currPH + randf_range(1,3)	# adds random number between 1 and 3
@@ -22,6 +24,14 @@ func phChange():
 		else:
 			currPH = currPH - randf_range(1,3)	# subtracts random number between 1 and 3
 			currPH = snapped(currPH, .01)		# round to the nearest tenth(.01)
+		
+func fixPH():
+	if $Anima.assigned_animation == "lettaceAnim0" or $Anima.assigned_animation == "lettaceAnim1" or $Anima.assigned_animation == "lettaceAnim2":
+		currPH = 6.0
+	if $Anima.assigned_animation == "radishAnim0" or $Anima.assigned_animation == "radishAnim1" or $Anima.assigned_animation == "radishAnim2":
+		currPH = 6.5
+	if $Anima.assigned_animation == "chivesAnim0" or $Anima.assigned_animation == "chivesAnim1" or $Anima.assigned_animation == "chivesAnim2":
+		currPH = 6.0
 
 func weekSignal():
 	if plantGrowing == true:
@@ -97,11 +107,11 @@ func _on_low_plant_coll_area_entered(area):
 				# grows plant depending on global variable seedSelected and plant is not growing
 				if Global.seedSelected == 1 and plantGrowing == false:
 					$Anima.play("lettaceAnim0")
-					currPH = 5.5
+					currPH = 6.0
 					plantGrowing = true
 				if Global.seedSelected == 2 and plantGrowing == false:
 					$Anima.play("radishAnim0")
-					currPH = 6.0
+					currPH = 6.5
 					plantGrowing = true
 				if Global.seedSelected == 3 and plantGrowing == false:
 					$Anima.play("chivesAnim0")

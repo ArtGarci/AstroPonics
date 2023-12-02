@@ -57,6 +57,27 @@ text = "Minigames"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+<<<<<<< HEAD
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(365, 216)
+scale = Vector2(0.252213, 0.270126)
+texture = ExtResource("9_s1y0i")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 942.0
+offset_top = 493.0
+offset_right = 1134.0
+offset_bottom = 685.0
+texture_normal = ExtResource("10_cet1j")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 796.0
+offset_top = 493.0
+offset_right = 988.0
+offset_bottom = 685.0
+texture_normal = ExtResource("10_cet1j")
+flip_h = true
+=======
 [node name="Button" type="Button" parent="."]
 offset_left = 860.0
 offset_top = 575.0
@@ -64,6 +85,7 @@ offset_right = 1148.0
 offset_bottom = 647.0
 theme_override_fonts/font = ExtResource("9_tde6i")
 text = "Next"
+>>>>>>> master
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 548.0
@@ -81,6 +103,30 @@ offset_bottom = 41.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "X"
 
+<<<<<<< HEAD
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(146, 369)
+scale = Vector2(0.48, 0.466)
+sprite_frames = SubResource("SpriteFrames_kicpr")
+autoplay = "default"
+frame_progress = 0.501311
+
+[node name="Label" type="Label" parent="."]
+offset_left = 37.0
+offset_top = 480.0
+offset_right = 1096.0
+offset_bottom = 633.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_tde6i")
+text = "The goal of this game is to get the highest score from planting crops.
+To start planting, click on the bag of seeds and hover over the an empty soil spot 
+to plant them.
+
+To get the highest score, maintain the plants using the tools provided and gain high
+efficiency in the minigames."
+
+=======
+>>>>>>> master
 [node name="Label2" type="Label" parent="."]
 offset_left = 218.0
 offset_top = 62.0

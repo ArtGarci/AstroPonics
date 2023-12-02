@@ -83,10 +83,21 @@ theme_override_fonts/font = ExtResource("8_y51ow")
 text = "The goal of this game is to get the highest score from planting crops.
 To start planting, click on the bag of seeds and hover over the soil to plant them."
 
+<<<<<<< HEAD
+[node name="Label" type="Label" parent="."]
+offset_left = 37.0
+offset_top = 480.0
+offset_right = 1096.0
+offset_bottom = 633.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_llyco")
+text = "Hello, Welcome to AstroPonics. I am here to guide you during your journey of growing hydroponic crops in space!
+=======
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(232.75, 170.875)
 scale = Vector2(0.168945, 0.156738)
 texture = ExtResource("10_jvvk0")
+>>>>>>> master
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(353, 170)

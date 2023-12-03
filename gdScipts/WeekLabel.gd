@@ -12,7 +12,6 @@ func _ready():
 	t = RE.new() 
 	add_child(t)
 	update_weeks_display()
-	GlobalScoreLabel.set_score("TEST", 0)
 
 func _process(delta):
 	# Update elapsed real-time

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ni67k7grmpom"]
+[gd_scene load_steps=29 format=3 uid="uid://c4kcyh21fr2gj"]
 
 [ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="1_8w225"]
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]

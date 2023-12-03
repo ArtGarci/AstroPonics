@@ -1,17 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://0exr3nat38w"]
+[gd_scene load_steps=5 format=3 uid="uid://0exr3nat38w"]
 
-[ext_resource type="Texture2D" uid="uid://sgleevgun4bf" path="res://images/seedtmp1.png" id="1_ak6cd"]
+[ext_resource type="Texture2D" uid="uid://dav1gau7yoby7" path="res://Art and textures/seed.png" id="1_wrl2m"]
 [ext_resource type="Script" path="res://gdScipts/dragSeed.gd" id="2_0ab31"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_87hwg"]
-atlas = ExtResource("1_ak6cd")
-region = Rect2(0, 0, 135, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v223d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_87hwg")
+"texture": ExtResource("1_wrl2m")
 }],
 "loop": true,
 "name": &"default",
@@ -22,8 +18,7 @@ animations = [{
 radius = 60.0833
 
 [node name="lettaceSeedDrag" type="AnimatedSprite2D"]
-position = Vector2(1.00001, -1)
-scale = Vector2(2.90185, 3.0875)
+scale = Vector2(4.41246, 4.43542)
 sprite_frames = SubResource("SpriteFrames_v223d")
 script = ExtResource("2_0ab31")
 

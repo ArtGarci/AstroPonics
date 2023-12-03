@@ -9,53 +9,55 @@
 script = ExtResource("1_vntai")
 
 [node name="MicroGames" type="CanvasLayer" parent="."]
+scale = Vector2(6, 6)
+transform = Transform2D(6, 0, 0, 6, 0, 0)
 
-[node name="pHMicroGame" type="Button" parent="MicroGames"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 500.0
-offset_top = -98.0
-offset_right = 600.0
-offset_bottom = 2.0
-grow_vertical = 0
-tooltip_text = "pH Game"
-icon = ExtResource("2_duklt")
-expand_icon = true
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1568.0
+offset_bottom = 836.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="waterMicroGame" type="Button" parent="MicroGames"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -176.0
-offset_top = -98.0
-offset_right = -76.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1583.0
+offset_bottom = 923.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="waterMicroGame" type="Button" parent="Control/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 tooltip_text = "Watering Game"
 icon = ExtResource("3_dffu5")
 expand_icon = true
 
-[node name="trimMicroGame" type="Button" parent="MicroGames"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -552.0
-offset_top = -98.0
-offset_right = -452.0
-offset_bottom = 2.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="pHMicroGame" type="Button" parent="Control/BoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "pH Game"
+icon = ExtResource("2_duklt")
+expand_icon = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="trimMicroGame" type="Button" parent="Control/BoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
 tooltip_text = "Trimming Game"
 icon = ExtResource("4_g6mi1")
 expand_icon = true
 
-[connection signal="pressed" from="MicroGames/pHMicroGame" to="." method="_on_p_h_micro_game_pressed"]
-[connection signal="pressed" from="MicroGames/waterMicroGame" to="." method="_on_water_micro_game_pressed"]
-[connection signal="pressed" from="MicroGames/trimMicroGame" to="." method="_on_trim_micro_game_pressed"]
+[connection signal="pressed" from="Control/BoxContainer/HBoxContainer/waterMicroGame" to="." method="_on_water_micro_game_pressed"]
+[connection signal="pressed" from="Control/BoxContainer/HBoxContainer2/pHMicroGame" to="." method="_on_p_h_micro_game_pressed"]
+[connection signal="pressed" from="Control/BoxContainer/HBoxContainer3/trimMicroGame" to="." method="_on_trim_micro_game_pressed"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://17hdd8xx6243"]
 
 [ext_resource type="Script" path="res://gdScipts/trowel.gd" id="1_lvxip"]
-[ext_resource type="Texture2D" uid="uid://b83mafkd4d56c" path="res://images/invertTrowel2.0.png" id="2_ns5c4"]
+[ext_resource type="Texture2D" uid="uid://d08y0t1h7r3em" path="res://Art and textures/trowelFin.png" id="2_ffcur"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_02maq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ns5c4")
+"texture": ExtResource("2_ffcur")
 }],
 "loop": true,
 "name": &"default",
@@ -15,14 +15,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxeq6"]
-radius = 43.0
-height = 207.0
+radius = 55.6667
+height = 250.0
 
 [node name="trowel" type="Node2D"]
 script = ExtResource("1_lvxip")
 
 [node name="trowelSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.5, 2)
+position = Vector2(3.00001, -1.00001)
+scale = Vector2(2.086, 2.856)
 sprite_frames = SubResource("SpriteFrames_02maq")
 
 [node name="trowelArea" type="Area2D" parent="trowelSprite"]

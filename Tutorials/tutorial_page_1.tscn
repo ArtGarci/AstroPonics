@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bayat02bymvb6"]
+[gd_scene load_steps=18 format=3 uid="uid://cnjrl1w4vft8k"]
 
 [ext_resource type="Script" path="res://Tutorials/tutorial_page_1.gd" id="1_egw3r"]
 [ext_resource type="Texture2D" uid="uid://0j0gd37gfemk" path="res://Tutorials/frame_0_delay-0.09s.png" id="2_am0wq"]

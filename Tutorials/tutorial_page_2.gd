@@ -15,4 +15,4 @@ func mainmenu():
 
 #go straight to the main game
 func Skip():
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://scenes/game.tscn")

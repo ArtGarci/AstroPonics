@@ -7,4 +7,5 @@ func _ready():
 
 
 func _on_button_pressed():
+	Global.GLOBALLOAD.emit()
 	get_tree().change_scene_to_file('res://scenes/game.tscn')

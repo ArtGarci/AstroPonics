@@ -20,7 +20,7 @@
 [ext_resource type="Shader" path="res://pulse.gdshader" id="13_g4bt6"]
 [ext_resource type="Texture2D" uid="uid://bitemim18ttqw" path="res://images/alarmbell.png" id="14_20b3p"]
 [ext_resource type="Script" path="res://Setup_Alarm.gd" id="15_5lq74"]
-[ext_resource type="Texture2D" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
+[ext_resource type="Texture2D" uid="uid://dmx02x7kxprf1" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
 [ext_resource type="Script" path="res://gdScipts/PH_Indicator.gd" id="22_hmup2"]
 [ext_resource type="PackedScene" uid="uid://cy4sbarorkj37" path="res://MicroGames/MicroGameScenes/microgame_UI.tscn" id="23_76wrv"]
 
@@ -116,6 +116,7 @@ offset_left = -0.0609189
 offset_right = 0.0020099
 offset_bottom = 12.608
 theme = ExtResource("7_yaiqs")
+theme_override_font_sizes/font_size = 200
 text = "Next Week"
 metadata/_edit_use_anchors_ = true
 

@@ -177,6 +177,7 @@ texture_normal = ExtResource("8_ougi6")
 stretch_mode = 0
 
 [node name="empty" type="VBoxContainer" parent="seedMenu/seedMenuCont/background/BoxContainer/rightCont"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 

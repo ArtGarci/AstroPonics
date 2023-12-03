@@ -118,10 +118,10 @@ texture_normal = ExtResource("12_pfhde")
 flip_h = true
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 1087.0
-offset_top = 3.0
-offset_right = 1148.0
-offset_bottom = 41.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 39.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "X"
 
@@ -137,14 +137,16 @@ offset_left = 117.0
 offset_top = 475.0
 offset_right = 1141.0
 offset_bottom = 524.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
 text = "To water the plants, click on the watering can. To get a high score, you must
 collect the water droplets using the ARROW keys to control the can."
 
 [node name="Label2" type="Label" parent="."]
-offset_right = 1150.0
-offset_bottom = 102.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 101.0
 theme_override_fonts/font = ExtResource("19_1ybw5")
 theme_override_font_sizes/font_size = 28
 text = "Minigames"
@@ -155,19 +157,31 @@ offset_left = 111.0
 offset_top = 529.0
 offset_right = 1135.0
 offset_bottom = 578.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
-text = "To test the plant's PH level, click on the test tube"
+text = "To control the PH level, click on the test tube. To get a high score, you must click
+on the plants that are changing."
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 110.0
 offset_top = 583.0
 offset_right = 1134.0
 offset_bottom = 632.0
-theme_override_colors/font_color = Color(0.0745098, 0.282353, 0.631373, 1)
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_1ybw5")
-text = "To trim the plant, click on the scissors"
+text = "To trim the plant, click on the scissors. To get a high score, you must click
+on the plant really fast."
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1028.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("19_1ybw5")
+text = "Skip Tutorial"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="Skip"]

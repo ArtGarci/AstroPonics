@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://biltrovquco1y"]
+[gd_scene load_steps=29 format=3 uid="uid://c4kcyh21fr2gj"]
 
 [ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="1_8w225"]
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
@@ -20,7 +20,7 @@
 [ext_resource type="Shader" path="res://pulse.gdshader" id="13_g4bt6"]
 [ext_resource type="Texture2D" uid="uid://bitemim18ttqw" path="res://images/alarmbell.png" id="14_20b3p"]
 [ext_resource type="Script" path="res://Setup_Alarm.gd" id="15_5lq74"]
-[ext_resource type="Texture2D" uid="uid://dmx02x7kxprf1" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
+[ext_resource type="Texture2D" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
 [ext_resource type="Script" path="res://gdScipts/PH_Indicator.gd" id="22_hmup2"]
 
 [sub_resource type="Theme" id="Theme_h5407"]

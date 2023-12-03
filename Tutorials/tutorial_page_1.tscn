@@ -91,10 +91,9 @@ offset_bottom = 685.0
 texture_normal = ExtResource("12_2fa6v")
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 1087.0
-offset_top = 3.0
-offset_right = 1148.0
-offset_bottom = 41.0
+offset_left = 1.0
+offset_right = 62.0
+offset_bottom = 38.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "X"
 
@@ -103,7 +102,7 @@ position = Vector2(146, 369)
 scale = Vector2(0.48, 0.466)
 sprite_frames = SubResource("SpriteFrames_kicpr")
 autoplay = "default"
-frame_progress = 0.579752
+frame_progress = 0.756977
 
 [node name="Label" type="Label" parent="."]
 offset_left = 32.0
@@ -116,5 +115,15 @@ text = "Hello, Welcome to Astroponics! I am here to guide you during your journe
 
 Let's start with the controls."
 
+[node name="Button" type="Button" parent="."]
+offset_left = 1028.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_llyco")
+text = "Skip Tutorial"
+
 [connection signal="pressed" from="TextureButton" to="." method="nextpage"]
 [connection signal="pressed" from="Button2" to="." method="Exitbutton"]
+[connection signal="pressed" from="Button" to="." method="Skip"]

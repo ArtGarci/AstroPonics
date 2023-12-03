@@ -41,6 +41,23 @@ func get_gameplay_time():
 func update_weeks_display():
 	text = str(weeks_passed) + "/12"
 	
+func _on_next_week_button_pressed():
+	# Manually increment the week when the button is pressed
+	weeks_passed += 1
+	Global.nextWeekSignal.emit()
+	update_weeks_display()
+
+	# Check if 3 weeks have passed, then begin with random events launching.
+	if weeks_passed >= 3 and elapsed_re_time >= re_time:
+		elapsed_re_time -= re_time  # RESET
+		t.launcher(20)  # ASSUMES that the node presides on the same scene
+
+	# Check if the game should end after 12 weeks
+	if weeks_passed >= 12:
+		end_game()  # call a function to end the game
+	
+	
+	
 func end_game():
 	#access the current scene make call to exit game
 	get_tree().quit()

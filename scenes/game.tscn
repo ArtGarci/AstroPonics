@@ -20,7 +20,7 @@
 [ext_resource type="Shader" path="res://pulse.gdshader" id="13_g4bt6"]
 [ext_resource type="Texture2D" uid="uid://bitemim18ttqw" path="res://images/alarmbell.png" id="14_20b3p"]
 [ext_resource type="Script" path="res://Setup_Alarm.gd" id="15_5lq74"]
-[ext_resource type="Texture2D" uid="uid://dmx02x7kxprf1" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
+[ext_resource type="Texture2D" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
 [ext_resource type="Script" path="res://gdScipts/PH_Indicator.gd" id="22_hmup2"]
 
 [sub_resource type="Theme" id="Theme_h5407"]
@@ -98,6 +98,20 @@ theme_override_fonts/font = ExtResource("2_e280j")
 theme_override_font_sizes/font_size = 250
 text = "1/12"
 script = ExtResource("2_m3j3x")
+metadata/_edit_use_anchors_ = true
+
+[node name="nextWeekButton" type="Button" parent="WeekLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.53354
+anchor_top = -0.226362
+anchor_right = -0.523009
+anchor_bottom = 1.45914
+offset_left = -0.0609189
+offset_right = 0.0020099
+offset_bottom = 12.608
+theme = ExtResource("7_yaiqs")
+text = "Next Week"
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreBoxBackground" type="Sprite2D" parent="."]
@@ -241,4 +255,5 @@ offset_bottom = 4599.0
 theme_override_font_sizes/font_size = 500
 text = "A RANDOM EVENT INITIATED!"
 
+[connection signal="pressed" from="WeekLabel/nextWeekButton" to="WeekLabel" method="_on_next_week_button_pressed"]
 [connection signal="pressed" from="ScoreLogButton" to="ScoreLog" method="toggle_log_panel"]

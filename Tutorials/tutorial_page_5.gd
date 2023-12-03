@@ -1,17 +1,15 @@
 extends Node2D
 
-
-
-#go to next page
+#go to the game page
 func next():
+	get_tree().change_scene_to_file("res://game.tscn")
+
+#go to prev page
+func prev():
 	get_tree().change_scene_to_file("res://Tutorials/tutorial_page_4.tscn")
 
-#go to previous page
-func prev():
-	get_tree().change_scene_to_file("res://Tutorials/tutorial_page_2.tscn")
-
 #go to main menu
-func mainmenu():
+func main():
 	get_tree().change_scene_to_file("res://main_menu_display.tscn")
 
 #go straight to game

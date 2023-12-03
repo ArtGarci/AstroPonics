@@ -1,21 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://cju12ppe5w1bv"]
+[gd_scene load_steps=19 format=3 uid="uid://t53vpdtei6uq"]
 
-[ext_resource type="Script" path="res://Tutorials/tutorial_page_5.gd" id="1_3nutk"]
+[ext_resource type="Script" path="res://Tutorials/tutorial_page_5.gd" id="1_uhgab"]
 [ext_resource type="Texture2D" uid="uid://0j0gd37gfemk" path="res://Tutorials/frame_0_delay-0.09s.png" id="2_brueb"]
 [ext_resource type="Texture2D" uid="uid://dqlitp6l4d2sa" path="res://Tutorials/frame_1_delay-0.09s.png" id="3_beb37"]
 [ext_resource type="Texture2D" uid="uid://dkapowncp0h8k" path="res://Tutorials/frame_2_delay-0.09s.png" id="4_qas36"]
 [ext_resource type="Texture2D" uid="uid://b5wv5gbc5sxes" path="res://Tutorials/frame_3_delay-0.09s.png" id="5_hggpx"]
 [ext_resource type="Texture2D" uid="uid://d0mkafj86t2ml" path="res://Tutorials/frame_4_delay-0.09s.png" id="6_7tv73"]
 [ext_resource type="Texture2D" uid="uid://dtbir7oguac84" path="res://Tutorials/frame_5_delay-0.09s.png" id="7_2026o"]
-[ext_resource type="Texture2D" uid="uid://bn6r0ur0lqcvb" path="res://Art and textures/dialogue_boxes.png" id="8_6ya73"]
-[ext_resource type="Texture2D" uid="uid://djpdygihxb3nt" path="res://Art and textures/b_right_arrow.png" id="12_w6afr"]
+[ext_resource type="Texture2D" uid="uid://bn6r0ur0lqcvb" path="res://Art and textures/dialogue_boxes.png" id="8_cujhu"]
+[ext_resource type="Texture2D" uid="uid://djpdygihxb3nt" path="res://Art and textures/b_right_arrow.png" id="9_6x6dd"]
 [ext_resource type="Texture2D" uid="uid://j5dq27taffpv" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F1.png" id="13_7i6sy"]
 [ext_resource type="Texture2D" uid="uid://cxeegeqhyc3k4" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F2.png" id="14_wa1q7"]
 [ext_resource type="Texture2D" uid="uid://371k5pccmtoc" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F3.png" id="15_4ng6c"]
 [ext_resource type="Texture2D" uid="uid://ck1r346252v5s" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F4.png" id="16_0c2cr"]
+[ext_resource type="FontFile" uid="uid://bax17lxjdupj4" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="16_akqqf"]
 [ext_resource type="Texture2D" uid="uid://cjiat8w5pk3w3" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F5.png" id="17_gd03a"]
 [ext_resource type="Texture2D" uid="uid://cwk1xsx0b2gjx" path="res://Art and textures/spaceman exclamation/Spaceman_exclamation_hand_F6.png" id="18_4sb46"]
-[ext_resource type="FontFile" uid="uid://bax17lxjdupj4" path="res://Godot-Fontpack/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="19_vpu5s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5nsyu"]
 animations = [{
@@ -70,7 +70,7 @@ animations = [{
 }]
 
 [node name="tutorial_page1" type="Node2D"]
-script = ExtResource("1_3nutk")
+script = ExtResource("1_uhgab")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(572, 324.5)
@@ -82,28 +82,28 @@ frame_progress = 0.592108
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(569.5, 554)
 scale = Vector2(1.8898, 0.757813)
-texture = ExtResource("8_6ya73")
+texture = ExtResource("8_cujhu")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 942.0
 offset_top = 493.0
 offset_right = 1134.0
 offset_bottom = 685.0
-texture_normal = ExtResource("12_w6afr")
+texture_normal = ExtResource("9_6x6dd")
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 offset_left = 796.0
 offset_top = 493.0
 offset_right = 988.0
 offset_bottom = 685.0
-texture_normal = ExtResource("12_w6afr")
+texture_normal = ExtResource("9_6x6dd")
 flip_h = true
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 1087.0
-offset_top = 3.0
-offset_right = 1148.0
-offset_bottom = 41.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 39.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "X"
 
@@ -112,28 +112,39 @@ position = Vector2(146, 369)
 scale = Vector2(0.48, 0.466)
 sprite_frames = SubResource("SpriteFrames_kicpr")
 autoplay = "default"
-frame_progress = 0.501311
+frame_progress = 0.24724
 
 [node name="Label" type="Label" parent="."]
-offset_left = 37.0
-offset_top = 480.0
-offset_right = 1096.0
-offset_bottom = 633.0
+offset_left = 30.0
+offset_top = 472.0
+offset_right = 1102.0
+offset_bottom = 635.0
 theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("19_vpu5s")
+theme_override_fonts/font = ExtResource("16_akqqf")
 text = "Be careful! Random events can happen and you will need to be prepared when this happens.
-Refer to the reference guide for more information on these events.
 
-You are ready to go! Click on the NEXT arrow to start your journey!"
+You are ready to go! click on the NEXT arrow to start your journey!"
 
 [node name="Label2" type="Label" parent="."]
-offset_right = 1150.0
-offset_bottom = 102.0
-theme_override_fonts/font = ExtResource("19_vpu5s")
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 1155.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("16_akqqf")
 theme_override_font_sizes/font_size = 28
 text = "Random Events"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[node name="Button" type="Button" parent="."]
+offset_left = 1028.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_akqqf")
+text = "Skip Tutorial"
+
+[connection signal="pressed" from="TextureButton" to="." method="next"]
+[connection signal="pressed" from="TextureButton2" to="." method="prev"]
+[connection signal="pressed" from="Button2" to="." method="main"]
+[connection signal="pressed" from="Button" to="." method="Skip"]

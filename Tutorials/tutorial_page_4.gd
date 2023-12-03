@@ -17,3 +17,7 @@ func _on_texture_button_2_pressed():
 
 func _on_button_2_pressed():
 	get_tree().change_scene_to_file("res://main_menu_display.tscn")
+
+
+func Skip():
+	get_tree().change_scene_to_file("res://game.tscn")

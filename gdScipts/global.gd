@@ -6,7 +6,8 @@ var itSeed = false
 var itTrowel = false
 var microGameScore = 0
 var microGameType = ""
-var potData = {} 
+var potData = {}
+var weeks_passed = 0
 #tmp for making plants work
 signal nextWeekSignal
 signal PHEFFECT # why not ;p;

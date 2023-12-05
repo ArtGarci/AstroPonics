@@ -118,7 +118,7 @@ func activateRE(): # SUCCESS! now call a random event.
 	
 func launcher(rndNum): 
 	rng.randomize() 
-	var chance = rng.randf_range(0, 1); # 0 to 100% chance
+	var chance = rng.randf_range(0, 100); # 0 to 100% chance
 	if (chance <= rndNum):
 		push_warning("succesful hit!")
 		activateRE(); # ALARM BLARES !!

@@ -27,6 +27,8 @@ var overlay_node
 var camera_node
 var animate_text
 var re_counter = 0 # how many times RE events? for debugging purposes
+var display_ph_text # short 4 texturerect 
+var display_ph : ShaderMaterial
 
 # signal PHEFFECT # define signal object 4 RE 
 
@@ -42,6 +44,8 @@ func _ready():
 	alarm_node = get_node("/root/Game2/RandomEvents/Alarm")
 	# ph 
 	ph_ui_node = get_node("/root/Game2/RandomEvents/PH_UI")
+	display_ph_text = get_node("/root/Game2/RandomEvents/re_display")
+	display_ph = display_ph_text.get_material()
 	# OVERLAY NODE - DISTORTION DEFAULT
 	overlay_node = get_node("/root/Game2/Overlay")
 	overlay_node.set_visible(true)
@@ -68,9 +72,6 @@ func alarm_blare(): # set animate text visiblity
 	alarm_node.visible = true
 	alarm_node.animate()
 	
-func cutscene():
-	pass
-	
 func cam_effect(): 
 	camera_node.camera_effect()
 
@@ -84,54 +85,45 @@ func activateRE(): # SUCCESS! now call a random event.
 	spawnerObject = rng.randi_range(1,4) # RANGES 1->5
 	match spawnerObject:
 		1: # PH IMBALANCE 
-			#push_warning("PH effect")
+			push_warning("PH effect")
+			display_ph_text.set_visible(true)
+			display_ph.set_shader_parameter("onoff", 1.0)
+			await get_tree().create_timer(5).timeout
+			display_ph.set_shader_parameter("onoff", 0.0)
+			display_ph_text.set_visible(false)
 			ph_ui_node.visible = true
 			ph_ui_node.callAnimation() # animate w/ arrows down
-			await get_tree().create_timer(2).timeout
-			Global.PHEFFECT.emit(true)
+			await get_tree().create_timer(4).timeout
+			Global.PHEFFECT.emit()
 			ph_ui_node.visible = false
-		#1: BLUR EFFECT
-		#	push_warning("blur effect")
-		#	overlay_node.material.shader = blur_shade_mat
-			#ba = wrapf(ba + 0.05, 0.0, 5.0)
-			#overlay.set_shader_parameter("blur_amount", ba)
-		#	await get_tree().create_timer(2).timeout
-		#	overlay_node.material.shader = distort_shader 
 		2: # DISTORT
-			#push_warning("distortion")
+			push_warning("distortion")
 			overlay_node.set_material(overlay)
 			overlay.set_shader_parameter("onoff", 1.0)
 			await get_tree().create_timer(5).timeout # wait 5 secs 
 			overlay.set_shader_parameter("onoff", 0.0)
 		3: # SHAKE SCREEN
-			#push_warning("screen shake") 
+			push_warning("screen shake") 
 			camera_node.set("shake", true)
 			await get_tree().create_timer(5).timeout # wait 5 secs 
 			camera_node.set("shake", false)
 		4: # CRT MONITOR EFFECT
-			#push_warning("crt effect")
+			push_warning("crt effect")
 			overlay_node.material.shader = crt
 			await get_tree().create_timer(5).timeout # wait 5 secs 
 			overlay_node.material.shader = distort_shader
-		5: # PH IMBALANCE
-			#push_warning("PH effect")
-			ph_ui_node.visible = true
-			ph_ui_node.callAnimation() # animate w/ arrows down
-			await get_tree().create_timer(2).timeout
-			Global.PHEFFECT.emit(true)
-			ph_ui_node.visible = false
-		
 	alarm_node.visible = false 
 	currRunning = false
 	timerStarted = false
 	
 func launcher(rndNum): 
-	var chance = rng.randf_range(0, 100); # 0 to 100% chance
+	rng.randomize() 
+	var chance = rng.randf_range(0, 1); # 0 to 100% chance
 	if (chance <= rndNum):
-		#push_warning("succesful hit!")
+		push_warning("succesful hit!")
 		activateRE(); # ALARM BLARES !!
-	#else: 
-		#push_warning("not successful!")
+	else: 
+		push_warning("not successful!")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta): 

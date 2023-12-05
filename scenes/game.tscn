@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://biltrovquco1y"]
+[gd_scene load_steps=41 format=3 uid="uid://biltrovquco1y"]
 
 [ext_resource type="Texture2D" uid="uid://duhhj5ebbfkdu" path="res://Art and textures/main_menu_background.png" id="1_8w225"]
 [ext_resource type="PackedScene" uid="uid://eultllaxwx7x" path="res://scenes/guiPlants.tscn" id="1_is64n"]
@@ -18,11 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://gi3m2ru2dp5j" path="res://Art and textures/Trophy.png" id="9_cjboo"]
 [ext_resource type="Script" path="res://gdScipts/RE_launcher.gd" id="10_imp6m"]
 [ext_resource type="Shader" path="res://pulse.gdshader" id="13_g4bt6"]
-[ext_resource type="Texture2D" uid="uid://bitemim18ttqw" path="res://images/alarmbell.png" id="14_20b3p"]
 [ext_resource type="Script" path="res://Setup_Alarm.gd" id="15_5lq74"]
-[ext_resource type="Texture2D" uid="uid://dmx02x7kxprf1" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
+[ext_resource type="Texture2D" uid="uid://b6wq37ey2hsuu" path="res://Art and textures/alarmbell.png" id="19_87fhs"]
+[ext_resource type="Texture2D" uid="uid://78qbrbi6nim5" path="res://Art and textures/down_arrow.png" id="21_ny0lh"]
+[ext_resource type="Texture2D" uid="uid://dshrxd3skr0t7" path="res://particle.png" id="21_w8jrb"]
 [ext_resource type="Script" path="res://gdScipts/PH_Indicator.gd" id="22_hmup2"]
-[ext_resource type="PackedScene" uid="uid://cy4sbarorkj37" path="res://MicroGames/MicroGameScenes/microgame_UI.tscn" id="23_76wrv"]
+[ext_resource type="Texture2D" uid="uid://cfkm6cmug756w" path="res://Art and textures/ph_attack.png" id="24_52lfj"]
+[ext_resource type="Shader" path="res://scenes/ph_dissolve.gdshader" id="24_b67v8"]
+[ext_resource type="Texture2D" uid="uid://cg5oe8m00bs5o" path="res://Art and textures/transparent_view.png" id="25_1cxog"]
+[ext_resource type="Script" path="res://scenes/texture_ph.gd" id="26_u40df"]
 
 [sub_resource type="Theme" id="Theme_h5407"]
 
@@ -51,6 +55,47 @@ shader_parameter/intensity = null
 shader_parameter/opacity = null
 shader_parameter/glow_color = null
 
+[sub_resource type="Gradient" id="Gradient_th1le"]
+offsets = PackedFloat32Array(0, 0.207407, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.759861, 0.730105, 0.921002, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o2nry"]
+gradient = SubResource("Gradient_th1le")
+
+[sub_resource type="Curve" id="Curve_xhkw1"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, -132.632), 0.0, 0.0, 0, 0, Vector2(0.493976, 103.158), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6nkgc"]
+curve = SubResource("Curve_xhkw1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0b6wc"]
+lifetime_randomness = 0.05
+emission_shape = 1
+emission_sphere_radius = 2.15
+particle_flag_disable_z = true
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 0.45
+linear_accel_max = 1.4
+linear_accel_curve = SubResource("CurveTexture_6nkgc")
+scale_max = 2.0
+color = Color(0.984314, 0.741176, 0.709804, 1)
+color_ramp = SubResource("GradientTexture1D_o2nry")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_l5r3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_216ah"]
+shader = ExtResource("24_b67v8")
+shader_parameter/onoff = 1.0
+shader_parameter/weight = 0.0
+shader_parameter/noise_spd = 0.014
+shader_parameter/edgeColor = Color(0.184314, 0.556863, 0.6, 0.537255)
+shader_parameter/texture_2 = ExtResource("25_1cxog")
+shader_parameter/noise = SubResource("NoiseTexture2D_l5r3f")
+
 [node name="Game2" type="Node2D"]
 
 [node name="Galaxy_splash_sprite" type="Sprite2D" parent="."]
@@ -75,11 +120,7 @@ position = Vector2(540, -837)
 zoom = Vector2(0.098, 0.098)
 script = ExtResource("1_vwpgh")
 
-[node name="Node2D" parent="." instance=ExtResource("23_76wrv")]
-position = Vector2(927, 1416)
-
 [node name="GUI" parent="." instance=ExtResource("1_is64n")]
-metadata/_edit_lock_ = true
 
 [node name="WeekBackground" type="Sprite2D" parent="."]
 position = Vector2(5893.5, 1924.5)
@@ -105,21 +146,6 @@ text = "1/12"
 script = ExtResource("2_m3j3x")
 metadata/_edit_use_anchors_ = true
 
-[node name="nextWeekButton" type="Button" parent="WeekLabel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.53354
-anchor_top = -0.226362
-anchor_right = -0.523009
-anchor_bottom = 1.45914
-offset_left = -0.0609189
-offset_right = 0.0020099
-offset_bottom = 12.608
-theme = ExtResource("7_yaiqs")
-theme_override_font_sizes/font_size = 200
-text = "Next Week"
-metadata/_edit_use_anchors_ = true
-
 [node name="ScoreBoxBackground" type="Sprite2D" parent="."]
 position = Vector2(4454, -3731)
 scale = Vector2(2.89255, 1.80143)
@@ -138,7 +164,6 @@ offset_bottom = -76.1164
 scale = Vector2(0.556473, 0.827278)
 theme = SubResource("Theme_jcafy")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Score: 0"
 script = ExtResource("6_syt6x")
 
 [node name="ScoreLogButton" type="Button" parent="."]
@@ -221,34 +246,44 @@ z_index = 1
 material = SubResource("ShaderMaterial_o24rc")
 position = Vector2(3665.09, -3287.02)
 scale = Vector2(6.37431, 5.20368)
-texture = ExtResource("14_20b3p")
+texture = ExtResource("19_87fhs")
 script = ExtResource("15_5lq74")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RandomEvents/Alarm"]
+modulate = Color(0.964706, 0.501961, 0.427451, 1)
+self_modulate = Color(0.478431, 0.635294, 0.972549, 1)
+scale = Vector2(30, 30)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_0b6wc")
+texture = ExtResource("21_w8jrb")
+lifetime = 1.1
+speed_scale = 0.6
+explosiveness = 0.17
 
 [node name="PH_UI" type="Sprite2D" parent="RandomEvents"]
 visible = false
-position = Vector2(-1461, -393)
+position = Vector2(-1332.5, -264.5)
+scale = Vector2(1.514, 1.514)
 texture = ExtResource("21_ny0lh")
 script = ExtResource("22_hmup2")
 
 [node name="Sprite2D" type="Sprite2D" parent="RandomEvents/PH_UI"]
-position = Vector2(552.686, -1662.75)
-scale = Vector2(0.978746, 0.854991)
+position = Vector2(711.5, -1524.02)
+scale = Vector2(1.614, 1.40992)
 texture = ExtResource("21_ny0lh")
 
 [node name="Sprite2D2" type="Sprite2D" parent="RandomEvents/PH_UI"]
-position = Vector2(-63.376, -1228.4)
-scale = Vector2(0.929504, 0.634249)
+position = Vector2(178.124, -1063.61)
+scale = Vector2(1.8955, 1.2934)
 texture = ExtResource("21_ny0lh")
 
 [node name="Sprite2D3" type="Sprite2D" parent="RandomEvents/PH_UI"]
-position = Vector2(10632, 504)
-rotation = 3.14159
+position = Vector2(6701.78, 473.91)
 scale = Vector2(1.6399, 1.54524)
 texture = ExtResource("21_ny0lh")
 
 [node name="Sprite2D4" type="Sprite2D" parent="RandomEvents/PH_UI"]
-position = Vector2(10094, -551)
-rotation = 3.14159
+position = Vector2(6483.16, -261.889)
 scale = Vector2(1.47818, 1.39285)
 texture = ExtResource("21_ny0lh")
 
@@ -262,5 +297,20 @@ offset_bottom = 4599.0
 theme_override_font_sizes/font_size = 500
 text = "A RANDOM EVENT INITIATED!"
 
-[connection signal="pressed" from="WeekLabel/nextWeekButton" to="WeekLabel" method="_on_next_week_button_pressed"]
+[node name="re_display" type="TextureRect" parent="RandomEvents"]
+visible = false
+z_index = 1
+material = SubResource("ShaderMaterial_216ah")
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.417
+anchor_bottom = -0.417
+offset_left = 27.0
+offset_top = -1899.41
+offset_right = 7444.0
+offset_bottom = 3553.59
+mouse_filter = 2
+texture = ExtResource("24_52lfj")
+script = ExtResource("26_u40df")
+
 [connection signal="pressed" from="ScoreLogButton" to="ScoreLog" method="toggle_log_panel"]

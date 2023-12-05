@@ -78,7 +78,7 @@ func handleButtonPress(btn):
 			self.text = wheatTextLabel
 		_:
 			print("undefined event")
-	pass
+	return btn
 	
 
 func _on_plant_1_pressed(btn):

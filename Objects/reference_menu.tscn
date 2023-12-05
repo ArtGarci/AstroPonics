@@ -70,7 +70,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 20
-text = "This guide provides all the information you'll need  to be a successful space farmer!"
+text = "This guide provides all the information you'll need to be a successful space farmer!"
 script = ExtResource("1_jr356")
 metadata/_edit_use_anchors_ = true
 
